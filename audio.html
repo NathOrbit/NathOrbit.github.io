@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Production Audio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="audio-style.css">
+    <link rel="stylesheet" href="header-style.css">
+    <script src="shared.js"></script>
+</head>
+<body class="theme-music">
+
+    <!-- Emplacement pour le header dynamique -->
+    <div id="dynamic-header"></div>
+
+    <main>
+        <div class="audio-profile">
+            <h1 data-i18n="audio_page_title">Studio de Production Audio</h1>
+            <p class="tagline" data-i18n="audio_page_tagline">De l'idée brute au master finalisé. Voici mon processus créatif et technique.</p>
+        </div>
+
+        <div class="audio-grid">
+            <!-- Colonne Gauche : Outils -->
+            <div class="tool-section">
+                <h2 data-i18n="tools_title">Outils & Logiciels</h2>
+                <ul class="tool-list">
+                    <li data-i18n="tool_1">Pro Tools (Expert)</li>
+                    <li data-i18n="tool_2">Ableton Live</li>
+                    <li data-i18n="tool_3">Logic Pro X</li>
+                    <li data-i18n="tool_4">iZotope RX (Restauration)</li>
+                    <li data-i18n="tool_5">Ableton Push / MIDI Controllers</li>
+                </ul>
+            </div>
+
+            <!-- Colonne Droite : Expérience -->
+            <div class="exp-section">
+                <h2 data-i18n="exp_title">Expériences Clés</h2>
+                <div class="exp-card">
+                    <h3 data-i18n="exp_1_title">Mixage Cinéma</h3>
+                    <p data-i18n="exp_1_desc">Mixage 5.1 pour un court-métrage primé au festival de Cannes.</p>
+                </div>
+                <div class="exp-card">
+                    <h3 data-i18n="exp_2_title">Production Électro</h3>
+                    <p data-i18n="exp_2_desc">Production de 3 EP indépendants et tournées nationales.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Exemple d'écouteur audio (visuel) -->
+        <div class="demo-player">
+            <h2 data-i18n="listen_title">Écouter mes démos</h2>
+            <div class="player-mockup">
+                <span data-i18n="track_1">Ambiance Futuriste - 3:45</span>
+                <div class="progress-bar"><div class="fill"></div></div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        &copy; 2023 NathOrbit.
+    </footer>
+
+    <!-- Traductions spécifiques à la page Audio -->
+    <script>
+                /* ------------------------------------------------------------------
+        audio.html – initialisation (peut aussi servir à d’autres pages)
+        -------------------------------------------------------------------*/
+        document.addEventListener('DOMContentLoaded', initAudioPage);
+        // On ajoute les clés audio au dictionnaire global si elles n'existent pas déjà
+        if (!translations.fr.audio_page_title) {
+            translations.fr.audio_page_title = "Studio de Production Audio";
+            translations.fr.audio_page_tagline = "De l'idée brute au master finalisé. Voici mon processus créatif et technique.";
+            translations.fr.tools_title = "Outils & Logiciels";
+            translations.fr.tool_1 = "Pro Tools (Expert)";
+            translations.fr.tool_2 = "Ableton Live";
+            translations.fr.tool_3 = "Logic Pro X";
+            translations.fr.tool_4 = "iZotope RX (Restauration)";
+            translations.fr.tool_5 = "Ableton Push / MIDI Controllers";
+            translations.fr.exp_title = "Expériences Clés";
+            translations.fr.exp_1_title = "Mixage Cinéma";
+            translations.fr.exp_1_desc = "Mixage 5.1 pour un court-métrage primé au festival de Cannes.";
+            translations.fr.exp_2_title = "Production Électro";
+            translations.fr.exp_2_desc = "Production de 3 EP indépendants et tournées nationales.";
+            translations.fr.listen_title = "Écouter mes démos";
+            translations.fr.track_1 = "Ambiance Futuriste - 3:45";
+
+            translations.en.audio_page_title = "Audio Production Studio";
+            translations.en.audio_page_tagline = "From raw idea to final master. Here is my creative and technical process.";
+            translations.en.tools_title = "Tools & Software";
+            translations.en.tool_1 = "Pro Tools (Expert)";
+            translations.en.tool_2 = "Ableton Live";
+            translations.en.tool_3 = "Logic Pro X";
+            translations.en.tool_4 = "iZotope RX (Restoration)";
+            translations.en.tool_5 = "Ableton Push / MIDI Controllers";
+            translations.en.exp_title = "Key Experiences";
+            translations.en.exp_1_title = "Cinema Mixing";
+            translations.en.exp_1_desc = "5.1 Mixing for a short film awarded at the Cannes Film Festival.";
+            translations.en.exp_2_title = "Electronic Production";
+            translations.en.exp_2_desc = "Production of 3 independent EPs and national tours.";
+            translations.en.listen_title = "Listen to my demos";
+            translations.en.track_1 = "Futuristic Ambiance - 3:45";
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+             // On force l'état actif si ce n'est pas déjà fait par loadHeader
+             if (!document.getElementById('btn-music').classList.contains('active')) {
+                 updateActiveButtons('domain', 'music');
+             }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+/* ------------------- STYLE DE BASE ------------------- */
+.site-footer {
+    text-align: center;
+    padding: 1rem 0;
+    background: #222;               /* couleur sombre par défaut (aéro) */
+    color: #ddd;
+    font-size: 0.9rem;
+}
+
+/* ------------------- THÈME MUSIC -------------------- */
+.theme-music .site-footer {
+    background: #0b0c10;            /* couleur sombre mais différente */
+    color: #c5c6c7;
+}
+
+/* ------------------- RESPONSIVE --------------------- */
+@media (max-width: 600px) {
+    .site-footer {
+        font-size: 0.8rem;
+        padding: 0.8rem 0;
+    }
+}

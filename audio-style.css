@@ -1,0 +1,82 @@
+/* Style spécifique à audio.html */
+
+.audio-profile {
+    margin-bottom: 50px;
+}
+
+.audio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+.tool-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.tool-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    font-weight: 500;
+}
+
+.exp-card {
+    background: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--primary-music);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.exp-card h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1rem;
+    color: var(--primary-music);
+}
+
+/* Simulation d'un lecteur audio */
+.demo-player {
+    background: #222;
+    color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: left;
+}
+
+.demo-player h2 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: var(--primary-music);
+}
+
+.player-mockup {
+    background: #333;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+
+.progress-bar {
+    height: 6px;
+    background: #555;
+    border-radius: 3px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    width: 40%;
+    background: var(--primary-music);
+}
+
+/* Responsive pour la grille audio */
+@media (max-width: 768px) {
+    .audio-grid {
+        grid-template-columns: 1fr;
+    }
+}
