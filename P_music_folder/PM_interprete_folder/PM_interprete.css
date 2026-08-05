@@ -1,0 +1,144 @@
+/* ------------------------------------------------------------------
+   Re‑utilisation du style « audio‑grid » pour la partie « Groupes / Expériences ».
+   ------------------------------------------------------------------ */
+
+/* Profil principal (identique à audio) */
+.audio-profile {               /* on garde mais on ne l’utilise pas ici */
+    margin-bottom: 50px;
+}
+
+/* --------------------------------------------------------------
+   Grille à deux colonnes (identique à audio.html)
+   -------------------------------------------------------------- */
+.audio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* colonne gauche = outils / groupes, colonne droite = expériences */
+    gap: 40px;
+    text-align: left;
+    margin-bottom: 50px;
+}
+
+/* ---- Colonne gauche (listes) ---- */
+.tool-section ul {
+    list-style: none;
+    padding: 0;
+}
+.tool-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    font-weight: 500;
+}
+
+/* ---- Colonne droite (exp‑cards) ---- */
+.exp-section .exp-card {
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--primary-music);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+.exp-section .exp-card h3 {
+    margin: 0 0 5px;
+    font-size: 1.1rem;
+    color: var(--primary-music);
+}
+
+/* ------------------------------------------------------------------
+   Cartes supplémentaires (instruments & groupes) – même look que les
+   cartes de la page index (cards‑container)
+   ------------------------------------------------------------------ */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+.card {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.05);
+    border-top: 4px solid var(--accent);
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,.1);
+}
+.card h3 {
+    margin-top: 0;
+    color: var(--accent);
+}
+
+/* Instruments list (dans la première carte) */
+.instrument-list {
+    list-style: none;
+    padding-left: 0;
+    margin: .8rem 0 0;
+}
+.instrument-list li {
+    margin: .4rem 0;
+}
+
+/* Période (petit texte gris) */
+.period {
+    font-size: .9rem;
+    color: #888;
+    margin: .3rem 0 .6rem;
+}
+
+/* Bouton "En savoir plus" */
+.btn-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: .9rem;
+    align-self: flex-start;
+    transition: var(--transition);
+}
+.btn-link:hover {
+    opacity: .9;
+    transform: scale(1.05);
+}
+
+/* ------------------------------------------------------------------
+   Section écoute (même style que la page audio)
+   ------------------------------------------------------------------ */
+.listen-section {
+    margin-top: 3rem;
+}
+.player-mockup {
+    background: #333;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+.progress-bar {
+    height: 6px;
+    background: #555;
+    border-radius: 3px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.fill {
+    height: 100%;
+    width: 40%;
+    background: var(--primary-music);
+}
+
+/* ------------------------------------------------------------------
+   Responsive – on garde le même breakpoint que audio.html
+   ------------------------------------------------------------------ */
+@media (max-width: 768px) {
+    .audio-grid {
+        grid-template-columns: 1fr;
+    }
+}
