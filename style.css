@@ -62,7 +62,7 @@ h1 {
 
 .card {
     background: var(--card-bg);
-    padding: 25px;
+    padding: 15px;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.05);
     border-top: 4px solid var(--accent);
@@ -70,6 +70,8 @@ h1 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position:relative;          /* indispensable pour le positionnement de l'image */
+    overflow:hidden;            /* coupe l'image qui dépasse */
 }
 
 .card:hover {
@@ -136,11 +138,118 @@ h1 {
 #dynamic-footer > footer {
     margin: 0;
     width: 100%;
-    padding: 10px;
+    padding: 10px 0px;
     background-color: #fff;             
     color: #333;                         
 
     font-size: 0.9rem;
     text-align: center;
     border-top: 1px solid #eee;           
+}
+
+/* -------------------------------------------------
+   1️⃣  IMAGE DE FOND – (déjà corrigée, z-index = 0)
+------------------------------------------------- */
+.interprete-card .card-bg-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.15;               /* 15 % au repos */
+    z-index: 0;                  /* au-dessus du fond blanc, sous le texte */
+    pointer-events: none;
+    transition: opacity .3s ease;
+}
+
+/* -------------------------------------------------
+   1️⃣  IMAGE DE FOND – (déjà corrigée, z-index = 0)
+------------------------------------------------- */
+.interprete-card .card-bg-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.1;               /* 15 % au repos */
+    z-index: 0;                  /* derrière le texte, devant le fond blanc */
+    pointer-events: none;
+    transition: opacity .3s ease;
+}
+
+/* -------------------------------------------------
+   2️⃣  OVERLAY DE CONTRASTE (blanc 40 %)
+      → se situe **entre** l’image et le texte
+------------------------------------------------- */
+.interprete-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.40);   /* blanc à 40 % */
+    z-index: 1;                 /* devant l’image, derrière le texte */
+}
+
+/* -------------------------------------------------
+   3️⃣  TEXTE – on le garde au dessus (+ petit text‑shadow)
+------------------------------------------------- */
+.interprete-card h3,
+.interprete-card p,
+.interprete-card .btn-link {
+    position: relative;         /* crée un nouveau stacking context */
+    z-index: 2;                 /* au‑dessus de l’overlay */
+}
+
+/* On garde la couleur d’origine du h3 (var(--accent)) */
+.interprete-card h3 {
+    color: var(--accent);       /* ← **NE PAS** changer */
+}
+
+/* Légère ombre pour renforcer la lisibilité, sans altérer la couleur */
+.interprete-card h3,
+.interprete-card p {
+    text-shadow: 0 1px 2px rgba(255,255,255,0.6);
+}
+
+/* Le bouton « Explorer » reste blanc comme dans votre thème */
+.btn-link {
+    background: var(--accent);   /* couleur d’accent (rose ou bleu) */
+    color: #fff;                 /* blanc */
+}
+
+/* -------------------------------------------------
+   4️⃣  SURVOL – augmente l’opacité de l’image
+------------------------------------------------- */
+.interprete-card:hover .card-bg-image {
+    opacity: 0.15;              /* 20 % au hover */
+}
+
+/* (Optionnel) petit effet lift au survol – déjà présent */
+.interprete-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(0,0,0,.12);
+    transition: transform .3s ease, box-shadow .3s ease;
+}
+
+/* -------------------------------------------------
+   1️⃣  Réinitialisation globale des marges internes
+------------------------------------------------- */
+.interprete-card > * {
+    margin: 0;                     /* supprime toutes les marges héritées   */
+}
+
+/* -------------------------------------------------
+   2️⃣  Gestion de l’espacement avec flex‑gap
+------------------------------------------------- */
+.interprete-card {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;          /* 0.6 rem ≈ 9 px entre chaque enfant */
+}
+
+/* -------------------------------------------------
+   3️⃣  Ajustement fin (si vous avez besoin d’un petit
+       padding supplémentaire avant le bouton)
+------------------------------------------------- */
+.interprete-card .btn-link {
+    margin-top: 0.4rem;   /* petit supplément d’espace, optionnel */
 }

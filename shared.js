@@ -3,48 +3,105 @@
 =================================================================*/
 const translations = {
     fr: {
+        /* ── Header & Footer ───────────────────────────── */
         head_button_aero: "Aérospatial",
         head_button_music: "Musique",
+
         aero_title: "Spécialiste en mécanique dynamique : ingénierie et recherche aérospatiale",
-        aero_tagline: "Concevoir l'avenir du vol spatial et des systèmes de navigation.",
-        aero_skill1_title: "Dynamique des Fluides",
-        aero_skill1_desc: "Simulation et optimisation aérodynamique pour les avions et fusées.",
-        aero_skill2_title: "Systèmes Embarqués",
-        aero_skill2_desc: "Développement de logiciels de contrôle pour satellites et drones.",
-        aero_skill3_title: "Projets Spatiaux",
-        aero_skill3_desc: "Participation à des missions orbitales et analyse de données télémétriques.",
+        aero_tagline: "Soutien aux projets et à la recherche pour la mécanique dynamique dans le spatial.",
+
         music_title: "Musicien & Compositeur",
-        music_tagline: "Créer des ambiances sonores uniques et performer sur scène.",
+        music_tagline: "Développement et accompagnement de projets musicaux par la composition, l'interprétation et la technique son.",
+
+        btn_explore: "Explorer",
+
+        /* ── Aérospatial ──────────────────────────────── */
+        cnes_engineering_title: "Ingénierie et recherche au CNES",
+        cnes_engineering_desc: "Support en analyses mécaniques et recherche appliquée aux environnements dynamiques.",
+
+        shocks_research_title: "Recherche : dynamique des chocs mécaniques",
+        shocks_research_desc: "Modélisation, simulation et expérimentation. Amélioration des méthodes d'analyse.",
+
+        conferences_title: "Conférences & communications",
+        conferences_desc: "Communications scientifiques lors de conférences et congrès nationaux et internationaux.",
+
+        articles_title: "Articles et communications écrites",
+        articles_desc: "Publications scientifiques dans des revues spécialisées et articles de conférence.",
+
+        programming_title: "Programmation, conseil et formation",
+        programming_desc: "Développement d’outils et d’applications, support technique et ateliers d’apprentissage.",
+
+
+        /* ── Musique ─────────────────────────────────── */
         music_skill1_title: "Interprète",
-        music_skill1_desc: "Guitariste, bassiste et pianiste.",
-        music_skill2_title: "Production Audio",
-        music_skill2_desc: "Enregistrement, mixage et mastering sur DAW professionnel.",
-        music_skill3_title: "Composition",
-        music_skill3_desc: "Écriture de partitions originales pour cinéma et jeux vidéo.",
-        footer_contact: "Contactez-moi pour plus d'infos.",
-        btn_explore: "Explorer"
+        music_skill1_desc: "Guitariste, bassiste et pianiste. Groupes, concerts et expériences marquantes.",
+
+        music_skill2_title: "Compositeur",
+        music_skill2_desc: "Contribution à la production musicale à travers la composition pour différents artistes et groupes.",
+
+        music_skill3_title: "Technique son & sonorisation",
+        music_skill3_desc: "Accompagnement de projets musicaux par la production sonore et la sonorisation.",
+
+        music_skill4_title: "Coordinateur de production artistique",
+        music_skill4_desc: "Participation à la création musicale, direction artistique et coordination de projets musicaux.",
+
+
+        /* ── Footer ──────────────────────────────────── */
+        footer_legal: "Mentions légales",
+        footer_privacy: "Politique de confidentialité",
+        footer_contact: "Contact"
     },
+
+
     en: {
+        /* ── Header & Footer ───────────────────────────── */
         head_button_aero: "Aerospace",
         head_button_music: "Music",
-        aero_title: "Aerospace Engineer",
-        aero_tagline: "Designing the future of space flight and navigation systems.",
-        aero_skill1_title: "Fluid Dynamics",
-        aero_skill1_desc: "Aerodynamic simulation and optimization for aircraft and rockets.",
-        aero_skill2_title: "Embedded Systems",
-        aero_skill2_desc: "Control software development for satellites and drones.",
-        aero_skill3_title: "Space Projects",
-        aero_skill3_desc: "Participation in orbital missions and telemetry data analysis.",
+
+        aero_title: "Specialist in Structural Dynamics: Aerospace Engineering and Research",
+        aero_tagline: "Supporting projects and research in mechanical dynamics for space systems.",
+
         music_title: "Musician & Composer",
-        music_tagline: "Creating unique soundscapes and performing on stage.",
+        music_tagline: "Developing and supporting musical projects through composition, performance and sound production.",
+
+        btn_explore: "Explore",
+
+
+        /* ── Aerospace ────────────────────────────────── */
+        cnes_engineering_title: "Engineering & Research at CNES",
+        cnes_engineering_desc: "Mechanical analysis support and applied research on dynamic environments.",
+
+        shocks_research_title: "Research: Mechanical Shock Dynamics",
+        shocks_research_desc: "Modeling, simulation and experimental testing. Improving analysis methods.",
+
+        conferences_title: "Conferences & Presentations",
+        conferences_desc: "Scientific communications at national and international conferences.",
+
+        articles_title: "Articles & Written Communications",
+        articles_desc: "Scientific publications in specialized journals and conference papers.",
+
+        programming_title: "Programming, Consulting & Training",
+        programming_desc: "Development of tools and applications, technical support and training workshops.",
+
+
+        /* ── Music ────────────────────────────────────── */
         music_skill1_title: "Performer",
-        music_skill1_desc: "Guitarist, bassist and pianist.",
-        music_skill2_title: "Audio Production",
-        music_skill2_desc: "Recording, mixing, and mastering on professional DAWs.",
-        music_skill3_title: "Composition",
-        music_skill3_desc: "Writing original scores for cinema and video games.",
-        footer_contact: "Contact me for more info.",
-        btn_explore: "Explore"
+        music_skill1_desc: "Guitarist, bassist and pianist. Bands, live performances and key experiences.",
+
+        music_skill2_title: "Composer",
+        music_skill2_desc: "Contribution to music production through composition for various artists and bands.",
+
+        music_skill3_title: "Sound Engineering & Live Sound",
+        music_skill3_desc: "Supporting musical projects through sound production and live audio engineering.",
+
+        music_skill4_title: "Artistic Production Coordinator",
+        music_skill4_desc: "Participation in musical creation, artistic direction and coordination of music projects.",
+
+
+        /* ── Footer ──────────────────────────────────── */
+        footer_legal: "Legal Notice",
+        footer_privacy: "Privacy Policy",
+        footer_contact: "Contact"
     }
 };
 
