@@ -19,91 +19,368 @@
     <div id="dynamic-header"></div>
 
     <main>
-        <!-- ───── Titre / présentation ───── -->
-        <section class="profile-section">
-            <h1 data-i18n="interp_page_title">Interprète – Scène & Ensembles</h1>
-            <p class="tagline" data-i18n="interp_page_tagline">
-                Performer live, créer des ambiances, partager la passion du son.
-            </p>
-        </section>
+
+        <!-- ==== BOUTON RETOUR + TITRE « Interprète » ==== -->
+        <div class="top-bar">
+            <!-- Bouton retour (reste à gauche) -->
+            <div class="back-top">
+                <a href="/index.html"
+                class="btn-link back-btn"
+                data-i18n="back_to_home"
+                aria-label="Retour à la page d’accueil">
+                    ← Retour
+                </a>
+            </div>
+
+            <!-- Titre « Interprète » (centré) -->
+            <h2 class="section-title interprete-title"
+                data-i18n="interp_page_title">Scènes & Projets</h2>
+        </div>
+
+        <!-- Trait gris **sous** le titre « Interprète » -->
+        <hr class="divider">
+
+        <!-- ==== TITRE « Groupes » (à gauche) ==== -->
+        <h2 class="section-title groups-title"
+            data-i18n="group_title">Groupes</h2>
+
 
         <!-- ───── CARTES « GROUPES » ───── -->
         <div class="cards-container">
-
+            
             <!-- Groupe 1 – Houriaa -->
             <div class="card">
-                <h3 data-i18n="group_1_title">Houriaa</h3>
-                <p class="period" data-i18n="group_1_period">2022 – </p>
-                <p data-i18n="group_1_desc">
-                    <!-- description à compléter -->
-                </p>
-                <a href="#" class="btn-link" data-i18n="more_info">En savoir plus »</a>
+
+                <div class="card-banner">
+                    <img src="./PMInter_Houriaa_folder/PMInter_Houriaa_background.jpg" alt="Houriaa">
+                </div>
+
+                <div class="card-body">
+                    <h3 data-i18n="group_1_title">Houriaa</h3>
+
+                    <p class="period" data-i18n="group_1_period">2022 –</p>
+
+                    <p data-i18n="group_1_desc">
+                        <!-- description -->
+                    </p>
+
+                    <a href="./PMInter_Houriaa_folder/PMInter_Houriaa.html" class="btn-link" data-i18n="more_info">
+                        En savoir plus »
+                    </a>
+                </div>
+
             </div>
 
-            <!-- Groupe 2 – Bad Pigeons -->
+
+            <!-- Groupe 2 – Bad Pigeons -->
             <div class="card">
-                <h3 data-i18n="group_2_title">Bad Pigeons</h3>
-                <p class="period" data-i18n="group_2_period">2023 – </p>
-                <p data-i18n="group_2_desc">
-                    <!-- description à compléter -->
-                </p>
-                <a href="#" class="btn-link" data-i18n="more_info">En savoir plus »</a>
+
+                <div class="card-banner">
+                    <img src="./PMInter_Bad_pigeons_folder/PMInter_BP_background.JPG" alt="Bad Pigeons">
+                </div>
+
+                <div class="card-body">
+                    <h3 data-i18n="group_2_title">Bad Pigeons</h3>
+
+                    <p class="period" data-i18n="group_2_period">2023 –</p>
+
+                    <p data-i18n="group_2_desc">
+                        <!-- description -->
+                    </p>
+
+                    <a href="./PMInter_Bad_pigeons_folder/PMInter_BP.html" class="btn-link" data-i18n="more_info">
+                        En savoir plus »
+                    </a>
+                </div>
+
             </div>
 
-            <!-- Groupe 3 – Jansi -->
+
+            <!-- Groupe 3 – Jansi -->
             <div class="card">
-                <h3 data-i18n="group_3_title">Jansi</h3>
-                <p class="period" data-i18n="group_3_period">2025</p>
-                <p data-i18n="group_3_desc">
-                    <!-- description à compléter -->
-                </p>
-                <a href="#" class="btn-link" data-i18n="more_info">En savoir plus »</a>
+
+                <div class="card-banner">
+                    <img src="./PMInter_Jansi_folder/PMInter_JANSI_background.JPG" alt="Jansi">
+                </div>
+
+                <div class="card-body">
+                    <h3 data-i18n="group_3_title">Jansi</h3>
+
+                    <p class="period" data-i18n="group_3_period">2025</p>
+
+                    <p data-i18n="group_3_desc">
+                        <!-- description -->
+                    </p>
+
+                    <a href="#" class="btn-link" data-i18n="more_info">
+                        En savoir plus »
+                    </a>
+                </div>
+
             </div>
 
-            <!-- Groupe 4 – Los Chicos -->
+
+            <!-- Groupe 4 – Los Chicos -->
             <div class="card">
-                <h3 data-i18n="group_4_title">Los Chicos</h3>
-                <p class="period" data-i18n="group_4_period">2023 – 2024</p>
-                <p data-i18n="group_4_desc">
-                    <!-- description à compléter -->
-                </p>
-                <a href="#" class="btn-link" data-i18n="more_info">En savoir plus »</a>
+
+                <div class="card-banner">
+                    <img src="./PMInter_Los_chicos_folder/PMInter_Los_chicos_background_comp.jpg" alt="Los Chicos">
+                </div>
+
+                <div class="card-body">
+                    <h3 data-i18n="group_4_title">Los Chicos</h3>
+
+                    <p class="period" data-i18n="group_4_period">2023 – 2024</p>
+
+                    <p data-i18n="group_4_desc">
+                        <!-- description -->
+                    </p>
+
+                    <a href="#" class="btn-link" data-i18n="more_info">
+                        En savoir plus »
+                    </a>
+                </div>
+
             </div>
 
-            <!-- Groupe 5 – Hot Doctors -->
+
+            <!-- Groupe 5 – Hot Doctors -->
             <div class="card">
-                <h3 data-i18n="group_5_title">Hot Doctors</h3>
-                <p class="period" data-i18n="group_5_period">2014 – 2018</p>
-                <p data-i18n="group_5_desc">
-                    <!-- description à compléter -->
-                </p>
-                <a href="#" class="btn-link" data-i18n="more_info">En savoir plus »</a>
+
+                <div class="card-banner">
+                    <img src="./PMInter_Hot_doctors_folder/PMInter_HD_background.jpg" alt="Hot Doctors">
+                </div>
+
+                <div class="card-body">
+                    <h3 data-i18n="group_5_title">Hot Doctors</h3>
+
+                    <p class="period" data-i18n="group_5_period">2014 – 2018</p>
+
+                    <p data-i18n="group_5_desc">
+                        <!-- description -->
+                    </p>
+
+                    <a href="#" class="btn-link" data-i18n="more_info">
+                        En savoir plus »
+                    </a>
+                </div>
+
             </div>
 
-            <!-- Groupe 6 – Cleliacoustic -->
+
+            <!-- Groupe 6 – Cleliacoustic -->
             <div class="card">
-                <h3 data-i18n="group_6_title">Cleliacoustic</h3>
-                <p class="period" data-i18n="group_6_period">2012 – 2018</p>
-                <p data-i18n="group_6_desc">
-                    <!-- description à compléter -->
-                </p>
-                <a href="#" class="btn-link" data-i18n="more_info">En savoir plus »</a>
+
+                <div class="card-banner">
+                    <img src="./PMInter_Cleliacoustic_folder/PMinter_Cleliacoustic_background.jpg" alt="Cleliacoustic">
+                </div>
+
+                <div class="card-body">
+                    <h3 data-i18n="group_6_title">Cleliacoustic</h3>
+
+                    <p class="period" data-i18n="group_6_period">2012 – 2018</p>
+
+                    <p data-i18n="group_6_desc">
+                        <!-- description -->
+                    </p>
+
+                    <a href="#" class="btn-link" data-i18n="more_info">
+                        En savoir plus »
+                    </a>
+                </div>
+
             </div>
 
-            <!-- Groupe 7 – Soultime -->
+
+            <!-- Groupe 7 – Soultime -->
             <div class="card">
-                <h3 data-i18n="group_7_title">Soultime</h3>
-                <p class="period" data-i18n="group_7_period">2012 – 2018</p>
-                <p data-i18n="group_7_desc">
-                    <!-- description à compléter -->
-                </p>
-                <a href="#" class="btn-link" data-i18n="more_info">En savoir plus »</a>
+
+                <div class="card-banner">
+                    <img src="../images/soultime.jpg" alt="Soultime">
+                </div>
+
+                <div class="card-body">
+                    <h3 data-i18n="group_7_title">Soultime</h3>
+
+                    <p class="period" data-i18n="group_7_period">2012 – 2018</p>
+
+                    <p data-i18n="group_7_desc">
+                        <!-- description -->
+                    </p>
+
+                    <a href="#" class="btn-link" data-i18n="more_info">
+                        En savoir plus »
+                    </a>
+                </div>
+
             </div>
         </div>
-
         <!-- ───── GRILLE À DEUX COLONNES (style « audio‑grid ») ───── -->
         <div class="audio-grid">
 
+            
+
+            <!-- COLONNE DROITE – EXPÉRIENCES CLÉS -->
+            <section class="exp-section">
+
+                <h2 data-i18n="exp_title">Expériences Clés</h2>
+
+
+                <!-- Expérience 1 -->
+                <article class="exp-card">
+
+                    <div class="exp-card-banner">
+                        <img src="./Images/xx"
+                            alt="Rockin' 1000 Stade de France">
+                    </div>
+
+                    <div class="exp-card-body">
+
+                        <h3 data-i18n="exp_1_title">
+                            Rockin' 1000 - Stade de France
+                        </h3>
+
+                        <p class="exp-date" data-i18n="exp_1_date">
+                            29/06/2019
+                        </p>
+
+                        <p data-i18n="exp_1_desc">
+                            1000 musiciens sur scène au Stade de France
+                        </p>
+
+                        <a href="#" class="btn-link" data-i18n="more_info">
+                            En savoir plus »
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Expérience 2 -->
+                <article class="exp-card">
+
+                    <div class="exp-card-banner">
+                        <img src="./PMInter_EXP_Lot.jpg"
+                            alt="Houriaa Le Lot en meule bleue">
+                    </div>
+
+                    <div class="exp-card-body">
+
+                        <h3 data-i18n="exp_2_title">
+                            Houriaa - Le Lot en meule bleue
+                        </h3>
+
+                        <p class="exp-date" data-i18n="exp_2_date">
+                            07/09/2024
+                        </p>
+
+                        <p data-i18n="exp_2_desc">
+                            Festival à Cahors (LEJ, Cali, Martin Solveig, ...)
+                        </p>
+
+                        <a href="#" class="btn-link" data-i18n="more_info">
+                            En savoir plus »
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Expérience 3 -->
+                <article class="exp-card">
+
+                    <div class="exp-card-banner">
+                        <img src="./PMInter_Exp_Valras.jpg"
+                            alt="Los Chicos Valras-en-Live">
+                    </div>
+
+                    <div class="exp-card-body">
+
+                        <h3 data-i18n="exp_3_title">
+                            Los Chicos - Valras-en-Live
+                        </h3>
+
+                        <p class="exp-date" data-i18n="exp_3_date">
+                            28/07/2024
+                        </p>
+
+                        <p data-i18n="exp_3_desc">
+                            Participation au festival Valras-en-Live
+                        </p>
+
+                        <a href="#" class="btn-link" data-i18n="more_info">
+                            En savoir plus »
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Expérience 4 -->
+                <article class="exp-card">
+
+                    <div class="exp-card-banner">
+                        <img src="./PMInter_Exp_Jansi.JPG"
+                            alt="Jansi Saignelégier">
+                    </div>
+
+                    <div class="exp-card-body">
+
+                        <h3 data-i18n="exp_4_title">
+                            Jansi - Saignelégier
+                        </h3>
+
+                        <p class="exp-date" data-i18n="exp_4_date">
+                            26/04/2025
+                        </p>
+
+                        <p data-i18n="exp_4_desc">
+                            Médaille d'or de la Chanson - Finale
+                        </p>
+
+                        <a href="#" class="btn-link" data-i18n="more_info">
+                            En savoir plus »
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Expérience 5 -->
+                <article class="exp-card">
+
+                    <div class="exp-card-banner">
+                        <img src="./PMInter_Exp_Viva.jpg"
+                            alt="Los Chicos Casino Barrière">
+                    </div>
+
+                    <div class="exp-card-body">
+
+                        <h3 data-i18n="exp_5_title">
+                            Los Chicos – Casino Barrière
+                        </h3>
+
+                        <p class="exp-date" data-i18n="exp_5_date">
+                            31/08/2024
+                        </p>
+
+                        <p data-i18n="exp_5_desc">
+                            Comédie musicale Viva la Vida
+                        </p>
+
+                        <a href="#" class="btn-link" data-i18n="more_info">
+                            En savoir plus »
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </section>
             <!-- COLONNE GAUCHE – INSTRUMENTS -->
             <aside class="tool-section">
                 <h2 data-i18n="instruments_title">Instruments et Équipement</h2>
@@ -111,46 +388,13 @@
                     <li data-i18n="inst_1">Neural DSP Quad Cortex</li>
                     <li data-i18n="inst_2">Cort A5 Artisan</li>
                     <li data-i18n="inst_3">Roland VR‑730</li>
-                    <!-- Ajoutez d’autres équipements si besoin -->
-                </ul>
-                <h2 data-i18n="instruments_title">Instruments et Équipement</h2>
-                <ul class="tool-list">
-                    <li data-i18n="inst_1">Neural DSP Quad Cortex</li>
-                    <li data-i18n="inst_2">Cort A5 Artisan</li>
-                    <li data-i18n="inst_3">Roland VR‑730</li>
-                    <!-- Ajoutez d’autres équipements si besoin -->
+                    <li data-i18n="inst_hf_amp">HF Shure Guitar &amp; Bass</li>
+                    <li data-i18n="inst_in_ear">In-Ear LD System</li>
+                    <li data-i18n="inst_audio_iface">Focusrite 18i20</li>
+                    <li data-i18n="inst_logic">Logic Pro X</li>
+                    
                 </ul>
             </aside>
-
-            <!-- COLONNE DROITE – EXPÉRIENCES CLÉS -->
-            <section class="exp-section">
-                <h2 data-i18n="exp_title">Expériences Clés</h2>
-
-                <article class="exp-card">
-                    <h3 data-i18n="exp_1_title">Stade de France</h3>
-                    <p data-i18n="exp_1_desc">Rockin' 1000</p>
-                </article>
-
-                <article class="exp-card">
-                    <h3 data-i18n="exp_2_title">Houriaa Festival</h3>
-                    <p data-i18n="exp_2_desc">7 septembre 2024 | Le Lot en meule bleue</p>
-                </article>
-
-                <article class="exp-card">
-                    <h3 data-i18n="exp_3_title">Scene Los chicos</h3>
-                    <p data-i18n="exp_3_desc">28 juillet 2024 | Valras‑en‑Live</p>
-                </article>
-
-                <article class="exp-card">
-                    <h3 data-i18n="exp_4_title">Los chicos – Théâtre</h3>
-                    <p data-i18n="exp_4_desc">31 août 2024 | Casino Barrière</p>
-                </article>
-
-                <article class="exp-card">
-                    <h3 data-i18n="exp_5_title">Jansi – Finale</h3>
-                    <p data-i18n="exp_5_desc">26 avril 2025 | Live / danseurs</p>
-                </article>
-            </section>
         </div>
 
         <!-- ───── SECTION ÉCOUTE (facultative) ───── -->
@@ -215,7 +459,7 @@
     <script>
         if (!translations.fr.interp_page_title) {
             /* --------------------- FR --------------------- */
-            translations.fr.interp_page_title   = "Interprète – Scène & Ensembles";
+            translations.fr.interp_page_title   = "Scènes & Projets";
             translations.fr.interp_page_tagline = "Performer live, créer des ambiances, partager la passion du son.";
 
             /* Instruments / équipements */
@@ -225,46 +469,60 @@
             translations.fr.inst_3 = "Roland VR‑730";
 
             /* Groupes (cartes) */
+
+            translations.fr.group_title = "Groupes"
+
             translations.fr.group_1_title = "Houriaa";
             translations.fr.group_1_period = "2022 – ";
-            translations.fr.group_1_desc   = "Description de Houriaa (à compléter).";
+            translations.fr.group_1_desc   = "Artiste aux chansons françaises, vocalement rappé et chanté, aux inspirations funky et influences du monde";
 
             translations.fr.group_2_title = "Bad Pigeons";
             translations.fr.group_2_period = "2023 – ";
-            translations.fr.group_2_desc   = "Description de Bad Pigeons (à compléter).";
+            translations.fr.group_2_desc   = "Groupe de rock francophone toulousain. Label Boom Records. Sortie du 3e Album Rébellion";
 
             translations.fr.group_3_title = "Jansi";
             translations.fr.group_3_period = "2025";
-            translations.fr.group_3_desc   = "Description de Jansi (à compléter).";
+            translations.fr.group_3_desc   = "Guitariste pour Jansi, artiste toulousaine aux chansons à texte, entre slam et rap";
 
             translations.fr.group_4_title = "Los Chicos";
             translations.fr.group_4_period = "2023 – 2024";
-            translations.fr.group_4_desc   = "Description de Los Chicos (à compléter).";
-
+            translations.fr.group_4_desc   = "Groupe de Gipsy toulousain";
+            
             translations.fr.group_5_title = "Hot Doctors";
             translations.fr.group_5_period = "2014 – 2018";
-            translations.fr.group_5_desc   = "Description de Hot Doctors (à compléter).";
+            translations.fr.group_5_desc   = "Groupe de reprise tourangeau de musique rock.";
 
             translations.fr.group_6_title = "Cleliacoustic";
             translations.fr.group_6_period = "2012 – 2018";
-            translations.fr.group_6_desc   = "Description de Cleliacoustic (à compléter).";
+            translations.fr.group_6_desc   = "Groupe de reprise soul, pop, chansons francaises, anglaises";
 
             translations.fr.group_7_title = "Soultime";
             translations.fr.group_7_period = "2012 – 2018";
-            translations.fr.group_7_desc   = "Description de Soultime (à compléter).";
+            translations.fr.group_7_desc   = "Groupe de reprise de blues et soul.";
 
             /* Expériences clés */
-            translations.fr.exp_title   = "Expériences Clés";
-            translations.fr.exp_1_title = "Stade de France";
-            translations.fr.exp_1_desc  = "Rockin' 1000";
-            translations.fr.exp_2_title = "Houriaa Festival";
-            translations.fr.exp_2_desc  = "7 septembre 2024 | Le Lot en meule bleue";
-            translations.fr.exp_3_title = "Scene Los chicos";
-            translations.fr.exp_3_desc  = "28 juillet 2024 | Valras‑en‑Live";
-            translations.fr.exp_4_title = "Los chicos – Théâtre";
-            translations.fr.exp_4_desc  = "31 août 2024 | Casino Barrière";
-            translations.fr.exp_5_title = "Jansi – Finale";
-            translations.fr.exp_5_desc  = "26 avril 2025 | Live / danseurs";
+            /* Expériences clés */
+            translations.fr.exp_title = "Expériences clés";
+
+            translations.fr.exp_1_title = "Rockin' 1000 - Stade de France";
+            translations.fr.exp_1_date  = "29/06/2019";
+            translations.fr.exp_1_desc  = "1000 musiciens sur scène au Stade de France";
+
+            translations.fr.exp_2_title = "Houriaa - Le Lot en meule bleue";
+            translations.fr.exp_2_date  = "07/09/2024";
+            translations.fr.exp_2_desc  = "Festival à Cahors (LEJ, Cali, Martin Solveig, ...)";
+
+            translations.fr.exp_3_title = "Los Chicos - Valras-en-Live";
+            translations.fr.exp_3_date  = "28/07/2024";
+            translations.fr.exp_3_desc  = "Participation au festival Valras-en-Live";
+
+            translations.fr.exp_4_title = "Jansi - Saignelégier";
+            translations.fr.exp_4_date  = "26/04/2025";
+            translations.fr.exp_4_desc  = "Médaille d'or de la Chanson - Finale";
+
+            translations.fr.exp_5_title = "Los Chicos - Casino Barrière";
+            translations.fr.exp_5_date  = "31/08/2024";
+            translations.fr.exp_5_desc  = "Comédie musicale Viva la Vida";
 
             /* Reste du vocabulaire déjà présent dans le manifest global */
             translations.fr.more_info   = "En savoir plus »";
@@ -272,7 +530,7 @@
             translations.fr.track_1      = "Neon Pulse – “Midnight Drive” – 4:12";
 
             /* --------------------- EN --------------------- */
-            translations.en.interp_page_title   = "Performer – Stage & Projects";
+            translations.en.interp_page_title   = "Stages & Projects";
             translations.en.interp_page_tagline = "Playing live, shaping atmospheres, sharing the love of sound.";
 
             /* Instruments / gear */
@@ -282,50 +540,71 @@
             translations.en.inst_3 = "Roland VR‑730";
 
             /* Groups */
+            translations.en.group_title = "Groups";
+
             translations.en.group_1_title = "Houriaa";
-            translations.en.group_1_period = "2022 – ";
-            translations.en.group_1_desc   = "Houriaa description (to be completed).";
+            translations.en.group_1_period = "2022 –";
+            translations.en.group_1_desc = "French singer-songwriter blending rap and singing, with funky inspirations and influences from world music.";
 
             translations.en.group_2_title = "Bad Pigeons";
-            translations.en.group_2_period = "2023 – ";
-            translations.en.group_2_desc   = "Bad Pigeons description (to be completed).";
+            translations.en.group_2_period = "2023 –";
+            translations.en.group_2_desc = "French rock band from Toulouse, signed to Boom Records. Release of the third album, Rebellion.";
 
             translations.en.group_3_title = "Jansi";
             translations.en.group_3_period = "2025";
-            translations.en.group_3_desc   = "Jansi description (to be completed).";
+            translations.en.group_3_desc = "Guitarist for Jansi, a Toulouse-based artist performing poetic songs inspired by slam and rap.";
 
             translations.en.group_4_title = "Los Chicos";
-            translations.en.group_4_period = "2023‑2024";
-            translations.en.group_4_desc   = "Los Chicos description (to be completed).";
+            translations.en.group_4_period = "2023–2024";
+            translations.en.group_4_desc = "Gypsy music band based in Toulouse.";
 
             translations.en.group_5_title = "Hot Doctors";
-            translations.en.group_5_period = "2014‑2018";
-            translations.en.group_5_desc   = "Hot Doctors description (to be completed).";
+            translations.en.group_5_period = "2014–2018";
+            translations.en.group_5_desc = "Rock cover band from Tours.";
 
             translations.en.group_6_title = "Cleliacoustic";
-            translations.en.group_6_period = "2012‑2018";
-            translations.en.group_6_desc   = "Cleliacoustic description (to be completed).";
+            translations.en.group_6_period = "2012–2018";
+            translations.en.group_6_desc = "Cover band performing soul, pop, and French and English songs.";
 
             translations.en.group_7_title = "Soultime";
-            translations.en.group_7_period = "2012‑2018";
-            translations.en.group_7_desc   = "Soultime description (to be completed).";
+            translations.en.group_7_period = "2012–2018";
+            translations.en.group_7_desc = "Blues and soul cover band.";
 
             /* Key experiences */
-            translations.en.exp_title   = "Key Experiences";
-            translations.en.exp_1_title = "Stade de France";
-            translations.en.exp_1_desc  = "Rockin' 1000";
-            translations.en.exp_2_title = "Houriaa Festival";
-            translations.en.exp_2_desc  = "Sept 7 2024 | Le Lot in blue‑dust";
-            translations.en.exp_3_title = "Scene Los chicos";
-            translations.en.exp_3_desc  = "July 28 2024 | Valras‑en‑Live";
-            translations.en.exp_4_title = "Los chicos – Theatre";
-            translations.en.exp_4_desc  = "Aug 31 2024 | Casino Barrière";
-            translations.en.exp_5_title = "Jansi – Finale";
-            translations.en.exp_5_desc  = "April 26 2025 | Live / dancers";
+            translations.en.exp_title = "Key Experiences";
+
+            translations.en.exp_1_title = "Rockin' 1000 - Stade de France";
+            translations.en.exp_1_date  = "29/06/2019";
+            translations.en.exp_1_desc  = "1000 musicians performing on stage at the Stade de France";
+
+            translations.en.exp_2_title = "Houriaa - Le Lot en meule bleue";
+            translations.en.exp_2_date  = "07/09/2024";
+            translations.en.exp_2_desc  = "Festival in Cahors (LEJ, Cali, Martin Solveig, ...)";
+
+            translations.en.exp_3_title = "Los Chicos - Valras-en-Live";
+            translations.en.exp_3_date  = "28/07/2024";
+            translations.en.exp_3_desc  = "Performance at the Valras-en-Live festival";
+
+            translations.en.exp_4_title = "Jansi - Saignelégier";
+            translations.en.exp_4_date  = "26/04/2025";
+            translations.en.exp_4_desc  = "Médaille d'or de la Chanson - Final";
+
+            translations.en.exp_5_title = "Los Chicos - Casino Barrière";
+            translations.en.exp_5_date  = "31/08/2024";
+            translations.en.exp_5_desc  = "Viva la Vida musical show";
 
             translations.en.more_info   = "Read more »";
             translations.en.listen_title = "Listen to some live excerpts";
             translations.en.track_1      = "Neon Pulse – “Midnight Drive” – 4:12";
+
+            translations.fr.back_to_home = "← Retour";
+            translations.en.back_to_home = "← Back";
+
+
+            /* Ajoutez (si vous ne l’avez pas) le titre Groupes */
+            translations.fr.group_title = "Groupes";
+            translations.en.group_title = "Groups";
+
         }
     </script>
 

@@ -1,0 +1,172 @@
+/* -------------------------------------------------
+   0️⃣  RESET / VARIABLES (conservez celles que vous avez déjà)
+   ------------------------------------------------- */
+:root{
+    --accent:#c9386c;               /* couleur principale du site   */
+    --transition: .3s ease;         /* transition générique         */
+}
+
+/* -------------------------------------------------
+   1️⃣  BARRE DU HAUT (bouton retour + titre Interprète)
+   ------------------------------------------------- */
+.top-bar {
+    position: relative;                 /* parent du bouton absolu   */
+    display: flex;
+    justify-content: center;            /* centre le titre H2        */
+    align-items: center;
+    margin: 0.4rem 0;
+}
+.back-top {
+    position: absolute;
+    left: 0;
+}
+.btn-link {
+    display: inline-block;
+    margin-top: 0;
+    padding: 10px 20px;
+    background: var(--accent);
+    color:#fff;
+    text-decoration:none;
+    border-radius:25px;
+    font-size:.9rem;
+    transition:var(--transition);
+}
+.btn-link:hover{
+    opacity:.9;
+    transform:scale(1.05);
+}
+.houriaa-title{
+    margin:0;
+    font-size:2rem;
+    color:var(--accent);
+    text-align:center;
+}
+
+/* -------------------------------------------------
+   2️⃣  TRAIT FIN GRIS
+   ------------------------------------------------- */
+.divider{
+    border:none;
+    border-top:1px solid #ccc;
+    margin:0.2rem 0 1.5rem;
+}
+
+/* -------------------------------------------------
+   3️⃣  GESTION GÉNÉRALE DES BLOCS (présentation, galerie, docs)
+   ------------------------------------------------- */
+
+.group-presentation h2,
+.group-gallery h2,
+.group-documents h2{
+    text-align:center;
+    margin-bottom:25px;
+}
+.group-text{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(8px);
+    padding:0px;
+    border-radius:15px;
+    line-height:1.6;
+}
+
+/* -------------------------------------------------
+   4️⃣  GALERIE DÉFILANTE
+   ------------------------------------------------- */
+.slider{
+    overflow:hidden;
+    border-radius:15px;
+}
+.slides{
+    display:flex;
+    width:300%;
+    animation:slide 12s infinite;
+}
+.slides img{
+    width:33.333%;
+    height:450px;
+    object-fit:cover;
+}
+@keyframes slide{
+    0%   {transform:translateX(0);}
+    30%  {transform:translateX(0);}
+    35%  {transform:translateX(-33.333%);}
+    65%  {transform:translateX(-33.333%);}
+    70%  {transform:translateX(-66.666%);}
+    95%  {transform:translateX(-66.666%);}
+    100% {transform:translateX(0);}
+}
+
+/* -------------------------------------------------
+   5️⃣  DOCUMENTS PROFESSIONNELS
+   ------------------------------------------------- */
+.documents-list{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+.document-btn{
+    padding:15px 25px;
+    background:rgba(255,255,255,0.2);
+    backdrop-filter:blur(8px);
+    border-radius:12px;
+    text-decoration:none;
+    color:inherit;
+    transition:.3s;
+}
+.document-btn:hover{
+    transform:translateY(-3px);
+    background:rgba(255,255,255,0.35);
+}
+
+/* -------------------------------------------------
+   6️⃣  FLEX – METTRE .group-presentation & .group-gallery SUR LA MÊME LIGNE
+   ------------------------------------------------- */
+
+/* 6.1  Conteneur flex */
+.group-row{
+    display:flex;               /* crée le flex‑box */
+    flex-wrap:wrap;             /* retour à la ligne sur petits écrans */
+    gap:2rem;                   /* espace entre les deux sections */
+    margin-bottom:2rem;         /* espace avant la partie documents */
+}
+
+/* 6.2  Annuler le margin:auto & le max‑width qui étaient appliqués
+      (elles proviennent de la règle .group-presentation /.group-gallery
+      définie plus haut). */
+.group-row > .group-presentation,
+.group-row > .group-gallery{
+    margin:0;                /* <‑‑ annule le margin:auto */
+    max-width:none;          /* laisse le flex gérer la largeur */
+}
+
+/* 6.3  Largeur de chaque colonne en mode desktop */
+.group-row > .group-presentation,
+.group-row > .group-gallery{
+    flex:1 1 45%;            /* 45 % de largeur de base, rétrécit/étend */
+    min-width:300px;         /* évite que la colonne devienne trop étroite */
+}
+
+/* 6.4  Alignement interne (optionnel) – hauteur identique */
+.group-presentation .group-content,
+.group-gallery .slider{
+    height:100%;
+}
+
+/* 6.5  Adaptation mobile – empile les blocs sous 768 px */
+@media (max-width:768px){
+    .group-row{
+        flex-direction:column;   /* passe en pile */
+    }
+    .group-row > .group-presentation,
+    .group-row > .group-gallery{
+        flex-basis:100%;          /* chaque bloc prend toute la largeur */
+    }
+}
+
+.spotify-player {
+    margin: 2rem 0;                /* espace autour du lecteur */
+    max-width: 560px;              /* largeur maximale (comme sur Spotify) */
+    margin-left: auto;
+    margin-right: auto;            /* centrer */
+}

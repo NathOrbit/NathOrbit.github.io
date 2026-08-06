@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interprète – Musique</title>
+
+    <!-- Feuilles de style – chemins **absolus** -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/header-style.css">
+    <link rel="stylesheet" href="/footer-style.css">
+    <link rel="stylesheet" href="PMInter_Houriaa.css">
+    <script src="/shared.js"></script>
+</head>
+
+<body class="theme-music">
+
+     <!-- Header dynamique -->
+    <div id="dynamic-header"></div>
+
+    <main>
+        <!-- ==== BOUTON RETOUR + TITRE « Interprète » ==== -->
+        <div class="top-bar">
+            <!-- Bouton retour (reste à gauche) -->
+            <div class="back-top">
+                <a href="../PM_interprete.html"
+                class="btn-link back-btn"
+                data-i18n="back_to_home"
+                aria-label="Retour à la page d’accueil">
+                    ← Retour
+                </a>
+            </div>
+
+            <!-- Titre « Interprète » (centré) -->
+            <h2 class="section-title houriaa-title"
+                data-i18n="interp_page_title">Houriaa</h2>
+        </div>
+        <!-- Trait gris **sous** le titre « Interprète » -->
+        <hr class="divider">
+
+
+                <!-- ================================
+             Présentation du groupe
+             ================================ -->
+        <div class="group-row">               <!-- ← nouveau wrapper -->
+            <section class="group-presentation">
+                <!--
+                <h2 data-i18n="group_title">Présentation du groupe</h2>
+                -->
+                <div class="group-content">
+
+                    <div class="group-text">
+                        <p data-i18n="group_description">
+                            Houriaa, artiste polyvalente originaire de Toulouse, est une chanteuse, rappeuse et autrice-compositrice qui évolue depuis plus de 15 ans dans la scène musicale régionale. Elle partage la scène avec Nath, multi-instrumentiste, et ensemble, le groupe propose un mélange unique de pop urbaine, rap, tout en incorporant des éléments de funk et de soul dans ses performances.
+                            Inspirée par le parcours et les textes engagés de Diam’s, c’est une artiste qui met la sincérité au cœur de son art. Chaque performance de Houriaa est un voyage où se croisent énergie scénique, introspection et communion avec le public. À travers sa voix empreinte d’émotion, elle explore
+                            des thématiques universelles comme la quête de soi, l’amour et la résilience. 
+                        </p>
+
+                        <p data-i18n="group_members">
+                            Chant : Houriaa
+                            Multi-instrumentiste et chœurs : Nath
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================
+                Galerie photos défilante
+                ================================ -->
+            <section class="group-gallery">
+                <!--
+                <h2 data-i18n="gallery_title">Galerie photos</h2>
+                -->
+                <div class="slider">
+
+                    <div class="slides">
+
+                        <img src="./Photos_gallery/9420d991-7420-4dda-93b0-97a527bb39e5.JPG" alt="Houriaa Cali">
+                        <img src="./Photos_gallery/IMG_8974.jpg" alt="Houriaa concert">
+                        <img src="./Photos_gallery/PMInter_EXP_Lot.jpg" alt="Houriaa Nath concert">
+
+                    </div>
+
+                </div>
+
+            </section>
+        </div>
+
+        <div class="spotify-player">
+            <iframe 
+                style="border-radius:12px"
+                src="https://open.spotify.com/embed/artist/2ti1WK89JMdxVSBC00odyk"
+                width="100%" 
+                height="152" 
+                frameBorder="0" 
+                allowfullscreen="" 
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+            </iframe>
+        </div>
+
+        <!-- ================================
+             Documents professionnels
+             ================================ -->
+        <section class="group-documents">  
+
+            <h2 data-i18n="documents_title">
+                Documents professionnels
+            </h2>
+
+
+            <div class="documents-list">
+
+                <a href="./documents/Fiche technique - Houriaa 20260728.pdf"
+                   class="document-btn"
+                   target="_blank">
+
+                    📄 Fiche technique
+                </a>
+
+
+                <a href="./documents/Plan_de_scene_Houriaa.pdf"
+                   class="document-btn"
+                   target="_blank">
+
+                    🎤 Plan de scène
+                </a>
+
+
+                <a href="./documents/Dossier_presse_Houriaa.pdf"
+                   class="document-btn"
+                   target="_blank">
+
+                    📁 Dossier de presse
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+
+    <!-- Footer dynamique -->
+    <div id="dynamic-footer"></div>
+
+    <!-- ------------------------------------------------------------------
+         1️⃣  Initialisation de la page « Interprète »
+         ------------------------------------------------------------------ -->
+    <script>
+        function initHouriaaPage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const domainUrl = urlParams.get('domain');
+            const langUrl   = urlParams.get('lang');
+
+            // Langue
+            if (langUrl && (langUrl === 'fr' || langUrl === 'en')) {
+                currentLang = langUrl;
+                localStorage.setItem('preferredLang', currentLang);
+            } else {
+                currentLang = localStorage.getItem('preferredLang') || 'fr';
+            }
+            document.documentElement.lang = currentLang;
+
+            // Domaine (aero / music)
+            if (domainUrl && (domainUrl === 'aero' || domainUrl === 'music')) {
+                currentDomain = domainUrl;
+                localStorage.setItem('preferredDomain', currentDomain);
+            } else {
+                currentDomain = localStorage.getItem('preferredDomain') || 'music';
+            }
+
+            // Thème musique
+            document.body.classList.remove('theme-aero');
+            document.body.classList.add('theme-music');
+
+            // Header dynamique
+            loadHeader();
+
+            // Traductions de la page
+            translatePage(currentLang);
+
+            // Mise à jour des liens internes
+            updateExternalLinks();
+        }
+
+        document.addEventListener('DOMContentLoaded', initHouriaaPage);
+    </script>
+
+    <!-- ------------------------------------------------------------------
+         2️⃣  Traductions (FR / EN) – clés uniques
+         ------------------------------------------------------------------ -->
+    <script>
+        if (!translations.fr.interp_page_title) {
+            /* --------------------- FR --------------------- */
+
+            translations.fr.group_description =
+                "Houriaa, artiste polyvalente originaire de Toulouse, est une chanteuse, rappeuse et autrice‑compositrice qui évolue depuis plus de 15 ans dans la scène musicale régionale. " +
+                "Elle partage la scène avec Nath, multi‑instrumentiste, et ensemble le groupe propose un mélange unique de pop urbaine, rap, tout en incorporant des éléments de funk et de soul dans ses performances. " +
+                "Inspirée par le parcours et les textes engagés de Diam’s, c’est une artiste qui met la sincérité au cœur de son art. " +
+                "Chaque performance de Houriaa est un voyage où se croisent énergie scénique, introspection et communion avec le public. " +
+                "À travers sa voix empreinte d’émotion, elle explore des thématiques universelles comme la quête de soi, l’amour et la résilience.";
+
+            translations.fr.group_members =
+                "Chant : Houriaa | Multi‑instrumentiste et chœurs : Nath";
+
+
+            /* -------------------------------------------------
+            EN – English
+            ------------------------------------------------- */
+            translations.en.group_description =
+                "Houriaa, a versatile artist from Toulouse, is a singer, rapper and songwriter who has been active on the regional music scene for more than 15 years. " +
+                "She shares the stage with Nath, a multi‑instrumentalist, and together they offer a unique blend of urban pop and rap while weaving in elements of funk and soul into their performances. " +
+                "Inspired by the career and socially‑engaged lyrics of Diam’s, she places sincerity at the heart of her art. " +
+                "Every Houriaa show is a journey where stage energy, introspection and communion with the audience intersect. " +
+                "Through her emotionally‑charged voice she explores universal themes such as self‑discovery, love and resilience.";
+
+            translations.en.group_members =
+                "Vocals : Houriaa | Multi‑instrumentalist & backing vocals : Nath";
+
+
+            translations.fr.interp_page_title   = "Houriaa";
+            translations.fr.group_title = "Présentation du groupe";
+
+
+            translations.fr.gallery_title = "Galerie photos";
+
+            translations.fr.documents_title =
+            "Documents professionnels";
+
+
+            /* --------------------- EN --------------------- */
+
+            translations.en.interp_page_title = "Houriaa";
+
+            translations.en.group_title = "Band presentation";
+
+
+            translations.en.gallery_title =
+            "Photo gallery";
+
+            translations.en.documents_title =
+            "Professional documents";
+        }
+    </script>
+
+    <!-- ------------------------------------------------------------------
+         3️⃣  Chargement du footer (chemin absolu)
+         ------------------------------------------------------------------ -->
+    <script>
+        fetch('/footer.html')
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById('dynamic-footer').innerHTML = html;
+                translatePage(currentLang);
+                updateExternalLinks();
+            })
+            .catch(err => console.error('Erreur chargement footer :', err));
+    </script>
+</body>
+</html>
