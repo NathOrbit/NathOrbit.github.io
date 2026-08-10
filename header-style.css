@@ -1,33 +1,32 @@
-/* --- STYLE SPÉCIFIQUE DU HEADER (Style Apple) --- */
-*, *::before, *::after {
-    box-sizing: border-box;      /* ✔ les paddings / bordures ne changent plus la largeur */
-}
-/* Reset global pour éviter les bugs de largeur */
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden;
-    -webkit-font-smoothing: antialiased; /* Rendu de police plus net */
-}
-
-#dynamic-header {
-    width: 100vw;
-    max-width: 100%;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-header {
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+/* --------------------------------------------------------------
+   RESET & GÉNÉRAL
+-------------------------------------------------------------- */
+body{
+    margin:0;
+    padding:0;
     width:100%;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+}
 
-    /* espace interne identique à tes anciennes marges */
-    padding:10px 15px;               /* ← remplace les marges des enfants */
+hr.divider{
+    margin:0;
+    border:none;
+    border-top:1px solid rgba(0,0,0,.1);
+    width:100vw;
+    position:relative;
+    left:50%;
+    transform:translateX(-50%);
+    display:None
+}
 
+/* --------------------------------------------------------------
+   STYLE DE BASE DU HEADER (look Apple)
+-------------------------------------------------------------- */
+#site-header{
+    width:100vw;
+    max-width:100%;
+    box-sizing:border-box;
     background:rgba(255,255,255,0.85);
     backdrop-filter:blur(20px);
     -webkit-backdrop-filter:blur(20px);
@@ -38,89 +37,146 @@ header {
     transition:background .3s ease;
 }
 
-/* Groupe de navigation */
-.control-group {
-    display: flex;
-    margin: 0px 15px;
-    align-items: center;
-    gap: 15px;
+/* --------------------------------------------------------------
+   > 600 PX – Mise en page « flex »  
+   - Titre à gauche  
+   - Boutons « Aéro / Musique » centrés  
+   - Boutons « FR / EN » à droite
+-------------------------------------------------------------- */
+@media (min-width:601px){
+    #site-header{
+        display:flex;               /* rangée unique */
+        align-items:center;
+        justify-content:space-between;
+        padding:12px 1rem;          /* petit padding latéral */
+    }
+
+    /* le titre reste le premier bloc */
+    .brand-title{
+        flex:0 0 auto;
+    }
+
+    /* le wrapper qui contient les deux groupes de contrôles */
+    .controls-wrapper{
+        flex:1;                     /* prend tout l’espace restant */
+        display:flex;
+        align-items:center;
+    }
+
+    /* groupe « Aéro / Musique » → centré */
+    .left-controls{
+        margin:0 auto;              /* centre le bloc dans le wrapper */
+    }
+
+    /* groupe « FR / EN » → collé à droite */
+    .right-controls{
+        margin-left:auto;           /* pousse le bloc tout à droite */
+    }
+
+    /* même style que dans ta version d’origine */
+    .control-group{
+        display:flex;
+        gap:15px;
+        align-items:center;
+    }
+    .control-group button{
+        background:transparent;
+        border:none;
+        color:#555;
+        font-size:0.9rem;
+        font-weight:400;
+        cursor:pointer;
+        padding:6px 12px;
+        border-radius:8px;
+        transition:all .2s ease;
+    }
+    .control-group button:hover:not(.active){
+        color:#333;
+        background:transparent;
+    }
+    .control-group button.active{
+        background:var(--accent);
+        color:#fff;
+        font-weight:600;
+    }
+
+    .brand-title h1{
+        margin:0 15px;
+        font-size:1.3rem;
+        font-weight:600;
+        letter-spacing:-0.5px;
+        color:var(--text-color);
+        white-space:nowrap;
+    }
 }
 
-/* Liens/Boutons discrets */
-.control-group button {
-    background: transparent;
-    border: none;
-    color: #555; /* Gris normal pour inactif */
-    font-size: 0.9rem;
-    font-weight: 400; /* Texte normal */
-    cursor: pointer;
-    padding: 6px 12px;
-    border-radius: 8px;
-    transition: all 0.2s ease;
-}
+/* --------------------------------------------------------------
+   ≤ 600 PX – Mise en page « grid » (mobile)  
+   - Ligne 1 : titre (centrez)  
+   - Ligne 2 : gauche = Aéro / Musique, droite = FR / EN
+-------------------------------------------------------------- */
+@media (max-width:600px){
+    /* le séparateur est visible uniquement en mobile */
+    hr.divider{display:block; width:1000%; margin:0.2rem auto; border:none; border-top:1px solid rgba(0,0,0,.1);}
 
-/* Au survol : on garde le texte gris, on enlève le fond gris */
-.control-group button:hover:not(.active) {
-    color: #333; /* Légèrement plus foncé au survol */
-    background: transparent;
-}
-
-/* État actif : Couleur du thème + Blanc + Gras */
-.control-group button.active {
-    background: var(--accent);
-    color: white;
-    font-weight: 600;
-}
-
-/* Titre de marque */
-.brand-title h1 {
-    margin: 0 15px;
-    text-align: center;               /* centré lorsqu’on passe en column sur mobile */
-    font-size: 1.3rem;
-    font-weight: 600;
-    letter-spacing: -0.5px; /* Typographie serrée style Apple */
-    color: var(--text-color);
-    white-space: nowrap;
-}
-
-/* Responsive Mobile */
-@media (max-width: 600px) {
-
-    /* ---------- a) Header devient une grille ------------------- */
-    header {
-        display: grid;                                            /* <---- grid */
+    #site-header{
+        display:grid;
         grid-template-areas:
             "title   title"
-            "left    right";                                      /* deux colonnes sur la 2ᵉ ligne */
-        grid-template-columns: 1fr 1fr;                         /* deux colonnes de même largeur */
-        align-items: center;                                      /* centrage vertical */
-        gap: 0.8rem;                                              /* espace entre les lignes */
-        padding: 12px 1rem;                                       /* petit padding latéral */
+            "controls controls";
+        grid-template-columns:1fr 1fr;      /* même largeur – on n’en a pas besoin vraiment mais on garde la structure */
+        gap:0.8rem;
+        align-items:center;
+        padding:12px 1rem;
     }
 
-    /* ---------- b) Placement du titre ------------------------ */
-    .brand-title {
-        grid-area: title;                /* première ligne, s’étend sur les deux colonnes */
-        justify-self: center;            /* titre centré horizontalement */
-        margin: 0;
+    .brand-title{
+        grid-area:title;
+        justify-self:center;                /* titre centré horizontalement */
     }
 
-    /* ---------- c) Groupe de boutons « gauche » -------------- */
-    .left-controls {
-        grid-area: left;                  /* deuxième ligne, première colonne */
-        justify-self: start;              /* collé à gauche */
+    .controls-wrapper{
+        grid-area:controls;
+        display:flex;
+        justify-content:space-between;      /* gauche – droite */
     }
 
-    /* ---------- d) Groupe de boutons « droite » --------------- */
-    .right-controls {
-        grid-area: right;                 /* deuxième ligne, deuxième colonne */
-        justify-self: end;                /* collé à droite */
-    }
-
-    /* ---------- e) Les groupes eux‑mêmes restent en rangée ---- */
+    /* Les deux groupes conservent le même style que le desktop */
     .left-controls,
-    .right-controls {
-        display: flex;                    /* les boutons restent horizontalement */
-        gap: 0.4rem;
+    .right-controls{
+        display:flex;
+        gap:0.4rem;
     }
+
+    .brand-title h1{
+        font-size:1.3rem;
+        font-weight:600;
+        letter-spacing:-0.5px;
+        color:var(--text-color);
+        margin-top: 0px;
+    }
+}
+
+/* --------------------------------------------------------------
+   STYLE COMMUN DES BOUTONS (utilisé en desktop & mobile)
+-------------------------------------------------------------- */
+.control-group button{
+    background:transparent;
+    border:none;
+    color:#555;
+    font-size:0.9rem;
+    font-weight:400;
+    cursor:pointer;
+    padding:6px 12px;
+    border-radius:8px;
+    transition:all .2s ease;
+}
+.control-group button:hover:not(.active){
+    color:#333;
+    background:transparent;
+}
+.control-group button.active{
+    background:var(--accent);
+    color:#fff;
+    font-weight:600;
 }

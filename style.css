@@ -161,6 +161,7 @@ h1 {
 
 .card:hover .card-banner img{
     transform:scale(1.08);
+    overflow-clip-margin: unset;
 }
 
 .card-body{

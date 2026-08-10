@@ -1,20 +1,27 @@
-<header>
-        <!-- 2. CENTRE : Titre -->
+<header id="site-header">
+    <!-- 2. CENTRE : Titre -->
     <div class="brand-title">
         <h1>NathOrbit</h1>
-    </div>
-    
-    <!-- 1. GAUCHE : Domaines -->
-    <div class="control-group left-controls">
-        <button id="btn-aero" data-i18n="head_button_aero" class="active" onclick="handleDomainClick('aero')">Aérospatial</button>
-        <button id="btn-music" data-i18n="head_button_music" onclick="handleDomainClick('music')">Musique</button>
+        <!-- *** séparateur visible uniquement < 600 px *** -->
+        <hr class="divider">
     </div>
 
     
 
-    <!-- 3. DROITE : Langues -->
-    <div class="control-group right-controls">
-        <button id="btn-fr" class="active" onclick="switchLang('fr')">FR</button>
-        <button id="btn-en" onclick="switchLang('en')">EN</button>
+    <!-- Conteneur qui regroupe les deux colonnes de contrôles -->
+    <div class="controls-wrapper">
+        <!-- 1. GAUCHE : Domaines -->
+        <div class="control-group left-controls">
+            <button id="btn-aero" data-i18n="head_button_aero" class="active"
+                    onclick="handleDomainClick('aero')">Aérospatial</button>
+            <button id="btn-music" data-i18n="head_button_music"
+                    onclick="handleDomainClick('music')">Musique</button>
+        </div>
+
+        <!-- 3. DROITE : Langues -->
+        <div class="control-group right-controls">
+            <button id="btn-fr" class="active" onclick="switchLang('fr')">FR</button>
+            <button id="btn-en" onclick="switchLang('en')">EN</button>
+        </div>
     </div>
 </header>
