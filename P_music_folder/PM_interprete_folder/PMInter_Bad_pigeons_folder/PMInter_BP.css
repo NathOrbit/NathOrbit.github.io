@@ -69,6 +69,18 @@
     line-height:1.6;
 }
 
+.interprete-title{
+    display:flex;                /* <‑‑ maintenant c’est un flex‑container */
+    align-items:center;          /* centre le contenu verticalement */
+    justify-content:center;      /* centre le contenu horizontalement (facultatif) */
+    margin:0;
+    font-size:20px;              /* 0,875 rem ≈ 20 px, vous choisissez au besoin */
+    line-height:1;               /* évite les interlignes superflus */
+    color:var(--accent);
+    height:auto;                 /* laissez la hauteur s’ajuster au texte */
+    min-height:35px
+}
+
 /* -------------------------------------------------
    4️⃣  GALERIE DÉFILANTE
    ------------------------------------------------- */
@@ -85,6 +97,7 @@
     width:50%;
     height:450px;
     object-fit:cover;
+    overflow-clip-margin: unset;
 }
 
 /* ---------- ANIMATION ---------- */

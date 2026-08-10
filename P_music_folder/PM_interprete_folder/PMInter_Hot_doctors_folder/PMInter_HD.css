@@ -69,18 +69,6 @@
     line-height:1.6;
 }
 
-.interprete-title{
-    display:flex;                /* <‑‑ maintenant c’est un flex‑container */
-    align-items:center;          /* centre le contenu verticalement */
-    justify-content:center;      /* centre le contenu horizontalement (facultatif) */
-    margin:0;
-    font-size:20px;              /* 0,875 rem ≈ 20 px, vous choisissez au besoin */
-    line-height:1;               /* évite les interlignes superflus */
-    color:var(--accent);
-    height:auto;                 /* laissez la hauteur s’ajuster au texte */
-    min-height:35px
-}
-
 /* -------------------------------------------------
    4️⃣  GALERIE DÉFILANTE
    ------------------------------------------------- */
@@ -88,27 +76,83 @@
     overflow:hidden;
     border-radius:15px;
 }
+/* 10 photos – carousel */
 .slides{
     display:flex;
-    width:300%;
-    animation:slide 12s infinite;
+    width:1000%;
+    animation:slide 25s infinite; 
 }
 .slides img{
-    width:33.333%;
+    width:10%;
     height:450px;
     object-fit:cover;
     overflow-clip-margin: unset;
 }
-@keyframes slide{
-    0%   {transform:translateX(0);}
-    30%  {transform:translateX(0);}
-    35%  {transform:translateX(-33.333%);}
-    65%  {transform:translateX(-33.333%);}
-    70%  {transform:translateX(-66.666%);}
-    95%  {transform:translateX(-66.666%);}
-    100% {transform:translateX(0);}
-}
 
+/* ------- animation -------- */
+@keyframes slide{
+    /* Photo 1 – pause */
+    0% , 15%   { transform:translateX(0); }
+
+    /* 1 → 2 – transition */
+    16%       { transform:translateX(-10%); }
+
+    /* Photo 2 – pause */
+    16% , 24% { transform:translateX(-10%); }
+
+    /* 2 → 3 – transition */
+    25%       { transform:translateX(-20%); }
+
+    /* Photo 3 – pause */
+    25% , 32% { transform:translateX(-20%); }
+
+    /* 3 → 4 – transition */
+    33%       { transform:translateX(-30%); }
+
+    /* Photo 4 – pause */
+    33% , 42% { transform:translateX(-30%); }
+
+    /* 4 → 5 – transition */
+    43%       { transform:translateX(-40%); }
+
+    /* Photo 5 – pause */
+    43% , 51% { transform:translateX(-40%); }
+
+    /* 5 → 6 – transition */
+    52%       { transform:translateX(-50%); }
+
+    /* Photo 6 – pause */
+    52% , 58% { transform:translateX(-50%); }
+
+    /* 6 → 7 – transition */
+    59%       { transform:translateX(-60%); }
+
+    /* Photo 7 – pause */
+    59% , 69% { transform:translateX(-60%); }
+
+    /* 7 → 8 – transition */
+    70%       { transform:translateX(-70%); }
+
+    /* Photo 8 – pause */
+    70% , 79% { transform:translateX(-70%); }
+
+    /* 8 → 9 – transition */
+    80%       { transform:translateX(-80%); }
+
+    /* Photo 9 – pause */
+    80% , 89% { transform:translateX(-80%); }
+
+    /* 9 → 10 – transition */
+    90%       { transform:translateX(-90%); }
+
+    /* Photo 10 – pause */
+    90% , 99% { transform:translateX(-90%); }
+
+    99% , 100% { transform:translateX(-90%); }
+
+    /* Retour à la première photo */
+    100%      { transform:translateX(0); }
+}
 /* -------------------------------------------------
    5️⃣  DOCUMENTS PROFESSIONNELS
    ------------------------------------------------- */
@@ -165,6 +209,18 @@
 .group-gallery .slider{
     height:100%;
 }
+.interprete-title{
+    display:flex;                /* <‑‑ maintenant c’est un flex‑container */
+    align-items:center;          /* centre le contenu verticalement */
+    justify-content:center;      /* centre le contenu horizontalement (facultatif) */
+    margin:0;
+    font-size:20px;              /* 0,875 rem ≈ 20 px, vous choisissez au besoin */
+    line-height:1;               /* évite les interlignes superflus */
+    color:var(--accent);
+    height:auto;                 /* laissez la hauteur s’ajuster au texte */
+    min-height:35px
+}
+
 
 /* 6.5  Adaptation mobile – empile les blocs sous 768 px */
 @media (max-width:768px){

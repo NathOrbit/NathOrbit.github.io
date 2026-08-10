@@ -69,6 +69,32 @@
     line-height:1.6;
 }
 
+/* -------------------------------------------------
+   4️⃣  GALERIE DÉFILANTE
+   ------------------------------------------------- */
+.slider{
+    overflow:hidden;
+    border-radius:15px;
+}
+/* -------------------------------------------------
+   2️⃣ La rangée d’images qui glisse
+   ------------------------------------------------- */
+.slides{
+    display:flex;
+    width:800%;                /* 8 images × 100 % */
+    animation:slide 24s infinite;   /* 24 s = 8 × 3 s (pause+transition) */
+}
+
+/* -------------------------------------------------
+   3️⃣ Chaque image
+   ------------------------------------------------- */
+.slides img{
+    width:12.5%;               /* 100 % / 8 */
+    height:450px;              /* hauteur fixe – adaptez‑la si besoin */
+    object-fit:cover;          /* garde le ratio sans déformer */
+    overflow-clip-margin: unset;
+}
+
 .interprete-title{
     display:flex;                /* <‑‑ maintenant c’est un flex‑container */
     align-items:center;          /* centre le contenu verticalement */
@@ -82,33 +108,62 @@
 }
 
 /* -------------------------------------------------
-   4️⃣  GALERIE DÉFILANTE
+   4️⃣ Animation
    ------------------------------------------------- */
-.slider{
-    overflow:hidden;
-    border-radius:15px;
-}
-.slides{
-    display:flex;
-    width:300%;
-    animation:slide 12s infinite;
-}
-.slides img{
-    width:33.333%;
-    height:450px;
-    object-fit:cover;
-    overflow-clip-margin: unset;
-}
 @keyframes slide{
-    0%   {transform:translateX(0);}
-    30%  {transform:translateX(0);}
-    35%  {transform:translateX(-33.333%);}
-    65%  {transform:translateX(-33.333%);}
-    70%  {transform:translateX(-66.666%);}
-    95%  {transform:translateX(-66.666%);}
-    100% {transform:translateX(0);}
-}
+    /* --------------------------------------------------------------------
+       Chaque image bénéficie d’une pause d’environ 2 s (≈ 8 % du temps)
+       puis d’une transition d’environ 0,3 s (≈ 1 % du temps).
+       Les repères sont calculés en fonction de 8 slides → 100 % / 8 = 12,5 %.
+       -------------------------------------------------------------------- */
 
+    /* Photo 1 – pause */
+    0% , 8%    { transform:translateX(0); }
+
+    /* 1 → 2 – transition */
+    9%         { transform:translateX(-12.5%); }
+
+    /* Photo 2 – pause */
+    9% , 17%   { transform:translateX(-12.5%); }
+
+    /* 2 → 3 – transition */
+    18%        { transform:translateX(-25%); }
+
+    /* Photo 3 – pause */
+    18% , 26%  { transform:translateX(-25%); }
+
+    /* 3 → 4 – transition */
+    27%        { transform:translateX(-37.5%); }
+
+    /* Photo 4 – pause */
+    27% , 35%  { transform:translateX(-37.5%); }
+
+    /* 4 → 5 – transition */
+    36%        { transform:translateX(-50%); }
+
+    /* Photo 5 – pause */
+    36% , 44%  { transform:translateX(-50%); }
+
+    /* 5 → 6 – transition */
+    45%        { transform:translateX(-62.5%); }
+
+    /* Photo 6 – pause */
+    45% , 53%  { transform:translateX(-62.5%); }
+
+    /* 6 → 7 – transition */
+    54%        { transform:translateX(-75%); }
+
+    /* Photo 7 – pause */
+    54% , 62%  { transform:translateX(-75%); }
+
+    /* 7 → 8 – transition */
+    63%        { transform:translateX(-87.5%); }
+
+    /* Photo 8 – pause */
+    63% , 71%  { transform:translateX(-87.5%); }
+
+    72% , 100% { transform:translateX(0); }       /* remise à zéro */
+}
 /* -------------------------------------------------
    5️⃣  DOCUMENTS PROFESSIONNELS
    ------------------------------------------------- */
