@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NathOrbit - Sound Engineering</title>
+
+    <!-- Feuilles de style – chemins **absolus** -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/header-style.css">
+    <link rel="stylesheet" href="/footer-style.css">
+    <link rel="stylesheet" href="PM_Son.css">
+    <script src="/shared.js"></script>
+</head>
+
+<body class="theme-music">
+
+    <!-- Header dynamique -->
+    <div id="dynamic-header"></div>
+
+    <main>
+
+        <!-- ==== BOUTON RETOUR + TITRE « Interprète » ==== -->
+        <div class="top-bar">
+            <!-- Bouton retour (reste à gauche) -->
+            <div class="back-top">
+                <a href="/index.html"
+                class="btn-link back-btn"
+                data-i18n="back_to_home"
+                aria-label="Retour à la page d’accueil">
+                    ← Retour
+                </a>
+            </div>
+
+            <!-- Titre « Interprète » (centré) -->
+            <h2 class="section-title interprete-title"
+                data-i18n="interp_page_title">Technique son</h2>
+        </div>
+
+        <!-- Trait gris **sous** le titre « Interprète » -->
+        <hr class="divider">
+
+        <div class="group-row">               <!-- ← nouveau wrapper -->
+            <section class="group-gallery">
+                
+                <h2 data-i18n="gallery_title">Studio</h2>
+                
+                <div class="slider">
+
+                    <div class="slides_8">
+
+                        <img src="./Photos_gallery/Studio/28219583-89f1-402f-b827-c1deafb3253f.JPG" alt="Studio 1">
+                        <img src="./Photos_gallery/Studio/28612364-6791-4398-a7a8-b107960c1d6f.JPG" alt="Studio 2">
+                        <img src="./Photos_gallery/Studio/Bad_Pigeons_Studio_V2.jpg" alt="Studio 3">
+                        <img src="./Photos_gallery/Studio/IMG_7448.jpg" alt="Studio 4">
+                        <img src="./Photos_gallery/Studio/IMG_7591.JPG" alt="Studio 5">
+                        <img src="./Photos_gallery/Studio/Studio_2.JPG" alt="Studio 6">
+                        <img src="./Photos_gallery/Studio/Studio_3.jpg" alt="Studio 7">
+                        <img src="./Photos_gallery/Studio/studio_4.jpg" alt="Studio 8">
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- ================================
+                Galerie photos défilante
+                ================================ -->
+            <section class="group-gallery">
+                
+                <h2 data-i18n="gallery_title_2">Live</h2>
+                
+                <div class="slider">
+
+                    <div class="slides_8">
+
+                        <img src="./Photos_gallery/Live/Palais_congrès_1.JPG" alt="Live 7">
+                        <img src="./Photos_gallery/Live/IMG_8706.jpg" alt="Live 12">
+                        <img src="./Photos_gallery/Live/IMG_8610.jpg" alt="Live 11">
+                        <img src="./Photos_gallery/Live/22b4a024-ef29-467c-b6c4-6cde777bc244.JPG" alt="Live 1">
+                        <img src="./Photos_gallery/Live/D3AF3FED-CF17-4ED3-89D4-21F3F812314D.JPG" alt="Live 4">
+                        <img src="./Photos_gallery/Live/IMG_8834.jpg" alt="Live 5">
+                        <img src="./Photos_gallery/Live/IMG_9498.jpg" alt="Live 9">
+                        <img src="./Photos_gallery/Live/IMG_7297.jpg" alt="Live 10">
+                        
+                        
+                    </div>
+
+                </div>
+
+            </section>
+        </div>
+
+        <!-- ───── GRILLE À DEUX COLONNES (style « audio‑grid ») ───── -->
+        <div class="audio-grid">
+
+            <!-- COLONNE DROITE – EXPÉRIENCES CLÉS -->
+            <section class="exp-section">
+
+                <h2 data-i18n="exp_title">Projets</h2>
+
+                <!-- ====================== EXPÉRIENCE 1 ====================== -->
+                <a href="#"
+                class="exp-card-link"
+                aria-label="Houriaa - technique son générale">
+                    <article class="exp-card">
+
+                        <div class="exp-card-banner">
+                            <img src="./Photos_gallery/Live/IMG_8834.jpg"
+                                alt="Rockin' 1000 Stade de France">
+                        </div>
+
+                        <div class="exp-card-body">
+
+                            <h3 data-i18n="exp_1_title">
+                                Houriaa - Technique Son Générale
+                            </h3>
+
+                            <p class="exp-date" data-i18n="exp_1_desc">
+                                Compositions, Arrangements, Enregistrements Studio/Live |
+                                 Production Live (In ears, prods, ...) | Documentations techniques 
+                            </p>
+
+                        </div>
+                    </article>
+                </a>
+
+                <a href="#"
+                class="exp-card-link"
+                aria-label="Bad Pigeons - technique son générale">
+                    <article class="exp-card">
+
+                        <div class="exp-card-banner">
+                            <img src="./Photos_gallery/Studio/Bad_Pigeons_Studio.jpg"
+                                alt="Rockin' 1000 Stade de France">
+                        </div>
+
+                        <div class="exp-card-body">
+
+                            <h3 data-i18n="exp_2_title">
+                                Bad Pigeons - Technique Son Générale
+                            </h3>
+
+                            <p class="exp-date" data-i18n="exp_2_desc">
+                                Compositions, Arrangements, Enregistrements Studio/Live |
+                                 Production Live (In ears, prods, ...) | Documentations techniques 
+                            </p>
+
+                        </div>
+                    </article>
+                </a>
+
+                <a href="#"
+                class="exp-card-link"
+                aria-label="Hot Doctors - technique son live">
+                    <article class="exp-card">
+
+                        <div class="exp-card-banner">
+                            <img src="./Photos_gallery/Live/Soundcraft VI3000.jpg"
+                                alt="Rockin' 1000 Stade de France">
+                        </div>
+
+                        <div class="exp-card-body">
+
+                            <h3 data-i18n="exp_3_title">
+                                Palais des congrès du Futuroscope
+                            </h3>
+
+                            <p class="exp-date" data-i18n="exp_3_desc">
+                                Sonorisation (FOH, Monitoring, ...) | Captation Live 
+                            </p>
+
+                        </div>
+                    </article>
+                </a>
+
+                <a href="#"
+                class="exp-card-link"
+                aria-label="Hot Doctors - technique son live">
+                    <article class="exp-card">
+
+                        <div class="exp-card-banner">
+                            <img src="./Photos_gallery/Live/IMG_8610.jpg"
+                                alt="Rockin' 1000 Stade de France">
+                        </div>
+
+                        <div class="exp-card-body">
+
+                            <h3 data-i18n="exp_4_title">
+                                Houriaa - Bad Pigeons - Los Chicos - Hot Doctors 
+                            </h3>
+
+                            <p class="exp-date" data-i18n="exp_4_desc">
+                                Sonorisation (FOH, Monitoring, ...)
+                            </p>
+
+                        </div>
+                    </article>
+                </a>
+
+            </section>
+            
+            <!--
+            <div class="youtube-player"
+                style="position:relative; padding-bottom:56.25%; height:0; overflow:hidden; max-width:100%; background:#000;">
+                <iframe
+                    src="https://www.youtube.com/embed/oUoWo7uidH8?rel=0&modestbranding=1"
+                    title="YouTube playlist player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen
+                    style="position:absolute; top:0; left:0; width:100%; height:100%; border:none;">
+                </iframe>
+            </div>
+
+
+            <div class="video-wrapper">
+                <video
+                    src="https://cloud.ensma.fr/public.php/dav/files/XCHaQdZRRzLiMYw/Spectacle%20RDD%202024%20partie%202.mp4"
+                    controls
+                    autoplay
+                    playsinline
+                    preload="metadata">
+                    Votre navigateur ne prend pas en charge les vidéos.
+                </video>
+            </div>
+            -->
+        </div>
+
+    </main>
+
+    <!-- Footer dynamique -->
+    <div id="dynamic-footer"></div>
+
+    
+    <!-- ------------------------------------------------------------------
+         1️⃣  Initialisation de la page « Interprète »
+         ------------------------------------------------------------------ -->
+    <script>
+        
+        function initInterpPage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const domainUrl = urlParams.get('domain');
+            const langUrl   = urlParams.get('lang');
+
+            // Langue
+            if (langUrl && (langUrl === 'fr' || langUrl === 'en')) {
+                currentLang = langUrl;
+                localStorage.setItem('preferredLang', currentLang);
+            } else {
+                currentLang = localStorage.getItem('preferredLang') || 'fr';
+            }
+            document.documentElement.lang = currentLang;
+
+            // Domaine (aero / music)
+            if (domainUrl && (domainUrl === 'aero' || domainUrl === 'music')) {
+                currentDomain = domainUrl;
+                localStorage.setItem('preferredDomain', currentDomain);
+            } else {
+                currentDomain = localStorage.getItem('preferredDomain') || 'music';
+            }
+
+            // Thème musique
+            document.body.classList.remove('theme-aero');
+            document.body.classList.add('theme-music');
+
+            // Header dynamique
+            loadHeader();
+
+            // Traductions de la page
+            translatePage(currentLang);
+
+            // Mise à jour des liens internes
+            updateExternalLinks();
+        }
+
+        document.addEventListener('DOMContentLoaded', initInterpPage);
+    </script>
+
+    <!-- ------------------------------------------------------------------
+         2️⃣  Traductions (FR / EN) – clés uniques
+         ------------------------------------------------------------------ -->
+    <script>
+    /* ---------------------------------------------------------
+    3️⃣  Traductions – FR / EN – clés uniques
+    --------------------------------------------------------- */
+    if (!translations.fr.back_to_home) {
+        /* --------------------- FR --------------------- */
+        translations.fr.interp_page_title     = "Ingénierie du Son";
+        translations.fr.interp_page_tagline   = "Performer live, créer des ambiances, partager la passion du son.";
+        translations.fr.gallery_title         = "Studio";
+        translations.fr.gallery_title_2       = "Live";
+        translations.fr.exp_title             = "Projets";
+
+        /* titres des cartes d’expérience */
+        translations.fr.exp_1_title           = "Houriaa – Technique Son Générale";
+        translations.fr.exp_1_desc            = "Compositions, Arrangements, Enregistrements Studio/Live | Production Live (In‑ears, prods, …) | Documentations techniques";
+
+        translations.fr.exp_2_title           = "Bad Pigeons – Technique Son Générale";
+        translations.fr.exp_2_desc            = "Compositions, Arrangements, Enregistrements Studio/Live | Production Live (In‑ears, prods, …) | Documentations techniques";
+
+        translations.fr.exp_3_title           = "Palais des congrès du Futuroscope";
+        translations.fr.exp_3_desc            = "Sonorisation (FOH, Monitoring, …) | Captation Live";
+
+        translations.en.interp_page_title     = "Sound Engineering";
+        translations.en.interp_page_tagline   = "Playing live, shaping atmospheres, sharing the love of sound.";
+        translations.en.gallery_title         = "Studio";
+        translations.en.gallery_title_2       = "Live";
+        translations.en.exp_title             = "Projects";
+
+        /* card titles */
+        translations.en.exp_1_title           = "Houriaa – General Sound Engineering";
+        translations.en.exp_1_desc            = "Compositions, Arrangements, Studio/Live recordings | Live production (In‑ears, prods, …) | Technical documentation";
+
+        translations.en.exp_2_title           = "Bad Pigeons – General Sound Engineering";
+        translations.en.exp_2_desc            = "Compositions, Arrangements, Studio/Live recordings | Live production (In‑ears, prods, …) | Technical documentation";
+
+        translations.en.exp_3_title           = "Convention Center - Futuroscope";
+        translations.en.exp_3_desc            = "FOH, Monitoring, Live caption, ...";
+    }
+    </script>
+
+    <!-- ------------------------------------------------------------------
+         3️⃣  Chargement du footer (chemin absolu)
+         ------------------------------------------------------------------ -->
+    <script>
+        fetch('/footer.html')
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById('dynamic-footer').innerHTML = html;
+                translatePage(currentLang);
+                updateExternalLinks();
+            })
+            .catch(err => console.error('Erreur chargement footer :', err));
+    </script>
+</body>
+</html>
