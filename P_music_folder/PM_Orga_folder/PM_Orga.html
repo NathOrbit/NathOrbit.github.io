@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NathOrbit - Production</title>
+
+    <!-- Feuilles de style – chemins **absolus** -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/header-style.css">
+    <link rel="stylesheet" href="/footer-style.css">
+    <link rel="stylesheet" href="PM_Orga.css">
+    <script src="/shared.js"></script>
+</head>
+
+<body class="theme-music">
+
+    <!-- Header dynamique -->
+    <div id="dynamic-header"></div>
+
+    <main>
+
+        <!-- ==== BOUTON RETOUR + TITRE « Interprète » ==== -->
+        <div class="top-bar">
+            <!-- Bouton retour (reste à gauche) -->
+            <div class="back-top">
+                <a href="/index.html"
+                class="btn-link back-btn"
+                data-i18n="back_to_home"
+                aria-label="Retour à la page d’accueil">
+                    ← Retour
+                </a>
+            </div>
+
+            <!-- Titre « Interprète » (centré) -->
+            <h2 class="section-title interprete-title"
+                data-i18n="interp_page_title">Production</h2>
+        </div>
+
+        <!-- Trait gris **sous** le titre « Interprète » -->
+        <hr class="divider">
+
+        
+    </main>
+
+    <!-- Footer dynamique -->
+    <div id="dynamic-footer"></div>
+
+    
+    <!-- ------------------------------------------------------------------
+         1️⃣  Initialisation de la page « Interprète »
+         ------------------------------------------------------------------ -->
+    <script>
+        
+        function initInterpPage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const domainUrl = urlParams.get('domain');
+            const langUrl   = urlParams.get('lang');
+
+            // Langue
+            if (langUrl && (langUrl === 'fr' || langUrl === 'en')) {
+                currentLang = langUrl;
+                localStorage.setItem('preferredLang', currentLang);
+            } else {
+                currentLang = localStorage.getItem('preferredLang') || 'fr';
+            }
+            document.documentElement.lang = currentLang;
+
+            // Domaine (aero / music)
+            if (domainUrl && (domainUrl === 'aero' || domainUrl === 'music')) {
+                currentDomain = domainUrl;
+                localStorage.setItem('preferredDomain', currentDomain);
+            } else {
+                currentDomain = localStorage.getItem('preferredDomain') || 'music';
+            }
+
+            // Thème musique
+            document.body.classList.remove('theme-aero');
+            document.body.classList.add('theme-music');
+
+            // Header dynamique
+            loadHeader();
+
+            // Traductions de la page
+            translatePage(currentLang);
+
+            // Mise à jour des liens internes
+            updateExternalLinks();
+        }
+
+        document.addEventListener('DOMContentLoaded', initInterpPage);
+    </script>
+
+    <!-- ------------------------------------------------------------------
+         2️⃣  Traductions (FR / EN) – clés uniques
+         ------------------------------------------------------------------ -->
+    <script>
+    /* ---------------------------------------------------------
+    3️⃣  Traductions – FR / EN – clés uniques
+    --------------------------------------------------------- */
+    if (!translations.fr.back_to_home) {
+        /* --------------------- FR --------------------- */
+        translations.fr.interp_page_title     = "Production";
+        translations.fr.interp_page_tagline   = "Performer live, créer des ambiances, partager la passion du son.";
+        translations.fr.gallery_title         = "Studio";
+        translations.fr.gallery_title_2       = "Live";
+        translations.fr.exp_title             = "Projets et Expériences";
+
+        /* titres des cartes d’expérience */
+        translations.fr.exp_1_title           = "Houriaa – Technique Son Générale";
+        translations.fr.exp_1_desc            = "Compositions, Arrangements, Enregistrements Studio/Live | Production Live (In‑ears, prods, …) | Documentations techniques";
+
+        translations.fr.exp_2_title           = "Bad Pigeons – Technique Son Générale";
+        translations.fr.exp_2_desc            = "Compositions, Arrangements, Enregistrements Studio/Live | Production Live (In‑ears, prods, …) | Documentations techniques";
+
+        translations.fr.exp_3_title           = "Palais des congrès du Futuroscope";
+        translations.fr.exp_3_desc            = "Sonorisation (FOH, Monitoring, …) | Captation Live";
+
+        translations.en.interp_page_title     = "Production";
+        translations.en.interp_page_tagline   = "Playing live, shaping atmospheres, sharing the love of sound.";
+        translations.en.gallery_title         = "Studio";
+        translations.en.gallery_title_2       = "Live";
+        translations.en.exp_title             = "Projects & Experiences";
+
+        /* card titles */
+        translations.en.exp_1_title           = "Houriaa – General Sound Engineering";
+        translations.en.exp_1_desc            = "Compositions, Arrangements, Studio/Live recordings | Live production (In‑ears, prods, …) | Technical documentation";
+
+        translations.en.exp_2_title           = "Bad Pigeons – General Sound Engineering";
+        translations.en.exp_2_desc            = "Compositions, Arrangements, Studio/Live recordings | Live production (In‑ears, prods, …) | Technical documentation";
+
+        translations.en.exp_3_title           = "Convention Center - Futuroscope";
+        translations.en.exp_3_desc            = "FOH, Monitoring, Live caption, ...";
+    }
+    </script>
+
+    <!-- ------------------------------------------------------------------
+         3️⃣  Chargement du footer (chemin absolu)
+         ------------------------------------------------------------------ -->
+    <script>
+        fetch('/footer.html')
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById('dynamic-footer').innerHTML = html;
+                translatePage(currentLang);
+                updateExternalLinks();
+            })
+            .catch(err => console.error('Erreur chargement footer :', err));
+    </script>
+</body>
+</html>
