@@ -33,14 +33,11 @@ const translations = {
 
 
         /* ── Musique ─────────────────────────────────── */
-        music_skill1_title: "Interprète",
-        music_skill1_desc: "Guitariste, bassiste et pianiste. Groupes, concerts et expériences marquantes.",
-
-        music_skill2_title: "Compositeur",
-        music_skill2_desc: "Contribution à la production musicale à travers la composition pour différents artistes et groupes.",
+        music_skill1_title: "Compositeur & Interprète",
+        music_skill1_desc: "Guitariste, bassiste et pianiste. Groupes, concerts et expériences marquantes. Contribution à la production musicale à travers la composition pour différents artistes et groupes.",
 
         music_skill3_title: "Technique son & sonorisation",
-        music_skill3_desc: "Accompagnement de projets musicaux par la production sonore et la sonorisation.",
+        music_skill3_desc: "Accompagnement de projets musicaux par la production sonore et l'ingenierie du son pour le Live.",
 
         music_skill4_title: "Coordinateur de production artistique",
         music_skill4_desc: "Participation à la création musicale, direction artistique et coordination de projets musicaux.",
@@ -85,11 +82,8 @@ const translations = {
 
 
         /* ── Music ────────────────────────────────────── */
-        music_skill1_title: "Performer",
-        music_skill1_desc: "Guitarist, bassist and pianist. Bands, live performances and key experiences.",
-
-        music_skill2_title: "Composer",
-        music_skill2_desc: "Contribution to music production through composition for various artists and bands.",
+        music_skill1_title: "Composer & Performer",
+        music_skill1_desc: "Guitarist, bassist and pianist. Bands, live performances and key experiences. Contribution to music production through composition for various artists and bands.",
 
         music_skill3_title: "Sound Engineering & Live Sound",
         music_skill3_desc: "Supporting musical projects through sound production and live audio engineering.",
@@ -97,11 +91,14 @@ const translations = {
         music_skill4_title: "Artistic Production Coordinator",
         music_skill4_desc: "Participation in musical creation, artistic direction and coordination of music projects.",
 
+        back_to_home: "← Retour",
+        back_to_home: "← Back",
 
         /* ── Footer ──────────────────────────────────── */
         footer_legal: "Legal Notice",
         footer_privacy: "Privacy Policy",
         footer_contact: "Contact"
+        
     }
 };
 

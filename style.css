@@ -60,48 +60,129 @@ h1 {
     margin-top: 30px;
 }
 
-.card {
+/* ------------------------------------------------------------------
+   Cartes supplémentaires (instruments & groupes) – même look que les
+   cartes de la page index (cards‑container)
+   ------------------------------------------------------------------ */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+.card{
     background: var(--card-bg);
-    padding: 15px;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    border-top: 4px solid var(--accent);
-    transition: var(--transition);
+    overflow: hidden;
+
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    position:relative;          /* indispensable pour le positionnement de l'image */
-    overflow:hidden;            /* coupe l'image qui dépasse */
+
+    padding: 0;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.06);
+    transition: transform .35s ease,
+                box-shadow .35s ease;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+.card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.15);
 }
 
-.card h3 {
-    margin-top: 0;
-    color: var(--accent);
+.card h3{
+    margin:0;
+    color:var(--accent);
+    
 }
 
+.card p:last-of-type{
+    flex:1;
+}
+
+/* Instruments list (dans la première carte) */
+.instrument-list {
+    list-style: none;
+    padding-left: 0;
+    margin: .8rem 0 0;
+}
+.instrument-list li {
+    margin: .4rem 0;
+}
+
+/* Période (petit texte gris) */
+.period {
+    font-size: .9rem;
+    color: #888;
+    margin: .3rem 0 .6rem;
+}
+
+/* Bouton "En savoir plus" */
 .btn-link {
     display: inline-block;
-    margin-top: 20px;
+    margin-top: 0px;
     padding: 10px 20px;
     background: var(--accent);
-    color: white;
+    color: #fff;
     text-decoration: none;
     border-radius: 25px;
-    font-size: 0.9rem;
+    font-size: .9rem;
     align-self: flex-start;
     transition: var(--transition);
 }
-
 .btn-link:hover {
-    opacity: 0.9;
+    opacity: .9;
     transform: scale(1.05);
 }
 
+
+.card-banner{
+    position:relative;
+
+    width:100%;
+    height:180px;
+
+    overflow:hidden;
+
+    border-bottom:4px solid var(--accent);
+}
+
+.card-banner img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+    object-position:center;
+
+    display:block;
+    overflow-clip-margin: unset;
+    transition:transform .6s ease;
+}
+
+.card:hover .card-banner img{
+    transform:scale(1.08);
+}
+
+.card-body{
+    display:flex;
+    flex-direction:column;
+    flex:1;
+
+    padding:15px;
+    gap:0px;
+}
+
+.card-body p{
+    margin: .3rem 0 .6rem;
+}
+
+
+/* 1️⃣ Le lien qui englobe la carte */
+.exp-card-link {
+    display: block;               /* le lien occupe toute la largeur */
+    text-decoration: none;        /* pas de soulignement */
+    color: inherit;               /* hérite de la couleur du texte */
+}
 /* --- GESTION DES SECTIONS --- */
 .content-section {
     display: none;
