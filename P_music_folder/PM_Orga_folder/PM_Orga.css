@@ -1,25 +1,3 @@
-/* ------------------------------------------------------------------
-   Re‑utilisation du style « audio‑grid » pour la partie « Groupes / Expériences ».
-   ------------------------------------------------------------------ */
-
-/* Profil principal (identique à audio) */
-.audio-profile {               /* on garde mais on ne l’utilise pas ici */
-    margin-bottom: 50px;
-}
-
-/* --------------------------------------------------------------
-   Grille à deux colonnes (identique à audio.html)
-   -------------------------------------------------------------- */
-.audio-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;   /* colonne gauche = outils / groupes, colonne droite = expériences */
-    gap: 40px;
-    text-align: left;
-    margin-bottom: 50px;
-
-    grid-template-columns: 1fr;
-
-}
 
 /* ---- Colonne gauche (listes) ---- */
 .tool-section ul {
@@ -32,55 +10,49 @@
     font-weight: 500;
 }
 
-/* ---- Cartes expériences ---- */
-
+/* -------------------------------------------------
+   Carte principale (déjà en flex row)
+   ------------------------------------------------- */
 .exp-section .exp-card {
-
     display:flex;
     flex-direction:row;
-
+    align-items:center;        /* <‑‑ centrer verticalement *tous* les enfants */
     background:var(--card-bg);
-
     border-radius:12px;
     overflow:hidden;
     margin-bottom:15px;
-
     border-left:4px solid var(--primary-music);
-
     box-shadow:0 2px 5px rgba(0,0,0,.05);
-
 }
 
-
-/* Image à gauche */
-
+/* -------------------------------------------------
+   BANNIÈRE (image)
+   ------------------------------------------------- */
 .exp-card-banner {
-
-    width:200px;
-    flex-shrink:0;
+    width: 200px;               /* largeur fixe */
+    height: 85px;               /* <‑‑ hauteur fixe, même que max‑height de l'image */
+    flex-shrink: 0;             /* ne se rétrécit jamais */
+    overflow: hidden;
     
-    overflow:hidden;
+    /* NEW – centrer le contenu verticalement (et horizontalement) */
+    display: flex;
+    align-items: center;        /* centre vertical */
+    justify-content: center;    /* centre horizontal (facultatif) */
 }
 
-
+/* -------------------------------------------------
+   IMAGE (à l'intérieur de la bannière)
+   ------------------------------------------------- */
 .exp-card-banner img {
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-    overflow-clip-margin: unset;    
-    display:block;
-
-    transition:transform .5s ease;
+    width: 100%;                /* remplit la largeur du conteneur */
+    height: 100%;               /* remplit la hauteur du conteneur */
+    max-height: 85px;           /* évite toute débordement hors de la bannière */
+    object-fit: cover;          /* remplissage complet sans distorsion */
+    object-position: center;    /* <‑‑ centre la zone découpée */
+    display: block;             /* supprime l’espace blanc sous l’image */
+    transition: transform .5s ease;
 }
 
-
-.exp-card:hover .exp-card-banner img {
-
-    transform:scale(1.08);
-
-}
 
 
 /* Contenu */
@@ -115,11 +87,6 @@
 }
 
 
-
-/* ------------------------------------------------------------------
-   Cartes supplémentaires (instruments & groupes) – même look que les
-   cartes de la page index (cards‑container)
-   ------------------------------------------------------------------ */
 .cards-container {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -173,23 +140,7 @@
     margin: .3rem 0 .6rem;
 }
 
-/* Bouton "En savoir plus" */
-.btn-link {
-    display: inline-block;
-    margin-top: 0px;
-    padding: 10px 20px;
-    background: var(--accent);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 25px;
-    font-size: .9rem;
-    align-self: flex-start;
-    transition: var(--transition);
-}
-.btn-link:hover {
-    opacity: .9;
-    transform: scale(1.05);
-}
+
 
 /* ------------------------------------------------------------------
    Section écoute (même style que la page audio)
@@ -258,241 +209,350 @@
     min-height:35px
 }
 
+/* ----- Conteneur des onglets ----- */
+.tabs {
+    display: flex;            /* déjà présent */
+    flex-wrap: wrap;          /* garde la possibilité de *wrap* si la largeur est trop petite */
+    gap: 0.5rem;
+    margin: 1rem 0;
+}
 
-/* -------------------------------------------------
-   3️⃣  TRAIT FIN GRIS
-------------------------------------------------- */
-.divider {
-    border: none;
-    border-top: 1px solid #ccc;        /* gris clair */
+.tabs .tab {
+    flex: 1 1 0;                 /* largeur égale – garde le même comportement que précédemment */
+    display: flex;               /* <‑‑ nouveau : on rend l’onglet lui‑même un flex container */
+    align-items: center;         /* centre verticalement */
+    justify-content: center;     /* centre horizontalement */
+    padding: 0.5rem 0;           /* hauteur suffisante, on enlève le padding latéral car le flex gère l’alignement */
+    cursor: pointer;
+    position: relative;          /* nécessaire pour le pseudo‑élément du flou */
+    text-align: center;          /* au cas où du texte se retrouverait hors du flex (ex. fallback) */
+    position: relative;               /* requis pour le pseudo‑élément */
+    display: inline-flex;             /* pour que le texte soit centré */
+    align-items: center;
+    padding: 0.5rem 1rem;
+    color: #555;                      /* couleur par défaut */
+    border-bottom: 3px solid transparent;
+    transition: color 0.2s, border-bottom-color 0.2s;
+    cursor: pointer;
+    background-color: #fff;      /* ou une autre teinte qui contraste */
+    color: #00000088;              /* ton style actuel */
+    border-bottom-color: #e91e626b;
+    border-radius: 5px;
 }
 
 
-.card-banner{
+.tabs p {
+    margin:0
+}
+.tab:hover { color:#000; }
+
+.tabs .tab.active {
+    background-color: #ffffff;      /* fond blanc ou toute couleur que tu préfères */
+    color: #e91e63;               /* texte rose */
+    border-bottom-color: #e91e63;
+    font-weight: 600;
+}
+
+.tabs .tab.active::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border-radius: inherit;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.tabs .tab:not(.active):hover {
+    background-color: #ffffff;   /* un gris un peu plus foncé au hover */
+}
+
+
+/* ----- Contenu des onglets ----- */
+.tab-content {
+    display:none;                /* caché par défaut */
+    padding:1rem 0;
+}
+.tab-content.active { display:block; }
+
+.timeline {
+    margin:1.5rem 0;
+    padding-left:2rem;
     position:relative;
-
-    width:100%;
-    height:180px;
-
-    overflow:hidden;
-
-    border-bottom:4px solid var(--accent);
 }
-
-.card-banner img{
-    width:100%;
-    height:100%;
-    overflow-clip-margin: unset;
-    object-fit:cover;
-    object-position:center;
-
-    display:block;
-
-    transition:transform .6s ease;
-}
-
-.card:hover .card-banner img{
-    transform:scale(1.08);
-}
-
-.card-body{
-    display:flex;
-    flex-direction:column;
-    flex:1;
-
-    padding:15px;
-    gap:0px;
-}
-
-.card-body p{
-    margin: .3rem 0 .6rem;
-}
-
-
-/* 1️⃣ Le lien qui englobe la carte */
-.exp-card-link {
-    display: block;               /* le lien occupe toute la largeur */
-    text-decoration: none;        /* pas de soulignement */
-    color: inherit;               /* hérite de la couleur du texte */
-}
-
-
-.responsive-player{
-    position:relative;
-    width:100%;
-    max-width:100%;
-    padding-bottom:56.25%;
-    height:0;
-    overflow:hidden;
-    background:#000;
-}
-.responsive-player video{
+.timeline::before {
+    content:"";
     position:absolute;
-    inset:0;
-    border:none;
-    object-fit:cover;   /* couvre tout le conteneur, sans déformer */
+    left:0;
+    top:0;
+    bottom:0;
+    width:2px;
+    background:#e91e63;
+}
+.timeline ul {
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+.timeline li {
+    margin-bottom:1rem;
+    position:relative;
+}
+.timeline li::before {
+    content:"●";
+    position:absolute;
+    left:-1.3rem;
+    top:0.1rem;
+    color:#e91e63;
+    font-size:1rem;
+}
+.timeline strong {
+    display:block;
+    color:#333;
 }
 
-
-/* -------------------------------------------------
-   6️⃣  FLEX – METTRE .group-presentation & .group-gallery SUR LA MÊME LIGNE
-   ------------------------------------------------- */
-
-.group-gallery h2{
-    margin:0.5rem
+.budget-table {
+    width:100%;
+    border-collapse:collapse;
+    margin-top:1rem;
+}
+.budget-table th,
+.budget-table td {
+    padding:0.75rem 1rem;
+    border:1px solid #e0e0e0;
+    text-align:left;
+}
+.budget-table th {
+    background:#f0f0f0;
+    font-weight:600;
+}
+.budget-table tbody tr:nth-child(even) {
+    background:#fafafa;
+}
+.budget-table tbody tr:hover {
+    background:#f5f5f5;
 }
 
-
-/* 6.1  Conteneur flex */
-.group-row{
-    display:flex;               /* crée le flex‑box */
-    flex-wrap:wrap;             /* retour à la ligne sur petits écrans */
-    gap:2rem;                   /* espace entre les deux sections */
-    margin-bottom:2rem;         /* espace avant la partie documents */
+/* Responsive – on scroll si trop large */
+@media (max-width:768px) {
+    .budget-table { display:block; overflow-x:auto; }
 }
 
-/* 6.2  Annuler le margin:auto & le max‑width qui étaient appliqués
-      (elles proviennent de la règle .group-presentation /.group-gallery
-      définie plus haut). */
-.group-row > .group-presentation,
-.group-row > .group-gallery{
-    margin:0;                /* <‑‑ annule le margin:auto */
-    max-width:none;          /* laisse le flex gérer la largeur */
+.card-grid {
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(260px,1fr));
+    gap:1.5rem;
+    margin-top:1rem;
 }
 
-/* 6.3  Largeur de chaque colonne en mode desktop */
-.group-row > .group-presentation,
-.group-row > .group-gallery{
-    flex:1 1 45%;            /* 45 % de largeur de base, rétrécit/étend */
-    min-width:300px;         /* évite que la colonne devienne trop étroite */
-}
-
-/* 6.4  Alignement interne (optionnel) – hauteur identique */
-.group-presentation .group-content,
-.group-gallery .slider{
-    height:100%;
-}
-
-.slider{
-    overflow:hidden;
-    border-radius:15px;
-}
-.slides_8{
+.slider .slides_3 {
     display:flex;
-    width:800%;                /* 8 images × 100 % */
-    animation:slide_8_sync 30s infinite;   /* 24 s = 8 × 3 s (pause+transition) */
+    gap:0.75rem;
+    overflow-x:auto;
+    scroll-snap-type:x mandatory;
+}
+.slider .slides_3 img {
+    flex:0 0 auto;
+    max-width:100%;
+    scroll-snap-align:start;
+    border-radius:4px;
+}
+
+
+/* -------------------------------------------------
+   HERO – image de fond floutée + overlay noir
+   ------------------------------------------------- */
+.hero {
+    position: relative;               /* parent de nos pseudo‑éléments */
+    overflow: hidden;                 /* coupe le débordement du blur */
+    padding: 4rem 0;
+    text-align: center;
+    color: #fff;                      /* texte en blanc */
+}
+.hero p,h1{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/* ---- 1️⃣  Image de fond (floutée) ---- */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;                         /* top/right/bottom/left = 0 */
+    background: url("./Photos_gallery/IMG_8834.jpg") center / cover no-repeat;
+    filter: blur(1px);               /* ajustez la valeur à votre goût */
+    transform: scale(1.05);           /* compense le « perte de bord » du blur */
+    z-index: 1;                       /* derrière le texte */
+}
+
+/* ---- 2️⃣  Overlay noir semitransparent ---- */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);     /* le noir + opacité (0‑1) */
+    z-index: 2;                       /* entre l’image floutée et le texte */
+}
+
+/* ---- 3️⃣  Texte (au‑dessus) ---- */
+.hero h1,
+.hero p {
+    position: relative;   /* le rend au-dessus des pseudo‑éléments */
+    z-index: 3;
+    margin: 0.5rem 0;
+}
+
+/* Optionnel – petite animation d’apparition */
+.hero h1,
+.hero p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.3s;   /* décalage pour le <p> */
+}
+.hero p { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.divider{
+    margin-bottom: 0px;
+}
+
+
+
+/* -------------------------------------------------
+   CONTENEUR DES DEUX CARTES
+   ------------------------------------------------- */
+.process-cards {
+    display: flex;
+    flex-wrap: wrap;      /* passage en colonnes sur mobile */
+    gap: 1.8rem;          /* espace entre les cartes */
+
+    /* <‑‑ nouveau ‑‑> */
+    justify-content: center;   /* centre les éléments horizontalement */
+    /* (optionnel) align-items: center;   // centre verticalement si les hauteurs diffèrent */
 }
 
 /* -------------------------------------------------
-   3️⃣ Chaque image
+   CARTE – largeur exactement 50 % (moins le gap)
    ------------------------------------------------- */
-.slides_8 img{
-    width:12.5%;               /* 100 % / 8 */
-    height:340px;              /* hauteur fixe – adaptez‑la si besoin */
-    object-fit:cover;          /* garde le ratio sans déformer */
-    overflow-clip-margin: unset;
+.card {
+    background-color: var(--card-bg, #fafafa);
+    border-radius: 8px;
+    overflow: hidden;
+    /* 50 % de la largeur du conteneur, on retire la moitié du gap pour éviter le débordement */
+    flex: 0 1 calc(49.5% - 0.9rem);   /* 0.9rem = moitié du gap de 1.8rem */
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 6px rgba(0,0,0,.07);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* Hover – léger levage */
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,.12);
 }
 
 /* -------------------------------------------------
-   4️⃣ Animation
+   BANDEAU IMAGE (en haut)
    ------------------------------------------------- */
-@keyframes slide_8_sync{
-    /* pause 0 → transition 0‑1 */
-    0%   , 8%   { transform:translateX(0); }               /* pause */
-    9%   ,10%   { transform:translateX(-12.5%); }           /* transition */
-
-    /* pause 1 → transition 1‑2 */
-   10%   ,18%   { transform:translateX(-12.5%); }
-   19%   ,20%   { transform:translateX(-25%); }
-
-    /* pause 2 → transition 2‑3 */
-   20%   ,28%   { transform:translateX(-25%); }
-   29%   ,30%   { transform:translateX(-37.5%); }
-
-    /* pause 3 → transition 3‑4 */
-   30%   ,38%   { transform:translateX(-37.5%); }
-   39%   ,40%   { transform:translateX(-50%); }
-
-    /* pause 4 → transition 4‑5 */
-   40%   ,48%   { transform:translateX(-50%); }
-   49%   ,50%   { transform:translateX(-62.5%); }
-
-    /* pause 5 → transition 5‑6 */
-   50%   ,58%   { transform:translateX(-62.5%); }
-   59%   ,60%   { transform:translateX(-75%); }
-
-    /* pause 6 → transition 6‑7 */
-   60%   ,68%   { transform:translateX(-75%); }
-   69%   ,70%   { transform:translateX(-87.5%); }
-
-    /* pause 7 → transition 7‑0 (remise à zéro) */
-   70%   ,78%   { transform:translateX(-87.5%); }
-   79%   ,80%   { transform:translateX(0); }
-
-    /* temps d’attente après la remise à zéro (pour que l’animation fasse 100 %) */
-   89%   ,100% { transform:translateX(0); }
+.card-banner {
+    width: 100%;
+    height: 180px;                 /* hauteur fixe – à ajuster si besoin */
+    overflow: hidden;
 }
-
-.slides_12{
-    display:flex;
-    width:900%;              
-    animation:slide_12_sync 30s infinite;   
+.card-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
 }
 
 /* -------------------------------------------------
-   3️⃣ Chaque image
+   CORPS DE LA CARTE
    ------------------------------------------------- */
-.slides_12 img{
-    width:12.5%;               
-    height:450px;              /* hauteur fixe – adaptez‑la si besoin */
-    object-fit:cover;          /* garde le ratio sans déformer */
-    overflow-clip-margin: unset;
+.card-body {
+    padding: 1.2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Titre */
+.card-title {
+    font-size: 1.18rem;
+    color: var(--primary-music, #e91e63);
+    margin: 0 0 0.8rem;
+}
+
+/* LISTE (sans numéros) – petite puce décorative */
+.card-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.card-list li {
+    position: relative;
+    padding-left: 1.4rem;
+    margin-bottom: 0.6rem;
+    font-size: 0.94rem;
+    line-height: 1.45;
+    color: var(--text-primary, #333);
+}
+.card-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.45rem;
+    width: 6px;
+    height: 6px;
+    background-color: var(--primary-music, #e91e63);
+    border-radius: 50%;
+}
+
+/* Hover sur chaque ligne (facultatif) */
+.card-list li:hover {
+    color: var(--primary-music, #e91e63);
 }
 
 /* -------------------------------------------------
-   4️⃣ Animation
+   RESPONSIVE – empile les cartes sous 800 px
    ------------------------------------------------- */
-@keyframes slide_12_sync{
-    /* pause 0 → transition 0‑1 */
-    0%   , 8%   { transform:translateX(0); }
-    9%   ,10%   { transform:translateX(-8.333%); }
+@media (max-width: 800px) {
+    .process-cards {
+        flex-direction: column;
+    }
+    .card {
+        flex: 1 1 100%;               /* pleine largeur en mode mobile */
+    }
+}
 
-    /* pause 1 → transition 1‑2 */
-   10%   ,18%   { transform:translateX(-8.333%); }
-   19%   ,20%   { transform:translateX(-16.666%); }
-
-    /* pause 2 → transition 2‑3 */
-   20%   ,28%   { transform:translateX(-16.666%); }
-   29%   ,30%   { transform:translateX(-25%); }
-
-    /* pause 3 → transition 3‑4 */
-   30%   ,38%   { transform:translateX(-25%); }
-   39%   ,40%   { transform:translateX(-33.333%); }
-
-    /* pause 4 → transition 4‑5 */
-   40%   ,48%   { transform:translateX(-33.333%); }
-   49%   ,50%   { transform:translateX(-41.666%); }
-
-    /* pause 5 → transition 5‑6 */
-   50%   ,58%   { transform:translateX(-41.666%); }
-   59%   ,60%   { transform:translateX(-50%); }
-
-    /* pause 6 → transition 6‑7 */
-   60%   ,68%   { transform:translateX(-50%); }
-   69%   ,70%   { transform:translateX(-58.333%); }
-
-    /* pause 7 → transition 7‑8 */
-   70%   ,78%   { transform:translateX(-58.333%); }
-   79%   ,80%   { transform:translateX(-66.666%); }
-
-    /* pause 8 → transition 8‑9 */
-   80%   ,88%   { transform:translateX(-66.666%); }
-   89%   ,90%   { transform:translateX(-75%); }
-
-    /* pause 9 → transition 9‑10 */
-   90%   ,98%   { transform:translateX(-75%); }
-   99%   ,100%  { transform:translateX(-83.333%); }
-
-    /* slide 10 → transition 10‑11 (on exploite les 2 % restants) */
-  101%  ,108%  { transform:translateX(-91.666%); } /* ne s’affiche pas, sert juste à garder la logique */
+/* -------------------------------------------------
+   MOBILE – petite taille d’image etc.
+   ------------------------------------------------- */
+@media (max-width: 480px) {
+    .card-banner {
+        height: 150px;
+    }
+    .card-body {
+        padding: 1rem 0.8rem;
+    }
+    .card-title {
+        font-size: 1.07rem;
+    }
+    .card-list li {
+        font-size: 0.88rem;
+        padding-left: 1.2rem;
+    }
+    .card-list li::before {
+        top: 0.35rem;
+        width: 5px;
+        height: 5px;
+    }
 }

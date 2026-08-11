@@ -1,25 +1,3 @@
-/* ------------------------------------------------------------------
-   Re‑utilisation du style « audio‑grid » pour la partie « Groupes / Expériences ».
-   ------------------------------------------------------------------ */
-
-/* Profil principal (identique à audio) */
-.audio-profile {               /* on garde mais on ne l’utilise pas ici */
-    margin-bottom: 50px;
-}
-
-/* --------------------------------------------------------------
-   Grille à deux colonnes (identique à audio.html)
-   -------------------------------------------------------------- */
-.audio-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;   /* colonne gauche = outils / groupes, colonne droite = expériences */
-    gap: 40px;
-    text-align: left;
-    margin-bottom: 50px;
-
-    grid-template-columns: 1fr;
-
-}
 
 /* ---- Colonne gauche (listes) ---- */
 .tool-section ul {
@@ -173,23 +151,6 @@
     margin: .3rem 0 .6rem;
 }
 
-/* Bouton "En savoir plus" */
-.btn-link {
-    display: inline-block;
-    margin-top: 0px;
-    padding: 10px 20px;
-    background: var(--accent);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 25px;
-    font-size: .9rem;
-    align-self: flex-start;
-    transition: var(--transition);
-}
-.btn-link:hover {
-    opacity: .9;
-    transform: scale(1.05);
-}
 
 /* ------------------------------------------------------------------
    Section écoute (même style que la page audio)
@@ -256,15 +217,6 @@
     color:var(--accent);
     height:auto;                 /* laissez la hauteur s’ajuster au texte */
     min-height:35px
-}
-
-
-/* -------------------------------------------------
-   3️⃣  TRAIT FIN GRIS
-------------------------------------------------- */
-.divider {
-    border: none;
-    border-top: 1px solid #ccc;        /* gris clair */
 }
 
 
@@ -495,4 +447,68 @@
 
     /* slide 10 → transition 10‑11 (on exploite les 2 % restants) */
   101%  ,108%  { transform:translateX(-91.666%); } /* ne s’affiche pas, sert juste à garder la logique */
+}
+
+.divider{
+    margin-bottom: 0px;
+}
+
+/* -------------------------------------------------
+   HERO – image de fond floutée + overlay noir
+   ------------------------------------------------- */
+.hero {
+    position: relative;               /* parent de nos pseudo‑éléments */
+    overflow: hidden;                 /* coupe le débordement du blur */
+    padding: 4rem 0;
+    text-align: center;
+    color: #fff;                      /* texte en blanc */
+}
+
+.hero p,h1{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/* ---- 1️⃣  Image de fond (floutée) ---- */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;                         /* top/right/bottom/left = 0 */
+    background: url("./Photos_gallery/IMG_8834.jpg") center / cover no-repeat;
+    filter: blur(1px);               /* ajustez la valeur à votre goût */
+    transform: scale(1.05);           /* compense le « perte de bord » du blur */
+    z-index: 1;                       /* derrière le texte */
+}
+
+/* ---- 2️⃣  Overlay noir semitransparent ---- */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.55);     /* le noir + opacité (0‑1) */
+    z-index: 2;                       /* entre l’image floutée et le texte */
+}
+
+/* ---- 3️⃣  Texte (au‑dessus) ---- */
+.hero h1,
+.hero p {
+    position: relative;   /* le rend au-dessus des pseudo‑éléments */
+    z-index: 3;
+    margin: 0.5rem 0;
+}
+
+/* Optionnel – petite animation d’apparition */
+.hero h1,
+.hero p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.3s;   /* décalage pour le <p> */
+}
+.hero p { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
