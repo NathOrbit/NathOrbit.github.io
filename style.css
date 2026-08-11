@@ -292,11 +292,6 @@ h1 {
     text-shadow: 0 1px 2px rgba(255,255,255,0.6);
 }
 
-/* Le bouton « Explorer » reste blanc comme dans votre thème */
-.btn-link {
-    background: var(--accent);   /* couleur d’accent (rose ou bleu) */
-    color: #fff;                 /* blanc */
-}
 
 /* -------------------------------------------------
    4️⃣  SURVOL – augmente l’opacité de l’image
@@ -335,3 +330,30 @@ h1 {
 .interprete-card .btn-link {
     margin-top: 0.4rem;   /* petit supplément d’espace, optionnel */
 }
+
+/* -------------------------------------------------
+   3️⃣  TRAIT FIN GRIS
+------------------------------------------------- */
+.divider {
+    border: none;
+    border-top: 1px solid #e91e63;        /* gris clair */
+    margin: 0.2rem 0 1.5rem;            /* espace avant / après le trait */
+}
+
+/* Profil principal (identique à audio) */
+.audio-profile {               /* on garde mais on ne l’utilise pas ici */
+    margin-bottom: 50px;
+}
+
+/* --------------------------------------------------------------
+   Grille à deux colonnes (identique à audio.html)
+   -------------------------------------------------------------- */
+.audio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;   /* colonne gauche = outils / groupes, colonne droite = expériences */
+    gap: 20px;
+    text-align: left;
+
+    grid-template-columns: 1fr;
+}
+
