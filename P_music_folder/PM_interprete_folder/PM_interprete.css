@@ -1,25 +1,3 @@
-/* ------------------------------------------------------------------
-   Re‑utilisation du style « audio‑grid » pour la partie « Groupes / Expériences ».
-   ------------------------------------------------------------------ */
-
-/* Profil principal (identique à audio) */
-.audio-profile {               /* on garde mais on ne l’utilise pas ici */
-    margin-bottom: 50px;
-}
-
-/* --------------------------------------------------------------
-   Grille à deux colonnes (identique à audio.html)
-   -------------------------------------------------------------- */
-.audio-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;   /* colonne gauche = outils / groupes, colonne droite = expériences */
-    gap: 40px;
-    text-align: left;
-    margin-bottom: 50px;
-
-    grid-template-columns: 1fr;
-
-}
 
 /* ---- Colonne gauche (listes) ---- */
 .tool-section ul {
@@ -43,6 +21,7 @@
     margin-bottom: 15px;
     border-left: 4px solid var(--primary-music);
     box-shadow: 0 2px 5px rgba(0,0,0,.05);
+    
 }
 
 .exp-card-banner img {
@@ -152,23 +131,7 @@
     margin: .3rem 0 .6rem;
 }
 
-/* Bouton "En savoir plus" */
-.btn-link {
-    display: inline-block;
-    margin-top: 0px;
-    padding: 10px 20px;
-    background: var(--accent);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 25px;
-    font-size: .9rem;
-    align-self: flex-start;
-    transition: var(--transition);
-}
-.btn-link:hover {
-    opacity: .9;
-    transform: scale(1.05);
-}
+
 
 /* ------------------------------------------------------------------
    Section écoute (même style que la page audio)
@@ -247,14 +210,7 @@
     /* aucune autre règle : la police, la taille et la couleur restent celles du body */
 }
 
-/* -------------------------------------------------
-   3️⃣  TRAIT FIN GRIS
-------------------------------------------------- */
-.divider {
-    border: none;
-    border-top: 1px solid #ccc;        /* gris clair */
-    margin: 0.2rem 0 1.5rem;            /* espace avant / après le trait */
-}
+
 
 
 .card-banner{
