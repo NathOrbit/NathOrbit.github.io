@@ -19,7 +19,7 @@
     border-radius: 12px;
     overflow: hidden;
     margin-bottom: 15px;
-    border-left: 4px solid var(--primary-music);
+    border-left: 4px solid var(--accent);
     box-shadow: 0 2px 5px rgba(0,0,0,.05);
     
 }
@@ -64,7 +64,7 @@
 .exp-card-body h3 {
     margin: 0 0 8px;
     font-size: 1.1rem;
-    color: var(--primary-music);
+    color: var(--accent);
 }
 
 .exp-card-body p {
@@ -155,7 +155,7 @@
 .fill {
     height: 100%;
     width: 40%;
-    background: var(--primary-music);
+    background: var(--accent);
 }
 
 /* ------------------------------------------------------------------
