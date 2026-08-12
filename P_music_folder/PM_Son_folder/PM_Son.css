@@ -23,7 +23,7 @@
     overflow:hidden;
     margin-bottom:15px;
 
-    border-left:4px solid var(--primary-music);
+    border-left:4px solid var(--accent);
 
     box-shadow:0 2px 5px rgba(0,0,0,.05);
 
@@ -80,7 +80,7 @@
 
     font-size:1.1rem;
 
-    color:var(--primary-music);
+    color:var(--accent);
 }
 
 
@@ -174,7 +174,7 @@
 .fill {
     height: 100%;
     width: 40%;
-    background: var(--primary-music);
+    background: var(--accent);
 }
 
 /* ------------------------------------------------------------------
