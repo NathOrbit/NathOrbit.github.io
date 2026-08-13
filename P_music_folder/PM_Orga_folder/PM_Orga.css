@@ -430,28 +430,26 @@
    ------------------------------------------------- */
 .process-cards {
     display: flex;
-    flex-wrap: wrap;      /* passage en colonnes sur mobile */
-    gap: 1.8rem;          /* espace entre les cartes */
-
-    /* <‑‑ nouveau ‑‑> */
-    justify-content: center;   /* centre les éléments horizontalement */
-    /* (optionnel) align-items: center;   // centre verticalement si les hauteurs diffèrent */
+    flex-wrap: wrap;
+    gap: 1.8rem;
+    justify-content: center;
 }
 
 /* -------------------------------------------------
    CARTE – largeur exactement 50 % (moins le gap)
    ------------------------------------------------- */
 .card {
-    background-color: var(--card-bg, #fafafa);
-    border-radius: 8px;
-    overflow: hidden;
-    /* 50 % de la largeur du conteneur, on retire la moitié du gap pour éviter le débordement */
-    flex: 0 1 calc(49.5% - 0.9rem);   /* 0.9rem = moitié du gap de 1.8rem */
     display: flex;
     flex-direction: column;
-    box-shadow: 0 2px 6px rgba(0,0,0,.07);
-    transition: transform .2s ease, box-shadow .2s ease;
+    flex: 1 1 calc(33.333% - 20px);
+    min-width: 250px;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
+
 
 /* Hover – léger levage */
 .card:hover {
@@ -463,24 +461,27 @@
    BANDEAU IMAGE (en haut)
    ------------------------------------------------- */
 .card-banner {
-    width: 100%;
-    height: 180px;                 /* hauteur fixe – à ajuster si besoin */
+    position: relative;
+    flex-shrink: 0;
+    height: 0; /* Hauteur initiale à 0 */
+    padding-bottom: 56.25%; /* Ratio 16:9 (ajustez selon vos besoins) */
     overflow: hidden;
 }
+
 .card-banner img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center;
 }
-
 /* -------------------------------------------------
    CORPS DE LA CARTE
    ------------------------------------------------- */
 .card-body {
-    padding: 1.2rem 1rem;
-    display: flex;
-    flex-direction: column;
+    padding: 20px;
     flex-grow: 1;
 }
 
@@ -526,10 +527,13 @@
    ------------------------------------------------- */
 @media (max-width: 800px) {
     .process-cards {
-        flex-direction: column;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 20px;
     }
     .card {
-        flex: 1 1 100%;               /* pleine largeur en mode mobile */
+        flex: 1 1 100%;
     }
 }
 
