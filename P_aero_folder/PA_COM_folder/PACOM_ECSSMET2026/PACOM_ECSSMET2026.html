@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NathOrbit – Music</title>
+
+    <!-- Feuilles de style – chemins **absolus** -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/header-style.css">
+    <link rel="stylesheet" href="/footer-style.css">
+    <link rel="stylesheet" href="./PACOM_ECSSMET2026.css">
+
+    <script src="/shared.js"></script>
+</head>
+
+<body class="theme-music">
+
+    <!-- Header dynamique -->
+    <div id="dynamic-header"></div>
+
+    <main>
+
+        <!-- ==== BOUTON RETOUR + TITRE « Interprète » ==== -->
+        <div class="top-bar">
+            <!-- Bouton retour (reste à gauche) -->
+            <div class="back-top">
+                <a href="../PA_COM.html"
+                   class="btn-link back-btn"
+                   data-i18n="back_to_home"
+                   aria-label="Retour à la page d’accueil">
+                    ← Retour
+                </a>
+            </div>
+
+            <!-- Titre « Interprète » (centré) -->
+            <h2 class="section-title interprete-title"
+                data-i18n="interp_page_title">ECSSMET 2026</h2>
+        </div>
+
+        <!-- Trait gris sous le titre « Interprète » -->
+        <hr class="divider">
+
+        <!-- Hero section -->
+        <section class="hero"
+                 style="background:#000000 url('./f6c6d1d5-a8be-43b6-96b0-f0b8f5836dfc.jpg') center/cover; padding:4rem 0; color:#fff; text-align:center;">
+            <h2 data-i18n="production_hero_title">
+                European Conference on Spacecraft Structures, Materials and Environmental Testing
+            </h2>
+            <p data-i18n="production_hero_tagline">
+                Brunswick, Allemagne, 2026
+            </p>
+        </section>
+
+        <!-- ==== PRÉSENTATION / CONTEXTE ==== -->
+        <section class="overview-section">
+            <h2 data-i18n="documents_title">Abstract</h2>
+
+            <!-- paragraphe d’introduction -->
+            <p data-i18n="overview_intro">
+                Predicting shock levels for a given shock source at the injection point for system-level tests is considerably challenging. These tests are generally conducted in open-loop conditions with shock sources, which can lead to response variability due to the structure's behaviour under a given shock configuration.
+                Furthermore, to extend the context of the problem, among the various approaches to predict shock levels for a given shock source at the injection, all require modeling of the shock source. Different methodologies exist for this modeling, but in all cases, one of the objectives of shock analysis is to determine Shock Response Spectrum (SRS) levels at points of interest in the structure, particularly at the source. The article and communications listed futher propose a generalizable method for estimating injection shock levels. The approach involves characterizing the shock source on a reference structure and convert computed SRS from measured accelerations to a normalized energy spectral density. This data can be then transferred to a studied specimen, predicting SRS injection shock levels.
+            </p>
+
+            <!-- liste d’objectifs -->
+            <ul class="overview-list">
+                <li data-i18n="overview_item_1">
+                    Enhanced precision of injection specifications for shock-sizing rules in preliminary analyses: consider a studied specimen and an actual impact source. By characterizing the source and estimating the shock levels imparted to the structure, a representative test is no longer required; instead, appropriate level specifications can be defined for injection during the early sizing phases.
+                </li>
+                <li data-i18n="overview_item_2">
+                    Pre-selection of the design for shock sources (e.g., mechanisms, HDRMs, …): consider a studied specimen and several real shock-source variants. Characterizing the sources and estimating the resulting shock levels on the structure enables efficient identification of appropriate shock-source designs without conducting tests on the structure itself.
+                </li>
+                <li data-i18n="overview_item_3">
+                    Pre-selection of the shock-test configuration: consider a studied specimen and several possible shock-test setups. By characterizing the sources and estimating the shock levels on the structure, the appropriate configuration of shock sources can be identified in advance to reproduce the required test specifications.
+                </li>
+                <li data-i18n="overview_item_4">
+                    Use of a normalized shock-energy representation for source simulation: the characterization step and its description by a normalized spectral energy density enable the shock source to be represented in a simulation independently of the modeled structure.
+                </li>
+            </ul>
+
+            <!-- paragraphe de conclusion -->
+            <p data-i18n="overview_conclusion">
+                In conclusion, this study introduces a novel methodology that reliably represents a shock source through a normalized representation based on the Normalized Energy Spectral Density, computed from a characterization test on a reference specimen. This NESD is then used for shock source levels prediction on a studied specimen subjected to the same shock sources as characterized.
+            </p>
+            <div class="image-with-caption">
+                <img src="./NESD_illu_cropped_full.jpg"
+                            alt="NESS"
+                            loading="lazy">
+                            <figcaption data-i18n="image_caption">Figure: Illustration of the computed Normalized Energy Spectral Density (NESD) for a CNES shock test mean.</figcaption>
+            </div>
+
+            
+        </section>
+
+        <!-- ==== TITRE « Publications et Communications » ==== -->
+        <h2 class="section-title groups-title"
+            data-i18n="pub_section_title">Publications et Communications</h2>
+
+        <section class="group-documents">
+            <div class="documents-list">
+                <a href="./PASCAL_Nathan_ECSSMET2026_article.pdf"
+                   class="document-btn"
+                   target="_blank"
+                   data-i18n="doc_extended_abstract"
+                   aria-label="Télécharger l'abstract étendu">
+                    🗎 Abstract étendu
+                </a>
+
+                <a href="https://event.dlr.de/en/event/ecssmet-2026/"
+                   class="document-btn"
+                   target="_blank"
+                   data-i18n="doc_site_ecssmet"
+                   aria-label="Ouvrir le site ECSSMET 2024">
+                    🌐 Site ECSSMET 2026
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer dynamique -->
+    <div id="dynamic-footer"></div>
+
+    <!-- ---------------------------------------------------------
+         1️⃣  Initialisation de la page « Interprète »
+         --------------------------------------------------------- -->
+    <script>
+        function initInterpPage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const domainUrl = urlParams.get('domain');
+            const langUrl   = urlParams.get('lang');
+
+            // Langue
+            if (langUrl && (langUrl === 'fr' || langUrl === 'en')) {
+                currentLang = langUrl;
+                localStorage.setItem('preferredLang', currentLang);
+            } else {
+                currentLang = localStorage.getItem('preferredLang') || 'fr';
+            }
+            document.documentElement.lang = currentLang;
+
+            // Domaine (aero / music)
+            if (domainUrl && (domainUrl === 'aero' || domainUrl === 'music')) {
+                currentDomain = domainUrl;
+                localStorage.setItem('preferredDomain', currentDomain);
+            } else {
+                currentDomain = localStorage.getItem('preferredDomain') || 'music';
+            }
+
+            // Thème musique
+            document.body.classList.remove('theme-aero');
+            document.body.classList.add('theme-music');
+
+            // Header dynamique
+            loadHeader();
+
+            // Traductions de la page
+            translatePage(currentLang);
+
+            // Mise à jour des liens internes
+            updateExternalLinks();
+        }
+
+        document.addEventListener('DOMContentLoaded', initInterpPage);
+    </script>
+
+    <!-- ---------------------------------------------------------
+         2️⃣  Traductions (FR / EN) – clés uniques
+         --------------------------------------------------------- -->
+    <script>
+        /* -------------------------------------------------
+           FR – toutes les clés
+           ------------------------------------------------- */
+        if (!translations.fr.interp_page_title) {
+
+            translations.fr.interp_page_title     = "ECSSMET 2026";
+            translations.fr.production_hero_title = "European Conference on Spacecraft Structures, Materials and Environmental Testing";
+            translations.fr.production_hero_tagline = "Brunswick, Allemagne, 2026";
+            translations.fr.documents_title       = "Abstract";
+            
+            /* --------------------- FR --------------------- */
+            translations.fr.group_title_main = "Contexte des activités de recherche";
+
+            translations.fr.overview_intro = "Prédire les niveaux de choc pour une source de choc donnée à la localisation de la source est considérablement difficile. Les essais dans le spatial sont généralement effectués en conditions de boucle ouverte avec des sources de choc, et la variabilité de la réponse est due au comportement de la structure soumise à la configuration de la source donnée. De plus, pour étendre le contexte du problème, parmi les différentes approches pour prédire les niveaux de choc pour une source de choc donnée à l'injection, toutes nécessitent la modélisation de la source de choc. Différentes méthodologies existent pour cette modélisation, mais dans tous les cas, l'un des objectifs de l'analyse des chocs est de déterminer les niveaux de Spectre de Réponse aux Chocs (SRS) aux points d'intérêt dans la structure, en particulier à la source. L'article et les communications listés proposent une méthode généralisable pour estimer les niveaux de choc à l'injection. L'approche implique de caractériser la source de choc sur une structure de référence et de convertir un SRS calculé à partir des accélérations mesurées, en une densité spectrale d'énergie normalisée. Ces données peuvent ensuite être transférées à un spécimen étudié, prédisant les niveaux de choc d'injection SRS. Les applications sont nombreuses :";
+
+            translations.fr.overview_item_1 = "Précision accrue des spécifications d'injection pour les règles de dimensionnement des chocs dans les analyses préliminaires : considérer un spécimen étudié et une source d'impact réelle. En caractérisant la source et en estimant les niveaux de choc attendus à la structure étudiée, un test représentatif n'est plus nécessaire ; au lieu de cela, des spécifications de niveau appropriées peuvent être définies pour l'injection pendant les phases de dimensionnement initiales.";
+
+            translations.fr.overview_item_2 = "Pré-sélection de la conception des sources de choc (par exemple, mécanismes, HDRM, ...) : considérer un spécimen étudié et plusieurs variantes de sources de choc réelles. La caractérisation des sources et l'estimation des niveaux de choc résultants sur la structure permettent d'identifier efficacement les conceptions de sources de choc appropriées sans effectuer de tests sur la structure elle-même.";
+
+            translations.fr.overview_item_3 = "Pré-sélection de la configuration du test de choc : considérer un spécimen étudié et plusieurs configurations de test de choc possibles. En caractérisant les sources et en estimant les niveaux de choc sur la structure, la configuration appropriée des sources de choc peut être identifiée à l'avance pour reproduire les spécifications de test requises.";
+
+            translations.fr.overview_item_4 = "Utilisation d'une représentation normalisée de l'énergie de choc pour la simulation: l'étape de caractérisation et sa description par une densité spectrale d'énergie normalisée permettent de représenter la source de choc dans une simulation indépendamment de la structure modélisée.";
+
+            translations.fr.overview_conclusion = "En conclusion, cette étude introduit une nouvelle méthodologie qui représente de manière fiable une source de choc par une représentation normalisée basée sur la Densité Spectrale d'Énergie Normalisée, calculée à partir d'un test de caractérisation sur un spécimen de référence. Cette NESD est ensuite utilisée pour la prédiction des niveaux de source de choc sur un spécimen étudié soumis aux mêmes sources de choc que celles caractérisées.";
+
+            translations.fr.image_caption= "Illustration de la Densité Spectrale d'Énergie Normalisée (NESD) calculée pour un moyen d'essai de choc du CNES";
+
+
+        /* --------------------- EN --------------------- */
+
+       
+            
+            translations.fr.pub_section_title    = "Publications et Communications";
+            translations.fr.doc_extended_abstract = "🗎 Abstract étendu";
+            translations.fr.doc_site_ecssmet      = "🌐 Site ECSSMET 2026";
+
+            /* -------------------------------------------------
+               EN – all keys, single definition
+               ------------------------------------------------- */
+
+            translations.en.interp_page_title     = "ECSSMET 2026";
+            translations.en.production_hero_title = "European Conference on Spacecraft Structures, Materials and Environmental Testing";
+            translations.en.production_hero_tagline = "Brunswick, Germany, 2026";
+            translations.en.documents_title       = "Abstract";
+            translations.en.image_caption= "Illustration of the computed Normalized Energy Spectral Density (NESD) for a CNES shock test mean";
+        
+
+            translations.en.group_title_main = "Context of Research Activities";
+
+            translations.en.overview_intro = "Predicting shock levels for a given shock source at the injection point for system-level tests is considerably challenging. These tests are generally conducted in open-loop conditions with shock sources, which can lead to response variability due to the structure's behaviour under a given shock configuration. Furthermore, to extend the context of the problem, among the various approaches to predict shock levels for a given shock source at the injection, all require modeling of the shock source. Different methodologies exist for this modeling, but in all cases, one of the objectives of shock analysis is to determine Shock Response Spectrum (SRS) levels at points of interest in the structure, particularly at the source. The article and communications listed propose a generalizable method for estimating injection shock levels. The approach involves characterizing the shock source on a reference structure and converting computed SRS from measured accelerations to a normalized energy spectral density. This data can then be transferred to a studied specimen, predicting SRS injection shock levels. Several applications are defnied:";
+
+            translations.en.overview_item_1 = "Enhanced precision of injection specifications for shock-sizing rules in preliminary analyses: consider a studied specimen and an actual impact source. By characterizing the source and estimating the shock levels imparted to the structure, a representative test is no longer required; instead, appropriate level specifications can be defined for injection during the early sizing phases.";
+
+            translations.en.overview_item_2 = "Pre-selection of the design for shock sources (e.g., mechanisms, HDRMs, …): consider a studied specimen and several real shock-source variants. Characterizing the sources and estimating the resulting shock levels on the structure enables efficient identification of appropriate shock-source designs without conducting tests on the structure itself.";
+
+            translations.en.overview_item_3 = "Pre-selection of the shock-test configuration: consider a studied specimen and several possible shock-test setups. By characterizing the sources and estimating the shock levels on the structure, the appropriate configuration of shock sources can be identified in advance to reproduce the required test specifications.";
+
+            translations.en.overview_item_4 = "Use of a normalized shock-energy representation for source simulation: the characterization step and its description by a normalized spectral energy density enable the shock source to be represented in a simulation independently of the modeled structure.";
+
+            translations.en.overview_conclusion = "In conclusion, this study introduces a novel methodology that reliably represents a shock source through a normalized representation based on the Normalized Energy Spectral Density, computed from a characterization test on a reference specimen. This NESD is then used for shock source levels prediction on a studied specimen subjected to the same shock sources as characterized.";
+
+            translations.en.pub_section_title    = "Publications and Communications";
+            translations.en.doc_extended_abstract = "🗎 Extended abstract";
+            translations.en.doc_site_ecssmet      = "🌐 ECSSMET 2026 Website";
+
+        }
+    </script>
+
+    <!-- ---------------------------------------------------------
+         3️⃣  Chargement du footer (chemin absolu)
+         --------------------------------------------------------- -->
+    <script>
+        fetch('/footer.html')
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById('dynamic-footer').innerHTML = html;
+                translatePage(currentLang);
+                updateExternalLinks();
+            })
+            .catch(err => console.error('Erreur chargement footer :', err));
+    </script>
+</body>
+</html>

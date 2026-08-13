@@ -1,0 +1,473 @@
+
+/* ---- Colonne gauche (listes) ---- */
+.tool-section ul {
+    list-style: none;
+    padding: 0;
+}
+.tool-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+    font-weight: 500;
+}
+
+.exp-section .exp-card {
+    display: grid;
+    grid-template-columns: 200px 1fr;   /* même largeur fixe pour l’image */
+    gap: 0;                             /* pas de marge entre colonnes */
+    align-items: start;                 /* même effet que flex-start */
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--accent);
+    box-shadow: 0 2px 5px rgba(0,0,0,.05);
+    
+}
+
+.exp-section_without_img .exp-card{
+    display: grid;
+    gap: 0;                             /* pas de marge entre colonnes */
+    align-items: start;                 /* même effet que flex-start */
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--accent);
+    box-shadow: 0 2px 5px rgba(0,0,0,.05);
+    
+}
+
+.exp-card-banner img {
+    width: 100%;
+    height: auto;
+    overflow-clip-margin: unset;
+}
+
+/* Image à gauche – largeur fixe, hauteur naturelle */
+.exp-card-banner {
+    width: 200px;                 /* largeur fixe */
+    flex-shrink: 0;               /* pas de réduction */
+    /* pas de height, on laisse l'image déterminer la hauteur */
+}
+
+/* L’image garde son ratio natif */
+.exp-card-banner img {
+    width: 100%;                  /* s’adapte à la largeur du bloc */
+    height: auto;                 /* <-- hauteur naturelle */
+    display: block;
+    object-fit: cover;            /* garde le crop si l’image dépasse la boîte */
+    overflow-clip-margin: unset;
+    transition: transform .5s ease;
+}
+
+/* Zoom au survol */
+.exp-card:hover .exp-card-banner img {
+    transform: scale(1.08);
+}
+
+/* Contenu texte */
+.exp-card-body {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;                      /* prend tout l’espace restant */
+}
+
+/* Titres & paragraphes */
+.exp-card-body h3 {
+    margin: 0 0 8px;
+    font-size: 1.1rem;
+    color: var(--accent);
+}
+
+.exp-card-body p {
+    margin: 0;
+    flex: 1;                      /* pousse le dernier <p> jusqu’en bas si besoin */
+}
+
+
+
+/* ------------------------------------------------------------------
+   Cartes supplémentaires (instruments & groupes) – même look que les
+   cartes de la page index (cards‑container)
+   ------------------------------------------------------------------ */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+.card{
+    background: var(--card-bg);
+    border-radius: 15px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 0;
+
+    box-shadow: 0 5px 15px rgba(0,0,0,.06);
+    transition: transform .35s ease,
+                box-shadow .35s ease;
+}
+
+.card:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.15);
+}
+
+.card h3{
+    margin:0;
+    color:var(--accent);
+    
+}
+
+.card p:last-of-type{
+    flex:1;
+}
+
+/* Instruments list (dans la première carte) */
+.instrument-list {
+    list-style: none;
+    padding-left: 0;
+    margin: .8rem 0 0;
+}
+.instrument-list li {
+    margin: .4rem 0;
+}
+
+/* Période (petit texte gris) */
+.period {
+    font-size: .9rem;
+    color: #888;
+    margin: .3rem 0 .6rem;
+}
+
+.copyright-card-banner {
+    font-size: .7rem;
+    color: #888;
+    margin: 0;
+}
+
+
+/* ------------------------------------------------------------------
+   Section écoute (même style que la page audio)
+   ------------------------------------------------------------------ */
+.listen-section {
+    margin-top: 3rem;
+}
+.player-mockup {
+    background: #333;
+    padding: 15px;
+    border-radius: 8px;
+    margin-top: 15px;
+}
+.progress-bar {
+    height: 6px;
+    background: #555;
+    border-radius: 3px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+.fill {
+    height: 100%;
+    width: 40%;
+    background: var(--accent);
+}
+
+/* ------------------------------------------------------------------
+   Responsive – on garde le même breakpoint que audio.html
+   ------------------------------------------------------------------ */
+@media (max-width: 1000px) {
+    
+}
+
+/* -------------------------------------------------
+   1️⃣  BARRE DU HAUT (bouton retour + titre Interprète)
+------------------------------------------------- */
+.top-bar {
+    position: relative;                 /* parent pour le positionnement absolu du bouton */
+    display: flex;
+    justify-content: center;            /* centre le titre H2 */
+    align-items: center;
+    margin-bottom: 0.4rem;              /* espace avant le trait */
+    margin-top:  0.4rem;              /* espace avant le trait */
+}
+
+/* Bouton retour → fixé à gauche, hors du flux centré */
+.back-top {
+    position: absolute;
+    left: 0;
+}
+
+/* -------------------------------------------------
+   2️⃣  TITRES SECTION
+------------------------------------------------- */
+
+/* Titre Interprète – centré (déjà centré grâce à .top-bar) */
+.interprete-title{
+    display:flex;                /* <‑‑ maintenant c’est un flex‑container */
+    align-items:center;          /* centre le contenu verticalement */
+    justify-content:center;      /* centre le contenu horizontalement (facultatif) */
+    margin:0;
+    font-size:20px;              /* 0,875 rem ≈ 20 px, vous choisissez au besoin */
+    line-height:1;               /* évite les interlignes superflus */
+    color:var(--accent);
+    height:auto;                 /* laissez la hauteur s’ajuster au texte */
+    min-height:35px
+}
+
+/* -------------------------------------------------
+   STYLE EXACT DE « Groupes » – copie de « Instruments… »
+------------------------------------------------- */
+/* ------------- STYLE POUR « GROUPES » ------------- */
+.groups-title {
+    margin: 0 0 0.5rem;        /* même espacement vertical que le H2 “Instruments …” */
+    text-align: left;          /* alignement à gauche (c’est le comportement natif) */
+    /* aucune autre règle : la police, la taille et la couleur restent celles du body */
+}
+
+
+
+
+.card-banner{
+    width:100%;
+    /* Pas de aspect-ratio → la hauteur dépend de l’image */
+    overflow:hidden;
+    border-bottom:4px solid var(--accent);
+}
+
+.card-banner img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;   /* ← IMPORTANT */
+    object-position:center;
+    overflow-clip-margin: unset;
+    display:block;
+    
+    transition:transform .6s ease;
+}
+
+.card:hover .card-banner img{
+    transform:scale(1.08);
+}
+
+.card-body{
+    display:flex;
+    flex-direction:column;
+    flex:1;
+
+    padding:15px;
+    gap:0px;
+}
+
+.card-body p{
+    margin: .3rem 0 .6rem;
+}
+
+
+/* 1️⃣ Le lien qui englobe la carte */
+.exp-card-link {
+    display: block;               /* le lien occupe toute la largeur */
+    text-decoration: none;        /* pas de soulignement */
+    color: inherit;               /* hérite de la couleur du texte */
+}
+
+
+.cards-container{
+    margin-bottom: 30px;
+}
+
+
+/* ---------------------------------------------------------
+   Overview / Context Section – texte et liste justifiés
+   --------------------------------------------------------- */
+.overview-section {
+    background-color: var(--bg-muted, #ffffff);
+    padding: 1.5rem 2rem;
+    border-left: 4px solid var(--accent, #0066cc);
+    margin: 2rem 0;
+    border-radius: 4px;
+}
+
+.overview-section img{
+    width: 60%;
+}
+
+/* Paragraphs – justified */
+.overview-section p {
+    margin: 0 0 1rem;
+    line-height: 1.6;
+    color: var(--text-primary, #333);
+    font-size: 1rem;
+    text-align: justify;      /* texte justifié */
+    hyphens: auto;            /* coupe des mots si besoin */
+}
+
+/* List – each <li> justified */
+.overview-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0 0 1rem;
+}
+
+/* • custom bullet + justified text */
+.overview-list li {
+    position: relative;
+    padding-left: 1.5rem;     /* espace pour le bullet */
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+    text-align: justify;      /* texte de l’item justifié */
+    hyphens: auto;            /* coupe des mots si nécessaire */
+}
+
+/* bullet */
+.overview-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.45rem;
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: var(--accent, #0066cc);
+    border-radius: 2px;
+}
+
+/* Optional heading inside the section */
+.overview-section h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--accent, #0066cc);
+}
+
+/* Small‑screen tweak */
+@media (max-width: 600px) {
+    .overview-section {
+        padding: 1rem 1.25rem;
+    }
+
+    .overview-section h3 {
+        font-size: 1.125rem;
+    }
+}
+
+.image-with-caption {
+        text-align: center;
+        margin: 20px 0;
+    }
+
+.image-with-caption img {
+    max-width: 100%;
+    height: auto;
+}
+
+.image-with-caption figcaption {
+        display: block;
+        margin-top: 10px;
+        font-style: italic;
+        color: #666666; /* Couleur gris pour la légende */
+    }
+
+/* -------------------------------------------------
+   HERO – image de fond floutée + overlay noir
+   ------------------------------------------------- */
+.hero {
+    position: relative;               /* parent de nos pseudo‑éléments */
+    overflow: hidden;                 /* coupe le débordement du blur */
+    padding: 4rem 0;
+    text-align: center;
+    color: #fff;                      /* texte en blanc */
+}
+
+.hero p,h2{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+/* ---- 1️⃣  Image de fond (floutée) ---- */
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;                         /* top/right/bottom/left = 0 */
+    background: center / cover no-repeat;
+    filter: blur(4px);               /* ajustez la valeur à votre goût */
+    transform: scale(1.05);           /* compense le « perte de bord » du blur */
+    z-index: 1;                       /* derrière le texte */
+}
+
+/* ---- 2️⃣  Overlay noir semitransparent ---- */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.65);     /* le noir + opacité (0‑1) */
+    z-index: 2;                       /* entre l’image floutée et le texte */
+}
+
+/* ---- 3️⃣  Texte (au‑dessus) ---- */
+.hero h2,
+.hero p {
+    position: relative;   /* le rend au-dessus des pseudo‑éléments */
+    z-index: 3;
+    margin: 0 0;
+}
+
+/* Optionnel – petite animation d’apparition */
+.hero h2,
+.hero p {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.3s;   /* décalage pour le <p> */
+}
+.hero p { animation-delay: 0.5s; }
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* -------------------------------------------------
+   3️⃣  GESTION GÉNÉRALE DES BLOCS (présentation, galerie, docs)
+   ------------------------------------------------- */
+
+.group-presentation h2,
+.group-gallery h2,
+.group-documents h2{
+    text-align:center;
+    margin-bottom:25px;
+}
+.group-text{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(8px);
+    padding:0px;
+    border-radius:15px;
+    line-height:1.6;
+}
+/* -------------------------------------------------
+   5️⃣  DOCUMENTS PROFESSIONNELS
+   ------------------------------------------------- */
+.documents-list{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+.document-btn{
+    padding:15px 25px;
+    background:rgba(255,255,255,0.2);
+    backdrop-filter:blur(8px);
+    border-radius:12px;
+    text-decoration:none;
+    color:inherit;
+    transition:.3s;
+}
+.document-btn:hover{
+    transform:translateY(-3px);
+    background:rgba(255,255,255,0.35);
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NathOrbit – Music</title>
+
+    <!-- Feuilles de style – chemins **absolus** -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/header-style.css">
+    <link rel="stylesheet" href="/footer-style.css">
+    <link rel="stylesheet" href="./PACOM_ECSSMET2024.css">
+
+    <script src="/shared.js"></script>
+</head>
+
+<body class="theme-music">
+
+    <!-- Header dynamique -->
+    <div id="dynamic-header"></div>
+
+    <main>
+
+        <!-- ==== BOUTON RETOUR + TITRE « Interprète » ==== -->
+        <div class="top-bar">
+            <!-- Bouton retour (reste à gauche) -->
+            <div class="back-top">
+                <a href="../PA_COM.html"
+                   class="btn-link back-btn"
+                   data-i18n="back_to_home"
+                   aria-label="Retour à la page d’accueil">
+                    ← Retour
+                </a>
+            </div>
+
+            <!-- Titre « Interprète » (centré) -->
+            <h2 class="section-title interprete-title"
+                data-i18n="interp_page_title">ECSSMET 2024</h2>
+        </div>
+
+        <!-- Trait gris sous le titre « Interprète » -->
+        <hr class="divider">
+
+        <!-- Hero section -->
+        <section class="hero"
+                 style="background:#000000 url('./f6c6d1d5-a8be-43b6-96b0-f0b8f5836dfc.jpg') center/cover; padding:4rem 0; color:#fff; text-align:center;">
+            <h2 data-i18n="production_hero_title">
+                European Conference on Spacecraft Structures, Materials and Environmental Testing
+            </h2>
+            <p data-i18n="production_hero_tagline">
+                ESA‑ESTEC, Noordwijk, Pays‑Bas, 2024
+            </p>
+        </section>
+
+        <!-- ==== PRÉSENTATION / CONTEXTE ==== -->
+        <section class="overview-section">
+            <h2 data-i18n="documents_title">Abstract</h2>
+
+            <p data-i18n="overview_intro"></p>
+            <p data-i18n="overview_conclusion"></p>
+            <p data-i18n="overview_add_on"></p>
+
+            
+        </section>
+
+        <!-- ==== TITRE « Publications et Communications » ==== -->
+        <h2 class="section-title groups-title"
+            data-i18n="pub_section_title">Publications et Communications</h2>
+
+        <section class="group-documents">
+            <div class="documents-list">
+                <a href="./ECSSMET_2024_PASCAL_LEMAY_V20.pdf"
+                   class="document-btn"
+                   target="_blank"
+                   data-i18n="doc_extended_abstract"
+                   aria-label="Télécharger l'abstract étendu">
+                    🗎 Abstract étendu
+                </a>
+
+                <a href="https://atpi.eventsair.com/ecssmet2024/"
+                   class="document-btn"
+                   target="_blank"
+                   data-i18n="doc_site_ecssmet"
+                   aria-label="Ouvrir le site ECSSMET 2024">
+                    🌐 Site ECSSMET 2024
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer dynamique -->
+    <div id="dynamic-footer"></div>
+
+    <!-- ---------------------------------------------------------
+         1️⃣  Initialisation de la page « Interprète »
+         --------------------------------------------------------- -->
+    <script>
+        function initInterpPage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const domainUrl = urlParams.get('domain');
+            const langUrl   = urlParams.get('lang');
+
+            // Langue
+            if (langUrl && (langUrl === 'fr' || langUrl === 'en')) {
+                currentLang = langUrl;
+                localStorage.setItem('preferredLang', currentLang);
+            } else {
+                currentLang = localStorage.getItem('preferredLang') || 'fr';
+            }
+            document.documentElement.lang = currentLang;
+
+            // Domaine (aero / music)
+            if (domainUrl && (domainUrl === 'aero' || domainUrl === 'music')) {
+                currentDomain = domainUrl;
+                localStorage.setItem('preferredDomain', currentDomain);
+            } else {
+                currentDomain = localStorage.getItem('preferredDomain') || 'music';
+            }
+
+            // Thème musique
+            document.body.classList.remove('theme-aero');
+            document.body.classList.add('theme-music');
+
+            // Header dynamique
+            loadHeader();
+
+            // Traductions de la page
+            translatePage(currentLang);
+
+            // Mise à jour des liens internes
+            updateExternalLinks();
+        }
+
+        document.addEventListener('DOMContentLoaded', initInterpPage);
+    </script>
+
+    <!-- ---------------------------------------------------------
+         2️⃣  Traductions (FR / EN) – clés uniques
+         --------------------------------------------------------- -->
+    <script>
+        /* -------------------------------------------------
+           FR – toutes les clés
+           ------------------------------------------------- */
+        if (!translations.fr.interp_page_title) {
+
+            translations.fr.interp_page_title     = "ECSSMET 2024";
+            translations.fr.production_hero_title = "European Conference on Spacecraft Structures, Materials and Environmental Testing";
+            translations.fr.production_hero_tagline = "ESA‑ESTEC, Noordwijk, Pays‑Bas, 2024";
+            translations.fr.documents_title       = "Abstract";
+            translations.fr.overview_intro = "Prédire les niveaux de chocs mécaniques avant les essais et le vol est un objectif important lors de la conception des systèmes spatiaux. Les méthodes de modélisation actuelles ne sont pas encore sufisamment robustes dans le secteur spatial, ce qui nécessite l’étude et la comparaison de différentes approches. La première contribution est la comparaison de deux méthodes : FEM explicite et FEM/TSEA hybride. La première est bien connue mais pas suffisamment efficace pour étudier les tests de choc sur des systèmes spatiaux complexes, tandis que la seconde a connu des améliorations significatives ces dernières années, mais sans usage défini pour les chocs dans le secteur spatial. Au final, le FEM explicite semble efficace et précis pour les systèmes simples, alors que le FEM/TSEA hybride montre un meilleur potentiel dans les systèmes complexes comme les satellites. La seconde contribution de l’article montre que la dépence des données d'injection liées à la caractérisation de la source de choc dans les résultats de la méthode hybride FEM/TSEA. Ainsi, la normalisation de la répartition d’énergie par rapport à la base modale du système de caractérisation est indispensable avant de l’injecter dans le système étudié.";
+            translations.fr.overview_conclusion = "Dans cette étude, on montre au travers du code de calcul FEM/TSEA que méthodes sont prometteuse pour améliorer la prédiction des niveaux de chocs pour les engins spatiaux, vis à vis des résultats obtenus. En particulier, la distribution d’énergie en fréquence normalisée semble être une méthode pratique et précise pour représenter les sources de choc. Ces conclusions doivent maintenant être confirmées par davantage d’études de cas sur des modèles d’engins spatiaux plus complexes. La précision ainsi que l'adaptatbilité de la méthode pour le dimensionnement des structures doit aussi être étudié car il sera necessaire en dimensionnement de réaliser des calculs de contraintes et de charges."
+            translations.fr.overview_add_on   = "Ces travaux nous ont ensuite amenés à étudier l'approche NERS, que j'invite à lire.";
+            translations.fr.pub_section_title    = "Publications et Communications";
+            translations.fr.doc_extended_abstract = "🗎 Abstract étendu";
+            translations.fr.doc_site_ecssmet      = "🌐 Site ECSSMET 2024";
+
+            /* -------------------------------------------------
+               EN – all keys, single definition
+               ------------------------------------------------- */
+
+            translations.en.interp_page_title     = "ECSSMET 2024";
+            translations.en.production_hero_title = "European Conference on Spacecraft Structures, Materials and Environmental Testing";
+            translations.en.production_hero_tagline = "ESA‑ESTEC, Noordwijk, Netherlands, 2024";
+            translations.en.documents_title       = "Abstract";
+            translations.en.overview_intro        = "Predicting mechanical shock levels before testing and flying is an important objective for space systems. Current modelling methods are not well‑established in the space sector, necessitating the study and comparison of different approaches. The first contribution is the comparison of two methods: explicit FEM and hybrid FEM/TSEA. The former is well‑known but not sufficiently effective for studying shock tests on complex space systems, while the latter is getting significant improvements in recent years, but without defined usage for shocks in the space sector. Ultimately, explicit FEM appears efficient and precise for simple systems, whereas hybrid FEM/TSEA shows better potential in complex systems like satellites. The second contribution of the article shows the shock source characterization system's dependence on injection data and results from the hybrid FEM/TSEA method. Thus, normalization of the energy distribution relative to the characterization system's modal basis is required before injecting it into the studied system.";
+            translations.en.overview_conclusion   = "In this study, with the FEM/TSEA computational code and the results obtained, methods employed showed promising for improving shock levels predictions for spacecrafts. Especially, normalized frequency energy distribution seems to be a convenient and accurate method for representing shock sources. These conclusions now need to be confirmed with more case studies on more complex spacecraft models. The accuracy and convenience of the method for structure sizing – stresses and loads computations, should be also evaluated.";
+            translations.en.overview_add_on   = "These studies subsequently led us to explore the NERS approach, which I encourage you to read.";
+            translations.en.pub_section_title    = "Publications and Communications";
+            translations.en.doc_extended_abstract = "🗎 Extended abstract";
+            translations.en.doc_site_ecssmet      = "🌐 ECSSMET 2024 Website";
+
+        }
+    </script>
+
+    <!-- ---------------------------------------------------------
+         3️⃣  Chargement du footer (chemin absolu)
+         --------------------------------------------------------- -->
+    <script>
+        fetch('/footer.html')
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById('dynamic-footer').innerHTML = html;
+                translatePage(currentLang);
+                updateExternalLinks();
+            })
+            .catch(err => console.error('Erreur chargement footer :', err));
+    </script>
+</body>
+</html>
