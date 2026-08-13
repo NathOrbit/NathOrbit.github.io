@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NathOrbit - Music</title>
+
+    <!-- Feuilles de style – chemins **absolus** -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/header-style.css">
+    <link rel="stylesheet" href="/footer-style.css">
+    <link rel="stylesheet" href="./PACnes_Interf.css">
+    <script src="/shared.js"></script>
+</head>
+
+<body class="theme-music">
+
+    <!-- Header dynamique -->
+    <div id="dynamic-header"></div>
+
+    <main>
+
+        <!-- ==== BOUTON RETOUR + TITRE « Interprète » ==== -->
+        <div class="top-bar">
+            <!-- Bouton retour (reste à gauche) -->
+            <div class="back-top">
+                <a href="/P_aero_folder/PA_CNES_folder/PA_CNES.html"
+                class="btn-link back-btn"
+                data-i18n="back_to_home"
+                aria-label="Retour à la page d’accueil">
+                    ← Retour
+                </a>
+            </div>
+
+            <!-- Titre « Interprète » (centré) -->
+            <h2 class="section-title interprete-title"
+                data-i18n="interp_page_title">Interfaces</h2>
+        </div>
+
+        <!-- Trait gris **sous** le titre « Interprète » -->
+        <hr class="divider">
+
+        <!-- ==== TITRE « Groupes » (à gauche) ==== -->
+        <h2 class="section-title groups-title"
+            data-i18n="group_title_main">Activités de recherche et d’ingénierie</h2>
+
+        <!-- ───── CARTES « GROUPES » ───── -->
+        <div class="cards-container">
+
+            <article class="card">
+
+                <div class="card-banner">
+                    <img src="./illu_interface_simu_cropped.jpg"
+                        alt="Illustration : simulation de chocs mécaniques"
+                        loading="lazy">
+                </div>
+
+                <div class="card-body">
+                    <h3 data-i18n="group_1_title">
+                        Simulation : méthodes de modélisation pour l'analyse en chocs
+                    </h3>
+
+                    <p class="period" data-i18n="group_1_years">2023 –</p>
+
+                    <p data-i18n="group_1_desc_1">
+                        Études paramétriques sur des cas simples
+                    </p>
+                    <p data-i18n="group_1_desc_2">
+                        Applications sur des modèles plus complexes comme des modèles structuraux de satellites
+                    </p>
+
+                    <a href="../../PA_Chocs_folder/PAChocs_Simu_folder/PACNES_Chocs_Simu.html"
+                    class="btn-link"
+                    data-i18n="more_info"
+                    aria-label="En savoir plus sur la simulation de chocs">
+                        En savoir plus »
+                    </a>
+                </div>
+            </article>
+        </div>
+
+
+        <!-- ==== TITRE « Publications et Communications » ==== -->
+        <h2 class="section-title groups-title"
+            data-i18n="pub_section_title">Publications et Communications</h2>
+
+
+        <!-- ───── GRILLE À DEUX COLONNES (style « audio‑grid ») ───── -->
+        <div class="audio-grid">
+
+            <!-- COLONNE DROITE – PUBLICATIONS / COMMUNICATIONS CLÉS -->
+            <section class="exp-section_without_img">
+
+                <!-- ====================== COMMUNICATION 4 ====================== -->
+                <a href="#"
+                class="exp-card-link"
+                aria-label="Communication scientifique CSMA 2026 – En savoir plus">
+                    <article class="exp-card">
+
+                        <div class="exp-card-body">
+                            <h3 data-i18n="comm_6_title">
+                                Communication scientifique : COMET Matériaux et Structures 2026
+                            </h3>
+
+                            <p class="exp-date" data-i18n="comm_6_date">
+                                N. Pascal,
+                                <em>Modélisation de la génération et de la propagation des chocs mécaniques dans les structures spatiales</em>,
+                                Communauté d’Experts CNES (COMET) sur la thématiques des Matériaux et Structures. Juillet 7, 2026, CNES, Toulouse, France.
+
+                            </p>
+                        </div>
+
+                    </article>
+                </a>
+
+                <!-- ====================== PUBLICATION 1 ====================== -->
+                <a href="https://doi.org/10.1016/j.rineng.2026.109932#"
+                class="exp-card-link"
+                aria-label="Article de Journal – En savoir plus">
+                    <article class="exp-card">
+
+
+                        <div class="exp-card-body">
+                            <h3 data-i18n="pub_1_title">
+                                Article de Journal : FEM à résolution temporelle explicite appliquée au spatial
+                            </h3>
+
+                            <p class="exp-date" data-i18n="pub_1_date">
+                                N. Pascal, F. Lachaud, M. Charlotte, S. Lemay, A. Brugnoli,
+                                <em>Shock level prediction in the space domain using explicit FEM on a simplified case study</em>,
+                                Results in Engineering, 2026; 30. ISSN 2590‑1230.
+                            </p>
+
+                            <p data-i18n="pub_1_desc">
+                                https://doi.org/10.1016/j.rineng.2026.109932
+                            </p>
+                        </div>
+
+                    </article>
+                </a>
+
+                
+                <!-- ====================== COMMUNICATION 3 ====================== -->
+                <a href="#"
+                class="exp-card-link"
+                aria-label="Communication scientifique ECSSMET 2024 – En savoir plus">
+                    <article class="exp-card">
+                        <div class="exp-card-body">
+                            <h3 data-i18n="comm_3_title">
+                                Communication scientifique : ECSSMET 2024
+                            </h3>
+
+                            <p class="exp-date" data-i18n="comm_3_date">
+                                N. Pascal, S. Lemay, F. Errico, F. Lachaud, M. Charlotte, A. Brugnoli,
+                                <em>Comparison of hybrid FEM/TSEA and explicit FEM numerical methods for mechanical shock simulation</em>,
+                                European Conference on Spacecraft Structures, Materials and Environmental Testing (ECSSMET 2024),
+                                23‑27 septembre 2024, Noordwijk, Pays‑Bas.
+                            </p>
+                        </div>
+
+                    </article>
+                </a>
+
+                <!-- ====================== COMMUNICATION 2 ====================== -->
+                <a href="#"
+                class="exp-card-link"
+                aria-label="Communication scientifique COMET Matériaux et Structures – En savoir plus">
+                    <article class="exp-card">
+
+                        <div class="exp-card-body">
+                            <h3 data-i18n="comm_2_title">
+                                Communication scientifique : COMET Matériaux et Structures 2024
+                            </h3>
+
+                            <p class="exp-date" data-i18n="comm_2_date">
+                                N. Pascal,
+                                <em>Modélisation de la génération et de la propagation des chocs mécaniques dans les structures spatiales</em>,
+                                Présentation des travaux de thèse – COMET,
+                                25 avril 2024, Toulouse.
+                            </p>
+                        </div>
+
+                    </article>
+                </a>
+
+                <!-- ====================== COMMUNICATION 1 ====================== -->
+                <a href="https://hal.science/hal-04610986v1"
+                class="exp-card-link"
+                aria-label="Communication scientifique CSMA 2024 – En savoir plus">
+                    <article class="exp-card">
+
+
+                        <div class="exp-card-body">
+                            <h3 data-i18n="comm_1_title">
+                                Communication scientifique : CSMA 2024
+                            </h3>
+
+                            <p class="exp-date" data-i18n="comm_1_date">
+                                N. Pascal, S. Lemay, M. Charlotte, F. Lachaud,
+                                <em>Modélisation de la génération et de la propagation des chocs mécaniques dans les structures spatiales</em>,
+                                CSMA 2024 – 16ᵉ Colloque National en Calcul des Structures,
+                                13‑17 mai 2024, Presqu’île de Giens (Var).
+                            </p>
+
+                            <p data-i18n="comm_1_desc">
+                                https://hal.science/hal-04610986v1
+                            </p>
+                        </div>
+
+                    </article>
+                </a>
+            </section>
+        </div>
+
+
+        <!-- ==== TITRE « Activités annexes » ==== -->
+        <h2 class="section-title groups-title"
+            data-i18n="group_title_annexes">Activités annexes</h2>
+
+
+        <!-- ───── GRILLE À DEUX COLONNES (style « audio‑grid ») ───── -->
+        <div class="audio-grid">
+
+            <!-- COLONNE DROITE – EXPÉRIENCES CLÉS -->
+            <section class="exp-section">
+
+                <!-- ====================== EXPÉRIENCE 1 ====================== -->
+                <a href="#"
+                class="exp-card-link"
+                aria-label="Support à projet (SPSS, NESS+) – En savoir plus">
+                    <article class="exp-card">
+
+                        <div class="exp-card-banner">
+                            <img src="../../PA_CNES_folder/P065541_BD.jpg"
+                                alt="NESS"
+                                loading="lazy">
+                        </div>
+
+                        <div class="exp-card-body">
+                            <h3 data-i18n="exp_1_title">
+                                Support à projet (SPSS, NESS+)
+                            </h3>
+
+                            <p class="copyright-card-banner"
+                            data-i18n="exp_1_author">© CNES/DE PRADA Thierry, 2021</p>
+
+                            <p class="exp-date" data-i18n="exp_1_date">
+                                Analyse Mécanique
+                            </p>
+
+                            <p data-i18n="exp_1_desc">
+                                Environnements dynamiques
+                            </p>
+                        </div>
+
+                    </article>
+                </a>
+
+                <!-- ====================== EXPÉRIENCE 2 ====================== -->
+                <a href="#"
+                class="exp-card-link"
+                aria-label="Veille technologique – En savoir plus">
+                    <article class="exp-card">
+
+                        <div class="exp-card-banner">
+                            <img src="../../PA_CNES_folder/P039386_BD.jpg"
+                                alt="Ex separation"
+                                loading="lazy">
+                        </div>
+
+                        <div class="exp-card-body">
+                            <h3 data-i18n="exp_2_title">
+                                Veille technologique
+                            </h3>
+
+                            <p class="copyright-card-banner"
+                            data-i18n="exp_2_author">© ESA/CARRIL Pierre, 2011</p>
+
+                            <p class="exp-date" data-i18n="exp_2_date">
+                                SEA
+                            </p>
+
+                            <p data-i18n="exp_2_desc">
+                                Normalisation d’une source
+                            </p>
+                        </div>
+
+                    </article>
+                </a>
+
+            </section>
+        </div>
+
+    </main>
+
+    <!-- Footer dynamique -->
+    <div id="dynamic-footer"></div>
+
+    <script>
+    /* ---------------------------------------------------------
+    3️⃣  Traductions – FR / EN – clés uniques
+    --------------------------------------------------------- */
+    if (!translations.fr.back_to_home) {
+        /* --------------------- FR --------------------- */
+
+        translations.fr.interp_page_title     = "Interfaces";
+
+        translations.fr.group_title_main       = "Activités de recherche et d’ingénierie";
+        translations.fr.group_title_annexes    = "Activités annexes";
+
+        /* Groupes / cartes */
+        translations.fr.group_1_title         = "Simulation : méthodes de modélisation pour l'analyse en chocs";
+        translations.fr.group_1_years         = "2023 –";
+        translations.fr.group_1_desc_1        = "Études paramétriques sur des cas simples";
+        translations.fr.group_1_desc_2        = "Applications sur des modèles plus complexes comme des modèles structuraux de satellites";
+        translations.fr.group_1_copyright     = "© CNES/Maxime BRIENT, 2025";
+
+        translations.fr.group_2_title         = "Méthodologie de Normalisation de l’Energie Représentant une Source (NERS)";
+        translations.fr.group_2_years         = "2025 –";
+        translations.fr.group_2_desc_1        = "Contexte";
+        translations.fr.group_2_desc_2        = "Concept global";
+        translations.fr.group_2_desc_3        = "Applications";
+        translations.fr.group_2_copyright     = "";   // pas de copyright indiqué
+
+        translations.fr.group_3_title         = "Application de la Méthodologie NERS";
+        translations.fr.group_3_years         = "2025 –";
+        translations.fr.group_3_desc_1        = "Prédiction des niveaux à la source de chocs mécaniques";
+        translations.fr.group_3_desc_2        = "Sélection de configurations de moyens d’essais";
+        translations.fr.group_3_desc_3        = "Modélisation de la source pour la simulation";
+        translations.fr.group_3_copyright     = "© CNES/Maxime BRIENT, 2025";
+
+        /* Expériences */
+        translations.fr.exp_1_title           = "Support à projet (SPSS, NESS+)";
+        translations.fr.exp_1_date            = "Analyse Mécanique";
+        translations.fr.exp_1_desc            = "Environnements dynamiques";
+        translations.fr.exp_1_author          = "© CNES/DE PRADA Thierry, 2021";
+
+        translations.fr.exp_2_title           = "Veille technologique";
+        translations.fr.exp_2_date            = "SEA";
+        translations.fr.exp_2_desc            = "Normalisation d’une source";
+        translations.fr.exp_2_author          = "© ESA/CARRIL Pierre, 2011";
+
+        translations.fr.more_info             = "En savoir plus »";
+
+        /* HERO – (conservé pour cohérence) */
+        translations.fr.production_hero_title   = "Sonorisation & Technique Son";
+        translations.fr.production_hero_tagline = "Réalisation et optimisation du son live — des spécifications à la performance finale.";
+
+        translations.fr.pub_section_title      = "Publications et Communications";
+
+        /* Publication #1 */
+        translations.fr.pub_1_title            = "Article de Journal : FEM à résolution temporelle explicite appliquée au spatial";
+        translations.fr.pub_1_date             = "N. Pascal, F. Lachaud, M. Charlotte, S. Lemay, A. Brugnoli, Shock Level Prediction in the Space Domain Using Explicit FEM on a Simplified Case Study, Results in Engineering, 2026 ; 30. ISSN 2590‑1230.";
+        translations.fr.pub_1_desc             = "https://doi.org/10.1016/j.rineng.2026.109932";
+
+        /* Communication #1 – CSMA 2024 */
+        translations.fr.comm_1_title           = "Communication scientifique : CSMA 2024";
+        translations.fr.comm_1_date            = "N. Pascal, S. Lemay, M. Charlotte, F. Lachaud, Modélisation de la Génération et de la Propagation des Chocs Mécaniques dans les Structures Spatiales, CSMA 2024 – 16ᵉ Colloque National en Calcul des Structures, 13‑17 mai 2024, Presqu’île de Giens (Var).";
+        translations.fr.comm_1_desc            = "https://hal.science/hal-04610986v1";
+
+        /* Communication #2 – COMET */
+        translations.fr.comm_2_title           = "Communication scientifique : COMET Matériaux et Structures 2024";
+        translations.fr.comm_2_date            = "N. Pascal, Modélisation de la Génération et de la Propagation des Chocs Mécaniques dans les Structures Spatiales, Présentation des travaux de thèse – COMET, 25 avril 2024, Toulouse.";
+
+        /* Communication #3 – ECSSMET 2024 */
+        translations.fr.comm_3_title           = "Communication scientifique : ECSSMET 2024";
+        translations.fr.comm_3_date            = "N. Pascal, S. Lemay, F. Errico, F. Lachaud, M. Charlotte, A. Brugnoli, Comparison of Hybrid FEM/TSEA and Explicit FEM Numerical Methods for Mechanical Shock Simulation, European Conference on Spacecraft Structures, Materials and Environmental Testing (ECSSMET 2024), 23‑27 Septembre 2024, Noordwijk, Pays‑Bas.";
+
+        /* Communication #4 – CSMA 2026 */
+        translations.fr.comm_4_title           = "Communication scientifique : CSMA 2026";
+        translations.fr.comm_4_date            = "N. Pascal, S. Lemay, A. Brugnoli, M. Charlotte, F. Lachaud, Prédiction des Niveaux de Chocs d’une Source à l’Injection par une Représentation Normalisée de l’Energie, CSMA 2026 – 17ᵉ Colloque National en Calcul des Structures, 18‑22 mai 2026, Presqu’île de Giens (Var).";
+
+        /* Communication #5 – ECSSMET 2026 */
+        translations.fr.comm_5_title           = "Communication scientifique : ECSSMET 2026";
+        translations.fr.comm_5_date            = "N. Pascal, S. Lemay, A. Brugnoli, M. Charlotte, F. Lachaud, Prediction of shock injection levels using normalized energy representation of the source, European Conference on Spacecraft Structures, Materials and Environmental Testing (ECSSMET 2026), Septembre 2026, Allemagne.";
+        
+        /* Communication #6 – COMET 2026 */
+        translations.fr.comm_6_title = "Communication scientifique : COMET Matériaux et Structures 2026";
+        translations.fr.comm_6_date  = "N. Pascal, Modélisation de la Génération et de la Propagation des Chocs Mécaniques dans les Structures Spatiales, Communauté d’Experts CNES (COMET) – thématique Matériaux et Structures, 7 juillet 2026, CNES, Toulouse, France.";
+
+        translations.fr.pub_2_title = "Article de Journal : Prédiction des Niveaux d’Injection de Chocs par la Normalisation l’Énergie Représentant la Source";
+
+        translations.fr.pub_2_date  = "N. Pascal, F. Lachaud, M. Charlotte, S. Lemay, A. Brugnoli, « Prédiction des niveaux d’injection de chocs en utilisant une représentation normalisée de l’énergie de la source », Results in Engineering, 2026 ; 30. ISSN 2590‑1230.";
+
+        translations.fr.pub_2_status = "En cours de relecture";
+
+
+ 
+        /* --------------------- EN --------------------- */
+
+        translations.en.interp_page_title     = "Interfaces";
+
+        translations.en.group_title_main       = "Research & Engineering Activities";
+        translations.en.group_title_annexes    = "Additional Activities";
+
+        /* Group cards */
+        translations.en.group_1_title         = "Simulation : modelling methods for impact analysis";
+        translations.en.group_1_years         = "2023 –";
+        translations.en.group_1_desc_1        = "Parametric studies on simple cases";
+        translations.en.group_1_desc_2        = "Applications on more complex models such as structural satellite models";
+        translations.en.group_1_copyright     = "© CNES/Maxime BRIENT, 2025";
+
+        translations.en.group_2_title         = "Normalized Energy Representation of the Source (NERS) methodology";
+        translations.en.group_2_years         = "2025 –";
+        translations.en.group_2_desc_1        = "Context";
+        translations.en.group_2_desc_2        = "Overall concept";
+        translations.en.group_2_desc_3        = "Applications";
+        translations.en.group_2_copyright     = "";
+
+        translations.en.group_3_title         = "Application of the NERS Methodology";
+        translations.en.group_3_years         = "2025 –";
+        translations.en.group_3_desc_1        = "Prediction of mechanical shock source levels";
+        translations.en.group_3_desc_2        = "Selection test mean configurations";
+        translations.en.group_3_desc_3        = "Source modelling for simulation";
+        translations.en.group_3_copyright     = "© CNES/Maxime BRIENT, 2025";
+
+        /* Experiences */
+        translations.en.exp_1_title           = "Project Support (SPSS, NESS+)";
+        translations.en.exp_1_date            = "Mechanical Analysis";
+        translations.en.exp_1_desc            = "Dynamic environments";
+        translations.en.exp_1_author          = "© CNES/DE PRADA Thierry, 2021";
+
+        translations.en.exp_2_title           = "Technology Watch";
+        translations.en.exp_2_date            = "SEA";
+        translations.en.exp_2_desc            = "Source normalization";
+        translations.en.exp_2_author          = "© ESA/CARRIL Pierre, 2011";
+
+        translations.en.more_info             = "Learn more »";
+
+        translations.en.production_hero_title   = "Sound & Technical Engineering";
+        translations.en.production_hero_tagline = "Design, tuning and optimisation of live sound — from spec. to final performance.";
+
+        /* --------------------- EN --------------------- */
+        translations.en.pub_section_title      = "Publications and Communications";
+
+        /* Publication #1 */
+        translations.en.pub_1_title            = "Journal Article: Explicit Temporal FEM Applied to Spacecraft Shock Analysis";
+        translations.en.pub_1_date             = "N. Pascal, F. Lachaud, M. Charlotte, S. Lemay, A. Brugnoli, Shock Level Prediction in the Space Domain Using Explicit FEM on a Simplified Case Study, Results in Engineering, 2026 ; 30. ISSN 2590‑1230.";
+        translations.en.pub_1_desc             = "https://doi.org/10.1016/j.rineng.2026.109932";
+
+        /* Communication #1 – CSMA 2024 */
+        translations.en.comm_1_title           = "Scientific Communication: CSMA 2024";
+        translations.en.comm_1_date            = "N. Pascal, S. Lemay, M. Charlotte, F. Lachaud, Modeling the Propagation and Generation of Mechanical Shocks in Space Structures, CSMA 2024 – 16th National Conference on Structural Computations, 13‑17 May 2024, Giens Peninsula (Var), France.";
+        translations.en.comm_1_desc            = "https://hal.science/hal-04610986v1";
+
+        /* Communication #2 – COMET */
+        translations.en.comm_2_title           = "Scientific Communication: COMET Materials and Structures";
+        translations.en.comm_2_date            = "N. Pascal, Modelling the Generation and Propagation of Mechanical Shocks in Space Structures – COMET, 25 April 2024, Toulouse, France.";
+
+        /* Communication #3 – ECSSMET 2024 */
+        translations.en.comm_3_title           = "Scientific Communication: ECSSMET 2024";
+        translations.en.comm_3_date            = "N. Pascal, S. Lemay, F. Errico, F. Lachaud, M. Charlotte, A. Brugnoli, Comparison of Hybrid FEM/TSEA and Explicit FEM Numerical Methods for Mechanical Shock Simulation, European Conference on Spacecraft Structures, Materials and Environmental Testing (ECSSMET 2024), 23‑27 September 2024, Noordwijk, The Netherlands.";
+
+        /* Communication #4 – CSMA 2026 */
+        translations.en.comm_4_title           = "Scientific Communication: CSMA 2026";
+        translations.en.comm_4_date            = "N. Pascal, S. Lemay, A. Brugnoli, M. Charlotte, F. Lachaud, Prediction of Shock Levels from a Source Injection Using a Normalized Energy Representation of the Source, CSMA 2026 – 17th National Conference on Structural Computations, 18‑22 May 2026, Giens Peninsula (Var), France.";
+
+        /* Communication #5 – ECSSMET 2026 */
+        translations.en.comm_5_title           = "Scientific Communication: ECSSMET 2026";
+        translations.en.comm_5_date            = "N. Pascal, S. Lemay, A. Brugnoli, M. Charlotte, F. Lachaud, Prediction of Shock Levels from a Source Injection Using a Normalized Energy Representation of the Source, European Conference on Spacecraft Structures, Materials and Environmental Testing (ECSSMET 2026), September 2026, Germany.";
+
+        translations.en.comm_6_title = "Scientific Communication: COMET Materials and Structures 2026";
+        translations.en.comm_6_date  = "N. Pascal, Modelling the Generation and Propagation of Mechanical Shocks in Space Structures, CNES Experts Community (COMET) – Materials and Structures theme, 7 July 2026, CNES, Toulouse, France.";
+        
+        translations.en.pub_2_title = "Journal Article: Prediction of Shock Injection Levels Using Normalized Energy Representation of the Source";
+
+        translations.en.pub_2_date  = "N. Pascal, F. Lachaud, M. Charlotte, S. Lemay, A. Brugnoli, Prediction of Shock Injection Levels Using Normalized Energy Representation of the Source";
+
+        translations.en.pub_2_status = "Under review";
+
+
+    }
+    </script>
+    <!-- ------------------------------------------------------------------
+         1️⃣  Initialisation de la page « Interprète »
+         ------------------------------------------------------------------ -->
+    <script>
+        function initInterpPage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const domainUrl = urlParams.get('domain');
+            const langUrl   = urlParams.get('lang');
+
+            // Langue
+            if (langUrl && (langUrl === 'fr' || langUrl === 'en')) {
+                currentLang = langUrl;
+                localStorage.setItem('preferredLang', currentLang);
+            } else {
+                currentLang = localStorage.getItem('preferredLang') || 'fr';
+            }
+            document.documentElement.lang = currentLang;
+
+            // Domaine (aero / music)
+            if (domainUrl && (domainUrl === 'aero' || domainUrl === 'music')) {
+                currentDomain = domainUrl;
+                localStorage.setItem('preferredDomain', currentDomain);
+            } else {
+                currentDomain = localStorage.getItem('preferredDomain') || 'music';
+            }
+
+            // Thème musique
+            document.body.classList.remove('theme-aero');
+            document.body.classList.add('theme-music');
+
+            // Header dynamique
+            loadHeader();
+
+            // Traductions de la page
+            translatePage(currentLang);
+
+            // Mise à jour des liens internes
+            updateExternalLinks();
+        }
+
+        document.addEventListener('DOMContentLoaded', initInterpPage);
+    </script>
+
+    <!-- ------------------------------------------------------------------
+         2️⃣  Traductions (FR / EN) – clés uniques
+         ------------------------------------------------------------------ -->
+    <script>
+        if (!translations.fr.interp_page_title) {
+            
+        }
+    </script>
+
+    <!-- ------------------------------------------------------------------
+         3️⃣  Chargement du footer (chemin absolu)
+         ------------------------------------------------------------------ -->
+    <script>
+        fetch('/footer.html')
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById('dynamic-footer').innerHTML = html;
+                translatePage(currentLang);
+                updateExternalLinks();
+            })
+            .catch(err => console.error('Erreur chargement footer :', err));
+    </script>
+</body>
+</html>
