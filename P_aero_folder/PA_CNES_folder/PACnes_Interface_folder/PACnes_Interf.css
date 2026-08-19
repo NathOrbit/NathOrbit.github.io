@@ -183,40 +183,7 @@
     
 }
 
-/* -------------------------------------------------
-   1️⃣  BARRE DU HAUT (bouton retour + titre Interprète)
-------------------------------------------------- */
-.top-bar {
-    position: relative;                 /* parent pour le positionnement absolu du bouton */
-    display: flex;
-    justify-content: center;            /* centre le titre H2 */
-    align-items: center;
-    margin-bottom: 0.4rem;              /* espace avant le trait */
-    margin-top:  0.4rem;              /* espace avant le trait */
-}
 
-/* Bouton retour → fixé à gauche, hors du flux centré */
-.back-top {
-    position: absolute;
-    left: 0;
-}
-
-/* -------------------------------------------------
-   2️⃣  TITRES SECTION
-------------------------------------------------- */
-
-/* Titre Interprète – centré (déjà centré grâce à .top-bar) */
-.interprete-title{
-    display:flex;                /* <‑‑ maintenant c’est un flex‑container */
-    align-items:center;          /* centre le contenu verticalement */
-    justify-content:center;      /* centre le contenu horizontalement (facultatif) */
-    margin:0;
-    font-size:20px;              /* 0,875 rem ≈ 20 px, vous choisissez au besoin */
-    line-height:1;               /* évite les interlignes superflus */
-    color:var(--accent);
-    height:auto;                 /* laissez la hauteur s’ajuster au texte */
-    min-height:35px
-}
 
 /* -------------------------------------------------
    STYLE EXACT DE « Groupes » – copie de « Instruments… »
