@@ -7,7 +7,25 @@
     --primary-music: #e91e63;
     --accent: var(--primary-aero);
     --transition: all 0.3s ease;
+    
 }
+
+/* -------------------------------------------------
+   Variables de couleur – vous pouvez les ajuster
+   ------------------------------------------------- */
+:root {
+  --card-bg: #f9f9f9;
+  --card-border: #e0e0e0;
+  --date-bg: #fff;
+  --date-color: #333;
+  --title-color: #222;
+  --date-text-color: #666;
+  --plus-bg: #222;
+  --plus-color: #fff;
+  --shadow: 0 2px 6px rgba(0,0,0,.1);
+}
+
+
 
 body.theme-music {
     --accent: var(--primary-music);
@@ -362,3 +380,417 @@ h1 {
 }
 
 
+/* -------------------------------------------------
+   1️⃣  BARRE DU HAUT (bouton retour + titre Interprète)
+------------------------------------------------- */
+.top-bar {
+    position: relative;                 /* parent pour le positionnement absolu du bouton */
+    display: flex;
+    justify-content: center;            /* centre le titre H2 */
+    align-items: center;
+    margin-bottom: 0.4rem;              /* espace avant le trait */
+    margin-top:  0.4rem;              /* espace avant le trait */
+}
+
+/* Bouton retour → fixé à gauche, hors du flux centré */
+.back-top {
+    position: absolute;
+    left: 0;
+}
+
+/* Titre Interprète – centré (déjà centré grâce à .top-bar) */
+.interprete-title{
+    display:flex;                /* <‑‑ maintenant c’est un flex‑container */
+    align-items:center;          /* centre le contenu verticalement */
+    justify-content:center;      /* centre le contenu horizontalement (facultatif) */
+    margin:0;
+    font-size:20px;              /* 0,875 rem ≈ 20 px, vous choisissez au besoin */
+    line-height:1;               /* évite les interlignes superflus */
+    color:var(--accent);
+    min-height:40px
+}
+
+
+
+/* -------------------------------------------------
+   Conteneur de la liste
+   ------------------------------------------------- */
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;               /* espace entre les cartes */
+  max-width: 500px;
+  margin: 0 auto;          /* centré sur la page */
+  margin-top: 20px;
+}
+
+.events-list > h2 {
+    text-align: left;          /* assure l’alignement à gauche */
+    margin: 0 ;
+    font-size: 1.8rem;        /* (optionnel) taille du titre */
+    color: #222;              /* (optionnel) couleur */
+}
+
+/* -------------------------------------------------
+   Carte d’événement
+   ------------------------------------------------- */
+.event-card {
+  display: flex;
+  align-items: center;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  box-shadow: var(--shadow);
+  gap: 1rem;
+  margin-bottom: 1rem;   /* <‑‑ espace entre deux cartes */
+}
+
+/* Le groupe date + infos : on le met en ligne */
+.event-main {
+    display: flex;
+    flex-direction: row;          /* côte à côte */
+    align-items: center;          /* centre verticalement */
+    gap: 1rem;                    /* espace entre date et texte */
+}
+
+/* -------------------------------------------------
+   Carré de la date (côté gauche)
+   ------------------------------------------------- */
+.event-date-box {
+  background: var(--date-bg);
+  color: var(--date-color);
+  text-align: center;
+  width: 5rem;
+  min-width: 5rem;
+  padding: 0.4rem 0;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px var(--card-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1.2;
+}
+.event-date-box .day   { font-size: 0.75rem; font-weight: 550; }
+.event-date-box .num   { font-size: 1.6rem;  font-weight: 700; }
+.event-date-box .month { font-size: 0.75rem; font-weight: 600; }
+
+/* -------------------------------------------------
+   Zone texte (centre)
+   ------------------------------------------------- */
+.event-info {
+    flex: 1;                 /* garde la même largeur que avant */
+    text-align: left;        /* ← Alignement du texte */
+
+}
+
+.event-title {
+  margin: 0;
+  font-size: 1.1rem;
+  color: var(--accent);
+}
+.event-fulldate {
+  margin: 0.2rem 0 0;
+  font-size: 0.9rem;
+  color: var(--date-text-color);
+}
+
+/* Bulle “plus” (côté droit) – désormais un lien à taille variable */
+.event-more {
+    background: var(--plus-bg);
+    color: var(--plus-color);
+    border: none;
+    border-radius: 20px;
+    padding: 0.45rem 0.9rem;        /* garde le padding “habituel” */
+    min-width: 90px;               /* taille minimale */
+    max-width: 90px;               /* ne dépasse jamais cette largeur */
+    text-align: center;
+    font-size: 0.94rem;
+    line-height: 1;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background .2s;
+}
+/* Boucle d’interaction */
+.event-more:hover {
+    background: var(--primary-music);
+}
+
+/* (Optionnel) petit effet de focus accessible */
+.event-more:focus {
+    outline: 2px solid var(--primary-music);
+    outline-offset: 2px;
+}
+/* -------------------------------------------------
+   Responsive (mobile)
+   ------------------------------------------------- */
+@media (max-width: 480px) {
+  .event-card {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+  .event-date-box {
+    margin: 0 auto;
+  }
+  .event-more {
+    margin: 0.5rem auto 0;
+  }
+  html { font-size: 80%; }               /* 1 rem = 16 px du navigateur */
+
+}
+
+.events-list h3{
+    padding: 0;
+    margin:0
+}
+
+
+/* -------------------------------------------------
+   2️⃣  Sélecteur de visibilité
+   ------------------------------------------------- */
+.visibility-filter {
+    display: flex;
+    gap: 1rem;
+    /* Si vous avez des éléments qui occupent toute la largeur du conteneur,
+       vous pouvez forcer l’alignement à gauche : */
+    justify-content: flex-start;        /* optionnel, déjà la valeur par défaut */
+}
+
+.filter-btn {
+    background: none;
+    border: none;
+    color: #000;                         /* gris */
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0rem 0.0rem;
+    text-align: left;                    /* <‑‑ ALIGNEMENT du texte à gauche */
+    /* Si le bouton est affiché en tant qu’élément flex (ex. dans un <button> avec display:flex) */
+    /* align-items: flex-start;   // optionnel */
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    text-decoration: underline;
+}
+
+.visibility-filter p{
+    margin:0
+}
+
+
+.exp-section_without_img .exp-card{
+    display: grid;
+    gap: 0;                             /* pas de marge entre colonnes */
+    align-items: start;                 /* même effet que flex-start */
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--accent);
+    box-shadow: 0 2px 5px rgba(0,0,0,.05);
+    
+}
+
+.exp-section .exp-card {
+    display: grid;
+    /*   min      max   →  la colonne d’image ne sera jamais <150 px
+       mais ne dépassera jamais 200 px */
+    grid-template-columns: minmax(150px, 200px) 1fr;
+    gap: 0;
+    align-items: start;
+    background: var(--card-bg);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--accent);
+    box-shadow: 0 2px 5px rgba(0,0,0,.05);
+}
+
+/* L’image remplit toujours sa cellule, mais garde son ratio */
+.exp-card-banner img {
+    width: 100%;
+    height: auto;          /* ratio natif */
+    display: block;
+    object-fit: cover;     /* découpe uniquement si la hauteur dépasse */
+    transition: transform .5s ease;
+}
+
+
+.exp-card-banner {
+    /* on enlève width:200px / flex‑shrink */
+    width: 100%;           /* occupe toute la cellule de la grille */
+}
+
+/* L’image garde son ratio natif */
+.exp-card-banner img {
+    width: 100%;                  /* s’adapte à la largeur du bloc */
+    height: auto;                 /* <-- hauteur naturelle */
+    display: block;
+    object-fit: cover;            /* garde le crop si l’image dépasse la boîte */
+    overflow-clip-margin: unset;
+    transition: transform .5s ease;
+}
+
+/* Zoom au survol */
+.exp-card:hover .exp-card-banner img {
+    transform: scale(1.08);
+}
+
+/* Contenu texte */
+.exp-card-body {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;                      /* prend tout l’espace restant */
+}
+
+/* Titres & paragraphes */
+.exp-card-body h3 {
+    margin: 0 0 8px;
+    font-size: 1.1rem;
+    color: var(--accent);
+}
+
+.exp-card-body p {
+    margin: 0;
+    flex: 1;                      /* pousse le dernier <p> jusqu’en bas si besoin */
+}
+
+@media (max-width: 560px) {          /* vous pouvez ajuster le point de rupture */
+    .exp-section .exp-card {
+        grid-template-columns: 1fr;   /* une seule colonne */
+    }
+
+    .exp-card-banner {
+        /* l’image prend toute la largeur disponible */
+        width: 100%;
+        max-height: 100px;            /* hauteur maximale optionnelle */
+        overflow: hidden;
+    }
+
+    .exp-card-body {
+        padding: 12px;                /* un peu plus d’espace autour du texte */
+    }
+}
+
+
+
+
+/* -------------------------------------------------
+   4️⃣  GALERIE DÉFILANTE
+   ------------------------------------------------- */
+.slider{
+    overflow:hidden;
+    border-radius:15px;
+}
+.slides{
+    display:flex;
+    width:200%;
+    animation:slide 12s infinite;
+}
+.slides img{
+    width:50%;
+    height:450px;
+    object-fit:cover;
+    overflow-clip-margin: unset;
+}
+
+/* ---------- ANIMATION ---------- */
+@keyframes slide {
+    /* 0 % → 40 % : première image affichée (pause) */
+    0%   { transform: translateX(0); }
+    40%  { transform: translateX(0); }
+
+    /* 40 % → 45 % : transition douce vers la 2ᵉ image */
+    45%  { transform: translateX(-50%); }   /* point médian de la transition */
+
+    /* 45 % → 90 % : deuxième image affichée (pause) */
+    90%  { transform: translateX(-50%); }
+
+    /* 90 % → 100 % : retour à la première image */
+    100% { transform: translateX(0); }
+}
+
+/* -------------------------------------------------
+   5️⃣  DOCUMENTS PROFESSIONNELS
+   ------------------------------------------------- */
+.documents-list{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+}
+.document-btn{
+    padding:15px 25px;
+    background:rgba(255,255,255,0.2);
+    backdrop-filter:blur(8px);
+    border-radius:12px;
+    text-decoration:none;
+    color:inherit;
+    transition:.3s;
+}
+.document-btn:hover{
+    transform:translateY(-3px);
+    background:rgba(255,255,255,0.35);
+}
+
+/* -------------------------------------------------
+   6️⃣  FLEX – METTRE .group-presentation & .group-gallery SUR LA MÊME LIGNE
+   ------------------------------------------------- */
+
+/* 6.1  Conteneur flex */
+.group-row{
+    display:flex;               /* crée le flex‑box */
+    flex-wrap:wrap;             /* retour à la ligne sur petits écrans */
+    gap:2rem;                   /* espace entre les deux sections */
+    margin-bottom:2rem;         /* espace avant la partie documents */
+}
+
+/* 6.2  Annuler le margin:auto & le max‑width qui étaient appliqués
+      (elles proviennent de la règle .group-presentation /.group-gallery
+      définie plus haut). */
+.group-row > .group-presentation,
+.group-row > .group-gallery{
+    margin:0;                /* <‑‑ annule le margin:auto */
+    max-width:none;          /* laisse le flex gérer la largeur */
+}
+
+/* 6.3  Largeur de chaque colonne en mode desktop */
+.group-row > .group-presentation,
+.group-row > .group-gallery{
+    flex:1 1 45%;            /* 45 % de largeur de base, rétrécit/étend */
+    min-width:300px;         /* évite que la colonne devienne trop étroite */
+}
+
+/* 6.4  Alignement interne (optionnel) – hauteur identique */
+.group-presentation .group-content,
+.group-gallery .slider{
+    height:100%;
+}
+
+/* 6.5  Adaptation mobile – empile les blocs sous 768 px */
+@media (max-width:768px){
+
+    .group-row{
+        flex-direction:column;   /* passe en pile */
+    }
+    .group-row > .group-presentation,
+    .group-row > .group-gallery{
+        flex-basis:100%;          /* chaque bloc prend toute la largeur */
+    }
+    .slides img{
+        height:250px;
+
+}
+}
+
+.spotify-player {
+    margin: 2rem 0;                /* espace autour du lecteur */
+    max-width: 560px;              /* largeur maximale (comme sur Spotify) */
+    margin-left: auto;
+    margin-right: auto;            /* centrer */
+}

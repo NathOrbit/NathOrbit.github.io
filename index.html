@@ -8,11 +8,15 @@
     <link rel="stylesheet" href="header-style.css">
     <link rel="stylesheet" href="footer-style.css">   
     <script src="shared.js"></script>
+    
 </head>
+
 <body>
 
     <!-- Emplacement pour le header dynamique -->
     <div id="dynamic-header"></div>
+
+    <div class="header-spacer"></div>
 
     <main>
         <!-- === SECTION AÉROSPATIAL === -->
@@ -22,111 +26,129 @@
                 <p class="tagline" data-i18n="aero_tagline">Soutien aux projets et à la recherche pour la mécanique dynamique dans le spatial</p>
             </div>
             
-        <div class="cards-container">
+            <div class="cards-container">
 
-            <!-- 1️⃣ Ingénierie et recherche au CNES -->
-            <div class="card">
-                <div class="card-banner">
-                    <!-- Image illustrative – à remplacer par la vôtre -->
-                    <img src="./P_aero_folder/IMG_6917.jpg"
-                        alt="Ingénierie CNES">
+                <!-- 1️⃣ Ingénierie et recherche au CNES -->
+                <div class="card">
+                    <div class="card-banner">
+                        <!-- Image illustrative – à remplacer par la vôtre -->
+                        <img src="./P_aero_folder/IMG_6917.jpg"
+                            alt="Ingénierie CNES">
+                    </div>
+
+                    <div class="card-body">
+                        <h3 data-i18n="cnes_engineering_title">
+                            Ingénierie et recherche au CNES
+                        </h3>
+                        <p data-i18n="cnes_engineering_desc">
+                            Support en analyses mécaniques et recherche appliquée aux environnements dynamiques.
+                        </p>
+                        <a href="./P_aero_folder/PA_CNES_folder/PA_CNES.html"
+                        class="btn-link"
+                        data-i18n="btn_explore">Explorer</a>
+                    </div>
                 </div>
 
-                <div class="card-body">
-                    <h3 data-i18n="cnes_engineering_title">
-                        Ingénierie et recherche au CNES
-                    </h3>
-                    <p data-i18n="cnes_engineering_desc">
-                        Support en analyses mécaniques et recherche appliquée aux environnements dynamiques.
-                    </p>
-                    <a href="./P_aero_folder/PA_CNES_folder/PA_CNES.html"
-                    class="btn-link"
-                    data-i18n="btn_explore">Explorer</a>
+                <!-- 2️⃣ Recherche : dynamique des chocs mécaniques -->
+                <div class="card">
+                    <div class="card-banner">
+                        <img src="./P_aero_folder/87924c34-07b7-403b-9118-2cc2b04708df.JPG"
+                            alt="Dynamique des chocs mécaniques">
+                    </div>
+
+                    <div class="card-body">
+                        <h3 data-i18n="shocks_research_title">
+                            Recherche : dynamique des chocs mécaniques
+                        </h3>
+                        <p data-i18n="shocks_research_desc">
+                            Modélisation, simulation et expérimentation. Améliorer les méthodes d'analyses
+                        </p>
+                        <a href="./P_aero_folder/PA_Chocs_folder/PA_Chocs.html"
+                        class="btn-link"
+                        data-i18n="btn_explore">Explorer</a>
+                    </div>
+                </div>
+
+                <!-- 3️⃣ Conférences & communications -->
+                <div class="card">
+                    <div class="card-banner">
+                        <img src="./P_aero_folder/IMG_3924.jpg"
+                            alt="Conférences et communications">
+                    </div>
+
+                    <div class="card-body">
+                        <h3 data-i18n="conferences_title">
+                            Conférences &amp; communications
+                        </h3>
+                        <p data-i18n="conferences_desc">
+                            Communications scientifiques lors de conférences et congrès nationaux et internationaux.
+                        </p>
+                        <a href="./P_aero_folder/PA_COM_folder/PA_COM.html"
+                        class="btn-link"
+                        data-i18n="btn_explore">Explorer</a>
+                    </div>
+                </div>
+
+                <!-- 4️⃣ Articles et communications écrites -->
+                <div class="card">
+                    <div class="card-banner">
+                        <img src="./P_aero_folder/Journal_1.jpg"
+                            alt="Articles scientifiques">
+                    </div>
+
+                    <div class="card-body">
+                        <h3 data-i18n="articles_title">
+                            Articles et communications écrites
+                        </h3>
+                        <p data-i18n="articles_desc">
+                            Publications scientifiques dans des revues spécialisées et articles de conférence.
+                        </p>
+                        <a href="#"
+                        class="btn-link"
+                        data-i18n="btn_explore">Explorer</a>
+                    </div>
+                </div>
+            
+                <!-- 5️⃣ Programmation, conseil et formation -->
+                <div class="card">
+                    <div class="card-banner">
+                        <img src="./P_aero_folder/OZXG3019 - Cropped.jpg"
+                            alt="Programmation, conseil & formation">
+                    </div>
+
+                    <div class="card-body">
+                        <h3 data-i18n="programming_title">
+                            Programmation, conseil et formation
+                        </h3>
+                        <p data-i18n="programming_desc">
+                            Développement d’outils et d'applications, support techniques et ateliers d'apprentissage.
+                        </p>
+                        <a href="#"
+                        class="btn-link"
+                        data-i18n="btn_explore">Explorer</a>
+                    </div>
                 </div>
             </div>
+            <!-- === SECTION AÉRO === -->
+            <section class="events-list">
+                <h2 data-i18n="aero_events_title">Évènements</h2>
 
-            <!-- 2️⃣ Recherche : dynamique des chocs mécaniques -->
-            <div class="card">
-                <div class="card-banner">
-                    <img src="./P_aero_folder/87924c34-07b7-403b-9118-2cc2b04708df.JPG"
-                        alt="Dynamique des chocs mécaniques">
-                </div>
-
-                <div class="card-body">
-                    <h3 data-i18n="shocks_research_title">
-                        Recherche : dynamique des chocs mécaniques
-                    </h3>
-                    <p data-i18n="shocks_research_desc">
-                        Modélisation, simulation et expérimentation. Améliorer les méthodes d'analyses
-                    </p>
-                    <a href="./P_aero_folder/PA_Chocs_folder/PA_Chocs.html"
-                    class="btn-link"
-                    data-i18n="btn_explore">Explorer</a>
-                </div>
-            </div>
-
-            <!-- 3️⃣ Conférences & communications -->
-            <div class="card">
-                <div class="card-banner">
-                    <img src="./P_aero_folder/IMG_3924.jpg"
-                        alt="Conférences et communications">
+                <!-- FILTRE AÉRO (identique au filtre musique) -->
+                <div class="visibility-filter" id="visibility-filter-aero">
+                    <button class="filter-btn active" data-i18n="events_filter_all" data-filter="all">Tous</button>
+                    <button class="filter-btn"        data-i18n="events_filter_Live" data-filter="live">Live</button>
                 </div>
 
-                <div class="card-body">
-                    <h3 data-i18n="conferences_title">
-                        Conférences &amp; communications
-                    </h3>
-                    <p data-i18n="conferences_desc">
-                        Communications scientifiques lors de conférences et congrès nationaux et internationaux.
-                    </p>
-                    <a href="./P_aero_folder/PA_COM_folder/PA_COM.html"
-                    class="btn-link"
-                    data-i18n="btn_explore">Explorer</a>
-                </div>
-            </div>
+                <h3 class="sub-title" data-i18n="events_title_a_venir"
+                    id="upcoming-title-aero">À venir</h3>
+                <div id="cards-container-aero-upcoming" class="cards-subcontainer"></div>
 
-            <!-- 4️⃣ Articles et communications écrites -->
-            <div class="card">
-                <div class="card-banner">
-                    <img src="./P_aero_folder/Journal_1.jpg"
-                        alt="Articles scientifiques">
-                </div>
-
-                <div class="card-body">
-                    <h3 data-i18n="articles_title">
-                        Articles et communications écrites
-                    </h3>
-                    <p data-i18n="articles_desc">
-                        Publications scientifiques dans des revues spécialisées et articles de conférence.
-                    </p>
-                    <a href="#"
-                    class="btn-link"
-                    data-i18n="btn_explore">Explorer</a>
-                </div>
-            </div>
-        
-            <!-- 5️⃣ Programmation, conseil et formation -->
-            <div class="card">
-                <div class="card-banner">
-                    <img src="./P_aero_folder/OZXG3019 - Cropped.jpg"
-                        alt="Programmation, conseil & formation">
-                </div>
-
-                <div class="card-body">
-                    <h3 data-i18n="programming_title">
-                        Programmation, conseil et formation
-                    </h3>
-                    <p data-i18n="programming_desc">
-                        Développement d’outils et d'applications, support techniques et ateliers d'apprentissage.
-                    </p>
-                    <a href="#"
-                    class="btn-link"
-                    data-i18n="btn_explore">Explorer</a>
-                </div>
-            </div>
+                <h3 class="sub-title" data-i18n="events_title_passe"
+                    id="past-title-aero">Passés</h3>
+                <div id="cards-container-aero-past" class="cards-subcontainer"></div>
+            </section>
         </div>
-    </div>
-        </div>
+   
 
         <!-- === SECTION MUSIQUE === -->
         <div id="section-music" class="content-section">
@@ -184,11 +206,43 @@
 
                 </div>
             </div>
+
+            <section class="events-list">
+                <h2 data-i18n="music_events_title">Évènements</h2>
+
+                <!-- ==== 1️⃣ Sélecteur TYPE d’événement ==== -->
+                <div class="visibility-filter" id="visibility-filter-music">
+                    <p data-i18n="events_filter_type">Event type</p>
+                    <button class="filter-btn active" data-i18n="events_filter_all" data-filter="all">Tous</button>
+                    <button class="filter-btn"        data-i18n="events_filter_Live" data-filter="live">Live</button>
+                    <button class="filter-btn"        data-filter="tech">Tech</button>
+                    <button class="filter-btn"        data-filter="prod">Prod</button>
+                </div>
+
+                <!-- ==== 2️⃣ Sélecteur ARTISTE ==== -->
+                <div class="visibility-filter artist-filter" id="artist-filter-music">
+                    <p data-i18n="events_filter_artist">Artiste</p>
+                    <button class="filter-btn active" data-i18n="events_filter_all" data-filter="all">Tous</button>
+                    <button class="filter-btn"        data-filter="houriaa">Houriaa</button>
+                    <button class="filter-btn"        data-filter="badpigeons">Bad Pigeons</button>
+                    <button class="filter-btn"        data-i18n="events_filter_others" data-filter="others">Autres</button>
+                </div>
+
+                <h3 class="sub-title" data-i18n="events_title_a_venir" id="upcoming-title-music">À venir</h3>
+                <div id="cards-container-music-upcoming" class="cards-subcontainer"></div>
+
+                <h3 class="sub-title" data-i18n="events_title_passe" id="past-title-music">Passés</h3>
+                <div id="cards-container-music-past" class="cards-subcontainer"></div>
+            </section>
         </div>
+        
     </main>
 
     <div id="dynamic-footer"></div>
 
+
+</body>
+    <script src="/Event_list.js"></script>
     <script>
         // Chargement du footer dynamique
         fetch('footer.html')
@@ -201,6 +255,4 @@
             })
             .catch(err => console.error('Erreur chargement footer :', err));
     </script>
-
-</body>
 </html>

@@ -1,3 +1,7 @@
+/* ==============================================================
+   1️⃣  HEADER FIXE
+   ============================================================== */
+
 /* --------------------------------------------------------------
    RESET & GÉNÉRAL
 -------------------------------------------------------------- */
@@ -56,49 +60,56 @@ hr.head_divider{
 }
 
 /* --------------------------------------------------------------
-   > 600 PX – Mise en page « flex »  
-   - Titre à gauche  
-   - Boutons « Aéro / Musique » centrés  
-   - Boutons « FR / EN » à droite
+   > 600 px – Layout « flex »
+   - titre à gauche (dans .brand‑title)  
+   - left‑controls centré (absolute)  
+   - right‑controls collé à droite
 -------------------------------------------------------------- */
 @media (min-width:600px){
     #site-header{
-        display:flex;               /* rangée unique */
+        display:flex;
         align-items:center;
-        justify-content:space-between;
-        padding:12px 1rem;          /* petit padding latéral */
+        justify-content:space-between;   /* titre ↔ wrapper */
+        padding:12px 1rem;
+        position:relative;               /* <- nécessaire pour le positionnement absolu */
     }
 
-    /* le titre reste le premier bloc */
+    /* ── Titre (inchangé) ─────────────────────── */
     .brand-title{
-        flex:0 0 auto;
+        flex:0 0 auto;               /* ne grandit pas */
         display:flex;
-        flex-direction:column;   /* h1 au dessus, hr en dessous */
-        align-items:center;      /* <‑‑ centre horizontalement tout le contenu */
-        justify-content:center;  /* centre verticalement si le conteneur devient plus haut */
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
     }
 
-    /* le wrapper qui contient les deux groupes de contrôles */
+    /* ── Wrapper qui contient les deux groupes de contrôles ─────────────────────── */
     .controls-wrapper{
-        flex:1;                     /* prend tout l’espace restant */
+        flex:1;                     /* occupe tout l’espace restant */
         display:flex;
         align-items:center;
+        position:relative;         /* ancêtre du left‑controls absolu */
     }
 
-    /* groupe « Aéro / Musique » → centré */
+    /* ── Groupe « Aéro / Musique » – centré exactement au milieu du header ─────── */
     .left-controls{
-        margin:0 auto;              /* centre le bloc dans le wrapper */
-    }
-
-    /* groupe « FR / EN » → collé à droite */
-    .right-controls{
-        margin-left:auto;           /* pousse le bloc tout à droite */
-    }
-
-    /* même style que dans ta version d’origine */
-    .control-group{
+        position:absolute;         /* on le sort du flux flex */
+        left:50%;                  /* centre horizontal */
+        transform:translateX(-90%);/* compense la largeur du groupe */
         display:flex;
         gap:15px;
+    }
+
+    /* ── Groupe « FR / EN » – à droite ─────────────────────────────────────────────── */
+    .right-controls{
+        margin-left:auto;          /* pousse le bloc le plus à droite */
+        display:flex;
+        gap:15px;
+    }
+
+    /* ── Style commun des deux groupes ───────────────────────────────────────────── */
+    .control-group{
+        display:flex;
         align-items:center;
     }
     .control-group button{
@@ -114,7 +125,6 @@ hr.head_divider{
     }
     .control-group button:hover:not(.active){
         color:#333;
-        background:transparent;
     }
     .control-group button.active{
         background:var(--accent);
@@ -122,6 +132,7 @@ hr.head_divider{
         font-weight:600;
     }
 
+    /* ── Le titre garde son style « Apple » ──────────────────────────────────────── */
     .brand-title h1{
         margin:0 15px;
         font-size:1.3rem;
@@ -157,6 +168,7 @@ hr.head_divider{
         justify-self:center;                /* titre centré horizontalement */
         width:100%
     }
+
 
     .controls-wrapper{
         grid-area:controls;
@@ -202,4 +214,11 @@ hr.head_divider{
     background:var(--accent);
     color:#fff;
     font-weight:600;
+}
+
+
+.brand-title h1 a.logo-link {
+    color: inherit;            
+    text-decoration: none;    
+    display: inline-block;    
 }

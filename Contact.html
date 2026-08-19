@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NathOrbit - Bad Pigeons</title>
+
+    <!-- Feuilles de style – chemins **absolus** -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/header-style.css">
+    <link rel="stylesheet" href="/footer-style.css">
+    <link rel="stylesheet" href="Contact.css">
+    <script src="/shared.js"></script>
+</head>
+
+<body class="theme-music">
+
+     <!-- Header dynamique -->
+    <div id="dynamic-header"></div>
+
+    <main>
+        <!-- ==== BOUTON RETOUR + TITRE « Interprète » ==== -->
+        <div class="top-bar">
+            <div class="back-top">
+                <a href="./index.html"
+                class="btn-link back-btn"
+                data-i18n="back_to_home"
+                aria-label="Retour à la page d’accueil">
+                    ← Retour
+                </a>
+            </div>
+
+            <h2 class="section-title interprete-title"
+                data-i18n="interp_page_title">Contact</h2>
+        </div>
+
+        <!-- Trait gris **sous** le titre « Interprète » -->
+        <hr class="divider">
+
+        <!-- ====================  CONTACTS EN 2 LIGNES  ==================== -->
+        <section class="contacts-section" aria-label="Liste complète des contacts">
+            <!-- ---------- LIGNE 2 : Music | Aero ---------- -->
+            <div class="service-row">
+                <!-- Music -->
+                <div class="service-column">
+                    <h3 class="service-title music">NathOrbit Music</h3>
+                    <div class="contacts-grid">
+                        <article class="contact-card">
+                            <ul class="contact-list">
+                                <li class="contact-item email">
+                                    <span class="icon">📧</span>
+                                    <a href="mailto:NathOrbit.music@gmail.com">NathOrbit.music@gmail.com</a>
+                                </li>
+                                <li class="contact-item phone">
+                                    <span class="icon">📞</span>
+                                    <a href="tel:+33680283774">+33 6 80 28 37 74</a>
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+
+                <!-- Aero -->
+                <div class="service-column">
+                    <h3 class="service-title aero">NathOrbit Aero</h3>
+                    <div class="contacts-grid">
+                        <article class="contact-card">
+                            <ul class="contact-list">
+                                <li class="contact-item email">
+                                    <span class="icon">📧</span>
+                                    <a href="mailto:NathOrbit.aero@gmail.com">NathOrbit.production@gmail.com</a>
+                                </li>
+                                <li class="contact-item phone">
+                                    <span class="icon">📞</span>
+                                    <a href="tel:+33680283774">+33 6 80 28 37 74</a>
+                                </li>
+                            </ul>
+                        </article>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ---------- LIGNE 1 : Production | Administratif ---------- -->
+            <div class="service-row">
+                <!-- Production -->
+                <div class="service-column">
+                    <h3 class="service-title production">NathOrbit Production et Administratif</h3>
+                    <div class="contacts-grid">
+                        <article class="contact-card">
+                            <ul class="contact-list">
+                                <li class="contact-item email">
+                                    <span class="icon">📧</span>
+                                    <a href="mailto:NathOrbit.production@gmail.com">NathOrbit.production@gmail.com</a>
+                                </li>
+                            </ul>
+                        </article>
+
+                        <!-- Ajoutez d’autres contacts Production ici → dupliquer le <article> -->
+                    </div>
+                </div>
+        </section>
+    </main>
+
+    <!-- Footer dynamique -->
+    <div id="dynamic-footer"></div>
+
+    <!-- ------------------------------------------------------------------
+         1️⃣  Initialisation de la page « Interprète »
+         ------------------------------------------------------------------ -->
+    <script>
+        function initHouriaaPage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const domainUrl = urlParams.get('domain');
+            const langUrl   = urlParams.get('lang');
+
+            // Langue
+            if (langUrl && (langUrl === 'fr' || langUrl === 'en')) {
+                currentLang = langUrl;
+                localStorage.setItem('preferredLang', currentLang);
+            } else {
+                currentLang = localStorage.getItem('preferredLang') || 'fr';
+            }
+            document.documentElement.lang = currentLang;
+
+            // Domaine (aero / music)
+            if (domainUrl && (domainUrl === 'aero' || domainUrl === 'music')) {
+                currentDomain = domainUrl;
+                localStorage.setItem('preferredDomain', currentDomain);
+            } else {
+                currentDomain = localStorage.getItem('preferredDomain') || 'music';
+            }
+
+            // Thème musique
+            document.body.classList.remove('theme-aero');
+            document.body.classList.add('theme-music');
+
+            // Header dynamique
+            loadHeader();
+
+            // Traductions de la page
+            translatePage(currentLang);
+
+            // Mise à jour des liens internes
+            updateExternalLinks();
+        }
+
+        document.addEventListener('DOMContentLoaded', initHouriaaPage);
+    </script>
+
+    <!-- ------------------------------------------------------------------
+         2️⃣  Traductions (FR / EN) – clés uniques
+         ------------------------------------------------------------------ -->
+    <script>
+        if (!translations.fr.interp_page_title) {
+
+            
+        }
+    </script>
+
+    <!-- ------------------------------------------------------------------
+         3️⃣  Chargement du footer (chemin absolu)
+         ------------------------------------------------------------------ -->
+    <script>
+        fetch('/footer.html')
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById('dynamic-footer').innerHTML = html;
+                translatePage(currentLang);
+                updateExternalLinks();
+            })
+            .catch(err => console.error('Erreur chargement footer :', err));
+    </script>
+</body>
+</html>

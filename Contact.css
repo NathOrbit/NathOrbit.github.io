@@ -1,0 +1,113 @@
+/* -------------------------------------------------
+   VARIABLES GLOBALES (vous avez déjà la plupart) */
+:root {
+    --clr-primary      : #2c3e50;
+    --clr-muted        : #7f8c8d;
+    --clr-bg-card      : #f8f9fa;
+    --clr-border       : #e0e0e0;
+    --radius           : .5rem;
+    --gap              : 1.5rem;
+
+    /* Accent par branche – vous pouvez les personnaliser */
+    --clr-prod         : #1e90ff;   /* bleu */
+    --clr-music        : #c2185b;   /* magenta */
+    --clr-aero         : #00695c;   /* vert foncé */
+    --clr-admin        : #795548;   /* marron */
+}
+
+/* -------------------------------------------------
+   SECTION GÉNÉRALE */
+.contacts-section {
+    background: #fff;
+    padding: var(--gap) 1rem;
+}
+
+/* -------------------------------------------------
+   LIGNE DE SERVICES (flex, 2 colonnes) */
+.service-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    margin-bottom: var(--gap);
+}
+
+/* Chaque colonne : 50 % (min‑width 280 px) */
+.service-column {
+    flex: 1 1 280px;
+    min-width: 280px;
+}
+
+/* -------------------------------------------------
+   TITRES DE BRANCHE (couleurs d’accent) */
+.service-title {
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: .8rem;
+    color: var(--clr-primary);
+}
+.service-title.production { color: var(--text-color); }
+.service-title.music      { color: var(--text-color); }
+.service-title.aero       { color: var(--text-color); }
+/* -------------------------------------------------
+   GRILLE DES CARTES (2 colonnes max) */
+.contacts-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap);
+    justify-content: center;
+}
+
+/* -------------------------------------------------
+   CARD CONTACT (fond, bordure, ombre, taille) */
+.contact-card {
+    background: var(--clr-bg-card);
+    border: 1px solid var(--clr-border);
+    border-radius: var(--radius);
+    width: 260px;            /* taille fixe pour garder l’alignement */
+    padding: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,.06);
+    transition: transform .2s ease, box-shadow .2s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;    /* les listes remplissent la largeur */
+}
+.contact-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0,0,0,.12);
+}
+
+/* -------------------------------------------------
+   LISTE DE CONTACT (sans puces) */
+.contact-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin: .4rem 0;
+    font-size: .95rem;
+}
+.contact-item .icon {
+    margin-right: .5rem;
+    font-size: 1.1rem;   /* icône un peu plus grande */
+    width: 1.2rem;       /* alignement fixe */
+}
+
+/* Liens e‑mail / tel */
+.contact-item a {
+    color: var(--clr-primary);
+    text-decoration: none;
+}
+.contact-item a:hover {
+    text-decoration: underline;
+}
+
+/* -------------------------------------------------
+   RESPONSIVE (mobile) */
+@media (max-width: 600px) {
+    .service-column {
+        flex-basis: 100%;   /* chaque service prend toute la largeur */
+    }
+}

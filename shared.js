@@ -46,7 +46,16 @@ const translations = {
         /* ── Footer ──────────────────────────────────── */
         footer_legal: "Mentions légales",
         footer_privacy: "Politique de confidentialité",
-        footer_contact: "Contact"
+        footer_contact: "Contact",
+        music_events_title: "Évènements",
+        Learn_more_events: "En savoir +",
+        events_title_a_venir: "À venir",
+        events_title_passe: "Passés", 
+        events_filter_all: "Tous",
+        events_filter_live: "Live",
+        events_filter_type: "Type",
+        events_filter_artist: "Artiste", 
+        events_filter_others: "Autres"
     },
 
 
@@ -97,8 +106,16 @@ const translations = {
         /* ── Footer ──────────────────────────────────── */
         footer_legal: "Legal Notice",
         footer_privacy: "Privacy Policy",
-        footer_contact: "Contact"
-        
+        footer_contact: "Contact",
+        music_events_title: "Events",
+        Learn_more_events: "Learn more",
+        events_title_a_venir: "Upcoming",
+        events_title_passe: "Past", 
+        events_filter_all: "All",
+        events_filter_live: "Live",
+        events_filter_type: "Type",
+        events_filter_artist: "Artist", 
+        events_filter_others: "Others"
     }
 };
 

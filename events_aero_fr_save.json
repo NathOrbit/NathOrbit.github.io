@@ -1,0 +1,124 @@
+[
+  {
+    "day": "Jeu",
+    "num": "8",
+    "month": "Oct 2026",
+    "title": "Forum Etudes Techniques",
+    "fulldate": "CNES Léonard de Vinci",
+    "url": "#",
+    "startDate": "2026-10-08",
+    "visibility": "private"
+    
+  },
+  {
+    "day": "Mar",
+    "num": "6",
+    "month": "Oct 2026",
+    "title": "Dynas+ - Présentation de travaux",
+    "fulldate": "FEM explicite pour la dynamique des chocs",
+    "url": "#",
+    "startDate": "2026-10-06",
+    "visibility": "private"
+  },
+  {
+    "day": "Ven",
+    "num": "21-25",
+    "month": "Sept 2026",
+    "title": "ECSSMET  - Présentation de la méthodologie NERS",
+    "fulldate": "Allemagne, Brunswick",
+    "url": "/P_aero_folder/PA_COM_folder/PACOM_ECSSMET2026/PACOM_ECSSMET2026.html",
+    "startDate": "2026-09-21",
+    "visibility": "live"
+  },
+  {
+    "day": "Ven",
+    "num": "17",
+    "month": "Juil 2026",
+    "title": "Communication scientifique : COMET Matériaux et Structures 2026",
+    "fulldate": "17 Juillet 2026",
+    "url": "https://www.comet-cnes.fr/",
+    "startDate": "2026-07-17",
+    "visibility": "live"
+  },
+  {
+    "day": "Jeu",
+    "num": "04‑05",
+    "month": "Juin 2026",
+    "title": "Communication scientifique : Journée Jeunes Chercheurs (CNES)",
+    "fulldate": "04‑05 Juin 2026",
+    "url": "https://cnes-jc1.fr/",
+    "startDate": "2026-06-04",
+    "visibility": "private"
+  },
+  {
+    "day": "Lun",
+    "num": "18‑22",
+    "month": "Mai 2026",
+    "title": "Communication scientifique : CSMA 2026",
+    "fulldate": "18‑22 Mai 2026",
+    "url": "#",
+    "startDate": "2026-05-18",
+    "visibility": "live"
+  },
+    {
+    "day": "Mar",
+    "num": "14‑16",
+    "month": "Oct 2025",
+    "title": "Communication scientifique : Journée Jeunes Chercheurs (CNES)",
+    "fulldate": "14‑16 Octobre 2025",
+    "url": "https://cnes-jc2.fr/",
+    "startDate": "2025-10-14",
+    "visibility": "private"
+  },
+  {
+    "day": "Jeu",
+    "num": "9",
+    "month": "Jan 2025",
+    "title": "Histoire des sciences – culture scientifique",
+    "fulldate": "9 Janvier 2025",
+    "url": "#",
+    "startDate": "2025-01-09",
+    "visibility": "live"
+  },
+
+  {
+    "day": "Jeu",
+    "num": "10",
+    "month": "Oct 2024",
+    "title": "Forum des métiers – ISAE‑ENSMA",
+    "fulldate": "10 Octobre 2024",
+    "url": "#",
+    "startDate": "2024-10-10",
+    "visibility": "private"
+  },
+  {
+    "day": "Lun",
+    "num": "23‑27",
+    "month": "Sept 2024",
+    "title": "Communication scientifique : ECSSMET 2024",
+    "fulldate": "23‑27 Septembre 2024",
+    "url": "./PACOM_ECSSMET2024/PACOM_ECSSMET2024.html",
+    "startDate": "2024-09-23",
+    "visibility": "live"
+  },
+  {
+    "day": "Lun",
+    "num": "13‑17",
+    "month": "Mai 2024",
+    "title": "Communication scientifique : CSMA 2024",
+    "fulldate": "13‑17 Mai 2024",
+    "url": "https://hal.science/hal-04610986v1",
+    "startDate": "2024-05-13",
+    "visibility": "live"
+  },
+  {
+    "day": "Jeu",
+    "num": "25",
+    "month": "Avr 2024",
+    "title": "Communication scientifique : COMET Matériaux et Structures 2024",
+    "fulldate": "25 Avril 2024",
+    "url": "https://www.comet-cnes.fr/",
+    "startDate": "2024-04-25",
+    "visibility": "live"
+  }
+]

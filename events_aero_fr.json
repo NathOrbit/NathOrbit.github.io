@@ -1,0 +1,14 @@
+[
+{"startDate":"2026-10-08","endDate":"2026-10-08","title":"Forum Etudes Techniques","fulldate":"CNES","url":"#","filter":["private"]},
+{"startDate":"2026-10-06","endDate":"2026-10-06","title":"Dynas+ - Présentation de travaux","fulldate":"FEM explicite pour la dynamique des chocs","url":"#","filter":["private"]},
+{"startDate":"2026-09-21","endDate":"2026-09-25","title":"Com. scientifique : ECSSMET","fulldate":"European Conference on Spacecraft Structures, Materials and Environmental Testing - Présentation de la méthodologie NERS","url":"/P_aero_folder/PA_COM_folder/PACOM_ECSSMET2026/PACOM_ECSSMET2026.html","filter":["live"]},
+{"startDate":"2026-07-17","endDate":"2026-07-17","title":"Com. scientifique : COMET","fulldate":"COMET Matériaux et Structures 2026","url":"https://www.comet-cnes.fr/","filter":["live"]},
+{"startDate":"2026-06-04","endDate":"2026-06-05","title":"Com. scientifique : JC CNES","fulldate":"Journée Jeunes Chercheurs","url":"https://cnes-jc1.fr/","filter":["private"]},
+{"startDate":"2026-05-18","endDate":"2026-05-22","title":"Com. scientifique : CSMA 2026","fulldate":"Colloque National en Calcul des Structures","url":"#","filter":["live"]},
+{"startDate":"2025-10-14","endDate":"2025-10-16","title":"Com. scientifique : JC CNES","fulldate":"Journée Jeunes Chercheurs","url":"https://cnes-jc2.fr/","filter":["private"]},
+{"startDate":"2025-01-09","endDate":"2025-01-09","title":"Histoire des sciences","fulldate":"culture scientifique","url":"#","filter":["live"]},
+{"startDate":"2024-10-10","endDate":"2024-10-10","title":"Forum des métiers","fulldate":"ISAE‑ENSMA","url":"#","filter":["private"]},
+{"startDate":"2024-09-23","endDate":"2024-09-27","title":"Com. scientifique : ECSSMET 2024","fulldate":"European Conference on Spacecraft Structures, Materials and Environmental Testing - Présentation de la comparaison FEM explicite vs Hrybird FEM TSEA","url":"./PACOM_ECSSMET2024/PACOM_ECSSMET2024.html","filter":["live"]},
+{"startDate":"2024-05-13","endDate":"2024-05-17","title":"Com. scientifique : CSMA 2024","fulldate":"Colloque National en Calcul des Structures","url":"https://hal.science/hal-04610986v1","filter":["live"]},
+{"startDate":"2024-04-25","endDate":"2024-04-25","title":"Com. scientifique : COMET","fulldate":" COMET Matériaux et Structures 2024","url":"https://www.comet-cnes.fr/","filter":["live"]}
+]
