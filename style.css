@@ -43,6 +43,7 @@ body {
     align-items: center;
     min-height: 100vh;
     transition: var(--transition);
+    padding-bottom: 4rem;   /* valeur ≈ hauteur du footer */
 }
 
 /* --- CONTENU PRINCIPAL --- */
@@ -535,6 +536,7 @@ h1 {
   }
   .event-date-box {
     margin: 0 auto;
+    font-size: 80%;
   }
   .event-more {
     margin: 0.5rem auto 0;

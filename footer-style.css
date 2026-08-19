@@ -1,6 +1,12 @@
 /* ---------------- Footer ---------------- */
 
 .site-footer{
+    position: fixed;
+    bottom:0;            /* ancré en bas */
+    left:0;
+    width:100%;          /* occuper toute la largeur */
+    background:#fafafa; /* (optionnel) garder la couleur d’origine */
+    z-index:10;          /* au‑dessus du reste du contenu */
     display:grid;
     grid-template-columns:1fr auto 1fr;
     align-items:center;
