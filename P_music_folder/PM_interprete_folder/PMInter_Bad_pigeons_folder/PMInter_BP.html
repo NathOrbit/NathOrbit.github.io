@@ -125,7 +125,7 @@
 
             <div class="documents-list">
 
-                <a href="./documents/Fiche technique - Houriaa 20260728.pdf"
+                <a href="#"
                    class="document-btn"
                    target="_blank">
 
@@ -133,7 +133,7 @@
                 </a>
 
 
-                <a href="./documents/Plan_de_scene_Houriaa.pdf"
+                <a href="#"
                    class="document-btn"
                    target="_blank">
 
@@ -141,7 +141,7 @@
                 </a>
 
 
-                <a href="./documents/Dossier_presse_Houriaa.pdf"
+                <a href="#"
                    class="document-btn"
                    target="_blank">
 
@@ -153,7 +153,33 @@
         </section>
 
 
+        <section class="events-list">
+            <h2 data-i18n="music_events_title">Évènements</h2>
 
+            <!-- ==== 1️⃣ Sélecteur TYPE d’événement ==== -->
+            <div class="visibility-filter" id="visibility-filter-music">
+                <p data-i18n="events_filter_type">Event type</p>
+                <button class="filter-btn active" data-i18n="events_filter_all" data-filter="all">Tous</button>
+                <button class="filter-btn"        data-i18n="events_filter_Live" data-filter="live">Live</button>
+                <button class="filter-btn"        data-filter="tech">Tech</button>
+                <button class="filter-btn"        data-filter="prod">Prod</button>
+            </div>
+
+            <!-- ==== 2️⃣ Sélecteur ARTISTE ==== -->
+            <div class="visibility-filter artist-filter" id="artist-filter-music">
+                <p data-i18n="events_filter_artist">Artiste</p>
+                <button class="filter-btn" data-i18n="events_filter_all" data-filter="all">Tous</button>
+                <button class="filter-btn active"        data-filter="houriaa">Houriaa</button>
+                <button class="filter-btn"        data-filter="badpigeons">Bad Pigeons</button>
+                <button class="filter-btn"        data-i18n="events_filter_others" data-filter="others">Autres</button>
+            </div>
+
+            <h3 class="sub-title" data-i18n="events_title_a_venir" id="upcoming-title-music">À venir</h3>
+            <div id="cards-container-music-upcoming" class="cards-subcontainer"></div>
+
+            <h3 class="sub-title" data-i18n="events_title_passe" id="past-title-music">Passés</h3>
+            <div id="cards-container-music-past" class="cards-subcontainer"></div>
+        </section>
 
 
 
@@ -173,7 +199,29 @@
 
     <!-- Footer dynamique -->
     <div id="dynamic-footer"></div>
+    <script>
+    // S’attendre à ce que le DOM soit chargé
+    document.addEventListener('DOMContentLoaded', () => {
+        // 1️⃣  Le conteneur des filtres d'artistes
+        const artistFilter = document.getElementById('artist-filter-music');
+        if (!artistFilter) return;   // sécurité
 
+        // 2️⃣  Désactiver tous les boutons du groupe
+        artistFilter.querySelectorAll('.filter-btn')
+                    .forEach(btn => btn.classList.remove('active'));
+
+        // 3️⃣  Sélectionner le bouton « houriaa »
+        const houriaaBtn = artistFilter.querySelector('.filter-btn[data-filter="badpigeons"]');
+        if (!houriaaBtn) return;
+
+        // 4️⃣  L’activer visuellement
+        houriaaBtn.classList.add('active');
+
+        // 5️⃣  (Optionnel) Simuler le clic pour que le filtre s’applique immédiatement
+        houriaaBtn.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true }));
+    });
+    </script>
+    <script src="/Event_list.js"></script>
     <!-- ------------------------------------------------------------------
          1️⃣  Initialisation de la page « Interprète »
          ------------------------------------------------------------------ -->
