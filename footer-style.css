@@ -79,3 +79,52 @@
     padding-left:1rem;
 }
 
+
+
+/* -------------------------------------------------
+   2️⃣ Quand la largeur < 768 px (ou la valeur que vous voulez)
+   ------------------------------------------------- */
+@media (max-width: 768px) {          /* <-- changez 768px à la largeur qui vous convient */
+
+    /* 2.1️⃣ Relâcher le positionnement fixe */
+    .site-footer{
+        position:static;            /* revient dans le flux normal */
+        bottom:auto;                /* inutile, mais explicite */
+        left:auto;
+        width:auto;                 /* prend la largeur du conteneur parent */
+        padding:1rem;               /* on enlève le padding horizontal trop large */
+    }
+
+    /* 2.2️⃣ Adapter la grille : on passe à une colonne unique */
+    .site-footer{
+        display:grid;
+        grid-template-columns:1fr;          /* une seule colonne */
+        grid-auto-rows:min-content;        /* chaque bloc prend la hauteur dont il a besoin */
+        row-gap:0.8rem;                     /* espacement vertical entre les blocs */
+        text-align:center;                 /* centre le texte */
+    }
+
+    /* 2.3️⃣ Centrer chaque bloc (gauche, centre, droite) */
+    .footer-left,
+    .footer-center,
+    .footer-right{
+        justify-self:center;               /* centre dans la colonne */
+    }
+
+    /* 2.4️⃣ Masquer les séparateurs « | » qui n’ont plus de sens */
+    .separator{
+        display:none;
+    }
+
+    /* 2.5️⃣ Agrandir la zone cliquable pour le tactile */
+    .footer-left a,
+    .footer-right a{
+        padding:0.4rem 0.8rem;              /* plus d’espace autour du texte */
+        display:inline-block;
+    }
+
+    /* 2.6️⃣ (Optionnel) réduire légèrement la taille de police */
+    .site-footer{
+        font-size:0.9rem;
+    }
+}
