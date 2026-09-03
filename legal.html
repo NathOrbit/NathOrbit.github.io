@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NathOrbit – Politique de confidentialité</title>
+    <title>NathOrbit – Mentions légales</title>
 
     <!-- Feuilles de style – chemins **absolus** -->
     <link rel="stylesheet" href="/style.css">
     <link rel="stylesheet" href="/header-style.css">
     <link rel="stylesheet" href="/footer-style.css">
-    <link rel="stylesheet" href="./Privacy.css"><!-- CSS dédié -->
+    <link rel="stylesheet" href="./Legal.css"><!-- éventuel CSS spécifique -->
     <script src="/shared.js"></script>
 </head>
 
@@ -19,7 +19,7 @@
     <div id="dynamic-header"></div>
 
     <main>
-        <!-- ==== BOUTON RETOUR + TITRE ==== -->
+        <!-- ==== BOUTON RETOUR + TITRE « Mentions légales » ==== -->
         <div class="top-bar">
             <div class="back-top">
                 <a href="./index.html"
@@ -31,38 +31,64 @@
             </div>
 
             <h2 class="section-title interprete-title"
-                data-i18n="privacy_policy_page_title">Politique de confidentialité</h2>
+                data-i18n="legal_notice_page_title">Mentions légales</h2>
         </div>
 
+        <!-- Trait gris **sous** le titre -->
         <hr class="divider">
 
-        <!-- ==================== CONTENU ==================== -->
-        <section class="privacy-section" aria-label="Politique de confidentialité du site">
+        <!-- ==================== CONTENU DES MENTIONS LÉGALES ==================== -->
+        <section class="legal-section" aria-label="Mentions légales du site">
 
             <!-- ------------------------------------------------------------------
-                 1️⃣  Introduction
+                 1️⃣  Éditeur du site
                  ------------------------------------------------------------------ -->
-            <article class="privacy-block" id="intro">
+            <article class="legal-block" id="editor">
+                <h3>Éditeur du site</h3>
                 <p>
-                    Nous attachons une grande importance à la protection de la vie
-                    privée de nos interlocuteurs. Cette applique cette approche et explique comment nous traitons les informations
-                    relatives à votre utilisation.
+                    <strong>Nom / Raison sociale :</strong> Association NathOrbit <br>
+                    <strong>Siège social :</strong>------------- <br>
+                    <strong>SIREN / SIRET :</strong>-------------<br>
+                    <strong>Capital social :</strong>-------------<br>
+                    <strong>Directeur de la publication :</strong>Nathan PASCAL<br>
+                    <strong>Contact :</strong> <a href="mailto:contact@nathorbit.com">nathorbit.production@gmail.com</a>
                 </p>
             </article>
 
             <!-- ------------------------------------------------------------------
-                 2️⃣  Absence de collecte de données
+                 2️⃣  Hébergeur
                  ------------------------------------------------------------------ -->
-            <article class="privacy-block" id="no-data">
-                <h3>Nous ne collectons aucune donnée personnelle</h3>
+            <article class="legal-block" id="host">
+                <h3>Hébergeur</h3>
                 <p>
-                    Le site ne recueille aucune information vous concernant :
-                </p>
-                <p>
-                    Le seul enregistrement technique réalisé par le serveur concerne les logs ou les cookies strictement
-                    nécessaires à la sécurisation et au bon fonctionnement du site 
+                    <strong>Nom :</strong>GitHub<br>
+                    <strong>Adresse :</strong>GitHub.com<br>
+                    <strong>Site web :</strong> <a href="https://github.com/" target="_blank" rel="noopener">https://github.com/</a>
                 </p>
             </article>
+
+            <!-- ------------------------------------------------------------------
+                 3️⃣  Propriété intellectuelle
+                 ------------------------------------------------------------------ -->
+            <article class="legal-block" id="copyright">
+                <h3>Propriété intellectuelle</h3>
+                <p>
+                    Tous les contenus (textes, vidéos, sons, logos, etc.) présents sur ce site
+                    sont la propriété exclusive de <strong>NathOrbit</strong> ou de leurs auteurs
+                    respectifs et sont protégés par le Code de la propriété intellectuelle.<br>
+                    <strong>Photos :</strong> toutes les photographies affichées sont la
+                    propriété exclusive de <strong>NathOrbit</strong>, <strong>à l’exception
+                    de celles dont les sources sont clairement indiquées sur le site</strong>.
+                    Dans ce cas, la mention de la source constitue la seule autorisation
+                    requise pour les réutiliser.<br>
+                    Toute autre reproduction, représentation, modification, diffusion ou utilisation,
+                    intégrale ou partielle, du contenu du site, par quelque procédé que ce soit,
+                    <strong>sans l’autorisation expresse et préalable de <strong>NathOrbit</strong></strong>,
+                    est interdite et constitue une contrefaçon sanctionnée par le Code de la
+                    propriété intellectuelle.
+                </p>
+            </article>
+
         </section>
     </main>
 
@@ -70,10 +96,10 @@
     <div id="dynamic-footer"></div>
 
     <!-- ------------------------------------------------------------------
-         1️⃣  Initialisation de la page « Privacy Policy »
+         1️⃣  Initialisation de la page « Mentions légales »
          ------------------------------------------------------------------ -->
     <script>
-        function initPrivacyPage() {
+        function initLegalPage() {
             const urlParams = new URLSearchParams(window.location.search);
             const langUrl   = urlParams.get('lang');
 
@@ -100,16 +126,16 @@
             updateExternalLinks();
         }
 
-        document.addEventListener('DOMContentLoaded', initPrivacyPage);
+        document.addEventListener('DOMContentLoaded', initLegalPage);
     </script>
 
     <!-- ------------------------------------------------------------------
          2️⃣  Traductions (FR / EN) – clés uniques (exemple)
          ------------------------------------------------------------------ -->
     <script>
-        // Exemple – à ajouter dans /shared.js
-        // translations.fr.privacy_policy_page_title = "Politique de confidentialité";
-        // translations.en.privacy_policy_page_title = "Privacy Policy";
+        // Exemple de structure de traductions – à compléter dans /shared.js
+        // translations.fr.legal_notice_page_title = "Mentions légales";
+        // translations.en.legal_notice_page_title = "Legal Notice";
     </script>
 
     <!-- ------------------------------------------------------------------
