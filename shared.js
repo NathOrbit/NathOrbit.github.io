@@ -38,7 +38,7 @@ const translations = {
 
         music_skill3_title: "Technique son & sonorisation",
         music_skill3_desc: "Accompagnement de projets musicaux par la production sonore et l'ingenierie du son pour le Live.",
-
+        music_skill3_desc2: "Location et Prestation",
         music_skill4_title: "Coordinateur de production artistique",
         music_skill4_desc: "Participation à la création musicale, direction artistique et coordination de projets musicaux.",
 

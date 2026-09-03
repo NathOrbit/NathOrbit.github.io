@@ -240,17 +240,7 @@ h1 {
     display: block;
 }
 
-#dynamic-footer > footer {
-    margin: 0;
-    width: 100%;
-    padding: 10px 0px;
-    background-color: #fff;             
-    color: #333;                         
 
-    font-size: 0.9rem;
-    text-align: center;
-    border-top: 1px solid #eee;           
-}
 
 /* -------------------------------------------------
    1️⃣  IMAGE DE FOND – (déjà corrigée, z-index = 0)
@@ -473,7 +463,7 @@ h1 {
   line-height: 1.2;
 }
 .event-date-box .day   { font-size: 0.75rem; font-weight: 550; }
-.event-date-box .num   { font-size: 1.6rem;  font-weight: 700; }
+.event-date-box .num   { font-size: 1.3rem;  font-weight: 700; }
 .event-date-box .month { font-size: 0.75rem; font-weight: 600; }
 
 /* -------------------------------------------------
@@ -512,9 +502,24 @@ h1 {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-decoration: none;
+    text-decoration: none; 
     transition: background .2s;
+} 
+
+.event-card:has(.event-more) .event-main{
+    flex-basis:70%;       /* 70 % du card */
 }
+.event-card:has(.event-more) .event-more{ 
+    flex-basis:30%;       /* 30 % du card */
+}
+
+/* -------------------------------------------------
+   Si le bouton **n’est pas** présent, la zone texte occupe 100 %
+   ------------------------------------------------- */
+.event-card:not(:has(.event-more)) .event-main{
+    flex-basis:100%;
+}
+
 /* Boucle d’interaction */
 .event-more:hover {
     background: var(--primary-music);
@@ -720,24 +725,68 @@ h1 {
 /* -------------------------------------------------
    5️⃣  DOCUMENTS PROFESSIONNELS
    ------------------------------------------------- */
-.documents-list{
-    display:flex;
-    justify-content:center;
-    gap:20px;
-    flex-wrap:wrap;
+
+/* ---------- Variables de design (facile à tweaker) ---------- */
+:root {
+    --doc-bg: rgba(255, 255, 255, 0.4);
+    --doc-bg-hover: rgba(255, 255, 255, 0.35);
+    --doc-radius: 12px;
+    --doc-padding-y: 1rem;   /* 15px → 1rem  (respect de l'échelle) */
+    --doc-padding-x: 1.5rem; /* 25px → 1.5rem */
+    --doc-gap: 1.5rem;       /* espace entre les colonnes */
+    --doc-transition: 0.3s ease;
+    --doc-elev: -3px;        /* translateY au hover */
 }
-.document-btn{
-    padding:15px 25px;
-    background:rgba(255,255,255,0.2);
-    backdrop-filter:blur(8px);
-    border-radius:12px;
-    text-decoration:none;
-    color:inherit;
-    transition:.3s;
+
+/* ---------- Conteneur principal ---------- */
+.documents-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--doc-gap);
+    justify-items: stretch;            /* chaque colonne prend toute la largeur disponible */
+    align-items: start;
+    margin-top: 1.5rem;                /* un petit espace sous le <h2> */
 }
-.document-btn:hover{
-    transform:translateY(-3px);
-    background:rgba(255,255,255,0.35);
+
+/* ---------- Colonnes de documents (facultatif) ---------- */
+.doc-column {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;                      /* espace vertical entre les boutons du même groupe */
+}
+
+/* ---------- Bouton de document ---------- */
+.document-btn {
+    display: block;                    /* occupe toute la largeur de la colonne */
+    padding: var(--doc-padding-y) var(--doc-padding-x);
+    background: var(--doc-bg);
+    backdrop-filter: blur(8px);
+    border-radius: var(--doc-radius);
+    text-decoration: none;
+    color: inherit;
+    font-weight: 500;
+    text-align: center;
+    transition: var(--doc-transition);
+}
+
+/* Hover / focus – petite élévation + légère variation de couleur */
+.document-btn:hover,
+.document-btn:focus-visible {
+    transform: translateY(var(--doc-elev));
+    background: var(--doc-bg-hover);
+}
+
+/* Optionnel : ajouter un effet d’ombre légère pour plus de profondeur */
+.document-btn:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* ---------- Responsivité ---------- */
+@media (max-width: 480px) {
+    :root {
+        --doc-padding-y: 0.9rem;
+        --doc-padding-x: 1.2rem;
+    }
 }
 
 /* -------------------------------------------------
@@ -786,7 +835,7 @@ h1 {
     }
     .slides img{
         height:250px;
-
+    
 }
 }
 

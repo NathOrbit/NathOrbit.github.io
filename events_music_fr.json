@@ -1,6 +1,8 @@
 [
 {"startDate": "2026-09-29", "endDate": "2026-09-30", "title": "Houriaa - Live", "fulldate": "FlashBack Café - Étoile Rose - Demi-finale - 20h", "url": "https://etoilerose.flashbackcafe.fr/", "filter": ["Houriaa", "live", "type_musician"]},
-{"startDate": "2026-09-27", "endDate": "2026-09-27", "title": "Houriaa - Live", "fulldate": "????", "url": "#", "filter": ["Houriaa", "live", "type_musician", "type_tech", "type_prod"]},
+{"startDate": "2026-09-27", "endDate": "2026-09-27", "title": "Houriaa - Live", "fulldate": "Mix-cités", "url": "#", "filter": ["Houriaa", "live", "type_musician", "type_tech", "type_prod"]},
+{"startDate": "2026-09-02", "endDate": "2026-09-02", "title": "Houriaa - Studio", "fulldate": "Résidnece Live",  "url": "#",  "filter": ["Houriaa", "private", "type_musician", "type_tech", "type_prod"]},
+{"startDate": "2026-08-22", "endDate": "2026-08-22", "title": "Nath - Live - Orchestre Miami", "fulldate": "Sonorisation FOH",  "url": "#",  "filter": ["Nath", "live", "type_tech"]},
 {"startDate": "2026-08-19", "endDate": "2026-08-19", "title": "Houriaa - Studio", "fulldate": "Préparation Live", "url": "#", "filter": ["Houriaa", "private", "type_musician", "type_tech", "type_prod"]},
 {"startDate": "2026-08-01", "endDate": "2026-08-01", "title": "Houriaa - Live", "fulldate": "Headline festival au Lac de la Reynerie", "url": "#", "filter": ["Houriaa", "live", "type_musician"]},
 {"startDate": "2026-08-01", "endDate": "2026-08-01", "title": "Houriaa - Studio", "fulldate": "Résidence Live", "url": "#", "filter": ["Houriaa", "private", "type_musician", "type_tech", "type_prod"]},

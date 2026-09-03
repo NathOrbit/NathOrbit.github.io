@@ -1,0 +1,82 @@
+/* ------------------------------------------------------------------
+   LegalNotice.css – styles spécifiques à la page Mentions légales
+   ------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+   1️⃣  Reset & typographie de base (hérité du style global)
+   ------------------------------------------------------------------ */
+.legal-section {
+    max-width:      960px;        /* largeur maximale du contenu */
+    margin:         0 auto;       /* centrage horizontal */
+    padding:        1.5rem 1rem;
+    line-height:    1.6;
+    font-family:    var(--font-main, "Helvetica Neue", Arial, sans-serif);
+    color:          #333;
+}
+
+/* Titres de chaque bloc juridique */
+.legal-block {
+    margin-bottom: 2rem;
+    padding:       0.8rem 1rem;
+    border-left:   4px solid var(--accent);
+    background:    var(--bg-light, #f9f9f9);
+    border-radius: 4px;
+}
+
+/* Les titres de niveau 3 (h3) sont les rubriques majeures */
+.legal-block h3 {
+    margin-top:    0;
+    margin-bottom: 0.6rem;
+    font-size:     1.3rem;
+    color:         var(--accent);
+}
+
+/* ------------------------------------------------------------------
+   2️⃣  Paragraphes & listes
+   ------------------------------------------------------------------ */
+.legal-block p,
+.legal-block ul,
+.legal-block li {
+    margin:        0 0 0.8rem 0;
+    font-size:     1rem;
+}
+
+/* Liste à puces dans les blocs (ex. droit d’accès, finalités) */
+.legal-block ul {
+    padding-left: 1.4rem;
+    list-style:   disc;
+}
+
+/* Liens internes / externes */
+.legal-block a {
+    color:         var(--link-color, #0066cc);
+    text-decoration: none;
+}
+.legal-block a:hover,
+.legal-block a:focus {
+    color:         var(--link-hover, #004999);
+    text-decoration: none;
+}
+
+/* ------------------------------------------------------------------
+   3️⃣  Responsive design
+   ------------------------------------------------------------------ */
+@media (max-width: 600px) {
+    .legal-section {
+        padding: 1rem 0.8rem;
+    }
+    .legal-block {
+        padding: 0.6rem 0.8rem;
+    }
+    .legal-block h3 {
+        font-size: 1.15rem;
+    }
+}
+
+/* ------------------------------------------------------------------
+   4️⃣  Helpers (facultatif)
+   ------------------------------------------------------------------ */
+.hidden { display: none !important; }
+.text-center { text-align: center; }
+.mt-0 { margin-top: 0 !important; }
+.mb-0 { margin-bottom: 0 !important; }

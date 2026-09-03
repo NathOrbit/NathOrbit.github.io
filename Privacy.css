@@ -1,0 +1,93 @@
+/* ------------------------------------------------------------------
+   PrivacyPolicy.css – styles spécifiques à la page “Politique de confidentialité”
+   ------------------------------------------------------------------ */
+
+/* ------------------------------------------------------------------
+   1️⃣  Container principal
+   ------------------------------------------------------------------ */
+.privacy-section {
+    max-width:        960px;                /* largeur maximale du contenu */
+    margin:           0 auto;               /* centrage horizontal */
+    padding:          1.5rem 1rem;
+    line-height:      1.6;
+    font-family:      var(--font-main, "Helvetica Neue", Arial, sans-serif);
+    color:          #333;
+    background-color: var(--bg-page, #fff);
+}
+
+/* ------------------------------------------------------------------
+   2️⃣  Blocs de texte (articles) – démarcage visuel
+   ------------------------------------------------------------------ */
+.privacy-block {
+    margin-bottom:    2rem;
+    padding:          1rem;
+    border-left:      5px solid var(--accent);
+    background:       var(--bg-light, #f9f9f9);
+    border-radius:    4px;
+}
+
+/* Titres de chaque section (h3) */
+.privacy-block h3 {
+    margin-top:       0;
+    margin-bottom:    0.6rem;
+    font-size:        1.3rem;
+    color:            var(--accent);
+}
+
+/* ------------------------------------------------------------------
+   3️⃣  Paragraphes, listes et liens
+   ------------------------------------------------------------------ */
+.privacy-block p,
+.privacy-block ul,
+.privacy-block li {
+    margin:           0 0 0.8rem 0;
+    font-size:        1rem;
+}
+
+/* Listes à puces */
+.privacy-block ul {
+    padding-left:     1.4rem;
+    list-style:       disc;
+}
+
+/* Liens */
+.privacy-block a {
+    color:            var(--link-color, #0066cc);
+    text-decoration: underline;
+}
+.privacy-block a:hover,
+.privacy-block a:focus {
+    color:            var(--link-hover, #004999);
+    text-decoration: none;
+}
+
+/* ------------------------------------------------------------------
+   4️⃣  Petite typographie – texte désactivé / date de mise à jour
+   ------------------------------------------------------------------ */
+.text-muted {
+    color:            var(--text-muted, #777);
+    font-size:        0.9rem;
+}
+
+/* ------------------------------------------------------------------
+   5️⃣  Responsive – adaptation sur petits écrans
+   ------------------------------------------------------------------ */
+@media (max-width: 600px) {
+    .privacy-section {
+        padding: 1rem 0.8rem;
+    }
+    .privacy-block {
+        padding: 0.8rem 0.6rem;
+    }
+    .privacy-block h3 {
+        font-size: 1.15rem;
+    }
+}
+
+/* ------------------------------------------------------------------
+   6️⃣  Helpers (facultatif) – utiles dans le HTML
+   ------------------------------------------------------------------ */
+.hidden       { display: none !important; }
+.text-center  { text-align: center; }
+.mt-0         { margin-top: 0 !important; }
+.mb-0         { margin-bottom: 0 !important; }

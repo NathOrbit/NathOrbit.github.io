@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NathOrbit – Politique de confidentialité</title>
+
+    <!-- Feuilles de style – chemins **absolus** -->
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/header-style.css">
+    <link rel="stylesheet" href="/footer-style.css">
+    <link rel="stylesheet" href="./Privacy.css"><!-- CSS dédié -->
+    <script src="/shared.js"></script>
+</head>
+
+<body class="theme-music">
+
+    <!-- Header dynamique -->
+    <div id="dynamic-header"></div>
+
+    <main>
+        <!-- ==== BOUTON RETOUR + TITRE ==== -->
+        <div class="top-bar">
+            <div class="back-top">
+                <a href="./index.html"
+                   class="btn-link back-btn"
+                   data-i18n="back_to_home"
+                   aria-label="Retour à la page d’accueil">
+                    ← Retour
+                </a>
+            </div>
+
+            <h2 class="section-title interprete-title"
+                data-i18n="privacy_policy_page_title">Politique de confidentialité</h2>
+        </div>
+
+        <hr class="divider">
+
+        <!-- ==================== CONTENU ==================== -->
+        <section class="privacy-section" aria-label="Politique de confidentialité du site">
+
+            <!-- ------------------------------------------------------------------
+                 1️⃣  Introduction
+                 ------------------------------------------------------------------ -->
+            <article class="privacy-block" id="intro">
+                <p>
+                    Nous attachons une grande importance à la protection de la vie
+                    privée de nos interlocuteurs. Cette applique cette approche et explique comment nous traitons les informations
+                    relatives à votre utilisation.
+                </p>
+            </article>
+
+            <!-- ------------------------------------------------------------------
+                 2️⃣  Absence de collecte de données
+                 ------------------------------------------------------------------ -->
+            <article class="privacy-block" id="no-data">
+                <h3>Nous ne collectons aucune donnée personnelle</h3>
+                <p>
+                    Le site ne recueille aucune information vous concernant :
+                </p>
+                <p>
+                    Le seul enregistrement technique réalisé par le serveur concerne les logs ou les cookies strictement
+                    nécessaires à la sécurisation et au bon fonctionnement du site 
+                </p>
+            </article>
+        </section>
+    </main>
+
+    <!-- Footer dynamique -->
+    <div id="dynamic-footer"></div>
+
+    <!-- ------------------------------------------------------------------
+         1️⃣  Initialisation de la page « Privacy Policy »
+         ------------------------------------------------------------------ -->
+    <script>
+        function initPrivacyPage() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const langUrl   = urlParams.get('lang');
+
+            // Langue
+            if (langUrl && (langUrl === 'fr' || langUrl === 'en')) {
+                currentLang = langUrl;
+                localStorage.setItem('preferredLang', currentLang);
+            } else {
+                currentLang = localStorage.getItem('preferredLang') || 'fr';
+            }
+            document.documentElement.lang = currentLang;
+
+            // Thème
+            document.body.classList.remove('theme-aero');
+            document.body.classList.add('theme-music');
+
+            // Header dynamique
+            loadHeader();
+
+            // Traductions de la page
+            translatePage(currentLang);
+
+            // Mise à jour des liens externes
+            updateExternalLinks();
+        }
+
+        document.addEventListener('DOMContentLoaded', initPrivacyPage);
+    </script>
+
+    <!-- ------------------------------------------------------------------
+         2️⃣  Traductions (FR / EN) – clés uniques (exemple)
+         ------------------------------------------------------------------ -->
+    <script>
+        // Exemple – à ajouter dans /shared.js
+        // translations.fr.privacy_policy_page_title = "Politique de confidentialité";
+        // translations.en.privacy_policy_page_title = "Privacy Policy";
+    </script>
+
+    <!-- ------------------------------------------------------------------
+         3️⃣  Chargement du footer (chemin absolu)
+         ------------------------------------------------------------------ -->
+    <script>
+        fetch('/footer.html')
+            .then(r => r.text())
+            .then(html => {
+                document.getElementById('dynamic-footer').innerHTML = html;
+                translatePage(currentLang);
+                updateExternalLinks();
+            })
+            .catch(err => console.error('Erreur chargement footer :', err));
+    </script>
+</body>
+</html>

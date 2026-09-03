@@ -1,130 +1,118 @@
-/* ---------------- Footer ---------------- */
-
-.site-footer{
-    position: fixed;
-    bottom:0;            /* ancré en bas */
+#dynamic-footer > footer{
+    width:100%;
+    padding: 10px 0px;
+    margin: 0;
+}/* --------------------------------------------------------------
+   FOOTER – même effet blur que le header
+-------------------------------------------------------------- */
+#site-footer{
+    position:fixed;                     /* collé en bas */
+    bottom:0;
     left:0;
-    width:100%;          /* occuper toute la largeur */
-    background:#fafafa; /* (optionnel) garder la couleur d’origine */
-    z-index:10;          /* au‑dessus du reste du contenu */
+    width:100%;
+    background:rgba(255,255,255,0.85);   /* semi‑transparent → laisse passer le blur */
+    backdrop-filter:blur(5px);          /* flou */
+    -webkit-backdrop-filter:blur(5px);  /* Safari */
+    z-index:1000;                        /* au‑dessus du reste */
     display:grid;
     grid-template-columns:1fr auto 1fr;
     align-items:center;
     padding:1rem 2rem;
-}
+}a
 
-.footer-left{
-    justify-self:start;
-    display:flex;
-    align-items:center;
-    gap:0.5rem;                 /* espace entre les liens */
-    padding-right: 0.5rem;
-}
-
-.footer-center{
-    justify-self:center;
-}
-
+/* -----------------------------------------------------------------
+   Zones du footer
+----------------------------------------------------------------- */
+.footer-left,
 .footer-right{
-    justify-self:end;
     display:flex;
     align-items:center;
+    gap:0.5rem;
 }
+.footer-left   { justify-self:start;   padding-right:0.5rem; }
+.footer-center { justify-self:center; }
+.footer-right  { justify-self:end; }
 
-/* -------- Liens de gauche -------- */
-
-.footer-left a{
-    color:#555;                 /* gris */
-    text-decoration:none;       /* retire le soulignement */
-    transition:color .2s;
-}
-
-.footer-left a:hover{
-    color:#777;
-}
-
-/* -------- Séparateur -------- */
-
-.footer-right .separator{
-    color:#444;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-}
-
-/* -------- Contact -------- */
-
-.footer-right .contact-label{
-    color:#444;
-    padding-left:1rem;          /* espace après le séparateur */
-    padding-right:2rem;         /* espace avant le bord droit */
-    text-decoration:none;
-    cursor:pointer;
-    transition:color .2s;
-}
-
-.footer-right .contact-label:hover{
-    color:#777;
-}
-
+/* -----------------------------------------------------------------
+   Liens (style commun)
+----------------------------------------------------------------- */
+.footer-left a,
+.footer-right a,
 .footer-link{
-    color:#444;
+    color:#555;
     text-decoration:none;
+    transition:color .2s;
 }
-
+.footer-left a:hover,
+.footer-right a:hover,
 .footer-link:hover{
     color:#777;
 }
 
+/* -----------------------------------------------------------------
+   Séparateur
+----------------------------------------------------------------- */
+.footer-right .separator,
+.footer-left .separator{
+    color:#444;
+    padding:0 0.5rem;
+}
+
+/* -----------------------------------------------------------------
+   Contact (dans .footer-right)
+----------------------------------------------------------------- */
+.footer-right .contact-label{
+    color:#444;
+    padding:0 2rem 0 1rem;   /* left 1rem / right 2rem */
+    cursor:pointer;
+    transition:color .2s;
+}
+.footer-right .contact-label:hover{
+    color:#777;
+}
+
+/* -----------------------------------------------------------------
+   Légal (dans .footer-left)
+----------------------------------------------------------------- */
 .footer-legal{
     padding-left:1rem;
 }
 
 
 
-/* -------------------------------------------------
-   2️⃣ Quand la largeur < 768 px (ou la valeur que vous voulez)
-   ------------------------------------------------- */
-@media (max-width: 768px) {          /* <-- changez 768px à la largeur qui vous convient */
+/* 1️⃣ Le footer reste fixe (si tu veux qu’il glisse avec le scroll,
+    retire `position:fixed` ici et garde le fond opaque) */
+.site-footer{
+    position:static;               /* dans le flux normal */
+    width:auto;
+    padding:1rem;
+    font-size:0.9rem;
+    display:grid;
+    grid-template-columns:1fr;     /* une seule colonne */
+    grid-auto-rows:min-content;
+    row-gap:0.8rem;
+    text-align:center;
+}
 
-    /* 2.1️⃣ Relâcher le positionnement fixe */
-    .site-footer{
-        position:static;            /* revient dans le flux normal */
-        bottom:auto;                /* inutile, mais explicite */
-        left:auto;
-        width:auto;                 /* prend la largeur du conteneur parent */
-        padding:1rem;               /* on enlève le padding horizontal trop large */
-    }
+.footer-left,
+.footer-center,
+.footer-right{
+    justify-self:center;           /* centrer chaque bloc */
+}
 
-    /* 2.2️⃣ Adapter la grille : on passe à une colonne unique */
-    .site-footer{
-        display:grid;
-        grid-template-columns:1fr;          /* une seule colonne */
-        grid-auto-rows:min-content;        /* chaque bloc prend la hauteur dont il a besoin */
-        row-gap:0.8rem;                     /* espacement vertical entre les blocs */
-        text-align:center;                 /* centre le texte */
-    }
+.separator{display:none;}
 
-    /* 2.3️⃣ Centrer chaque bloc (gauche, centre, droite) */
-    .footer-left,
-    .footer-center,
-    .footer-right{
-        justify-self:center;               /* centre dans la colonne */
-    }
+.footer-left a,
+.footer-right a{
+    padding:0.4rem 0.8rem;
+    display:inline-block;
+}
 
-    /* 2.4️⃣ Masquer les séparateurs « | » qui n’ont plus de sens */
-    .separator{
-        display:none;
-    }
 
-    /* 2.5️⃣ Agrandir la zone cliquable pour le tactile */
-    .footer-left a,
-    .footer-right a{
-        padding:0.4rem 0.8rem;              /* plus d’espace autour du texte */
-        display:inline-block;
-    }
-
-    /* 2.6️⃣ (Optionnel) réduire légèrement la taille de police */
-    .site-footer{
-        font-size:0.9rem;
-    }
+/* --------------------------------------------------------------
+   ESPACE EN BAS DE LA PAGE (pour éviter que le contenu soit
+   caché sous le footer fixe)
+-------------------------------------------------------------- */
+body{
+    padding-bottom:calc(5.5rem);   /* même hauteur que le footer (padding + éventuel border) */
 }
